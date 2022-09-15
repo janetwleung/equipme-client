@@ -1,0 +1,9 @@
+@mixin link-reset() {
+    text-decoration: none;
+    color: inherit;
+}
+
+@mixin ul-reset() {
+    list-style-type: none;
+    padding-left: 0;
+}
