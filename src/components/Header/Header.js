@@ -14,10 +14,10 @@ function Header() {
                     <NavLink to="/used" className="header__nav-item-link">Used</NavLink>
                 </li>
                 <li className="header__nav-item">
-                    <CTA isButton={false} text="Sign Up"/>
+                    <CTA isButton={false} text="Sign Up" link="/signup"/>
                 </li>
                 <li className="header__nav-item">
-                    <CTA isButton={false} text="Login" type="secondary"/>
+                    <CTA isButton={false} text="Login" type="secondary" link="/login"/>
                 </li>
             </ul>
 

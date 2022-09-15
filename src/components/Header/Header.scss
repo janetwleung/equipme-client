@@ -38,6 +38,7 @@
             width: auto;
             gap: 2rem;
             padding: 0 2rem;
+            align-items: center;
         }
 
         @include desktop {
@@ -47,7 +48,9 @@
 
     &__nav-item {
         @include tablet {
-            width: 8rem;
+            &:nth-child(3) {
+                width: 8rem;
+            }
         }
     }
 
