@@ -45,6 +45,7 @@
     &__text {
         color: $primary-global;
         margin: 0;
+        text-transform: uppercase;
 
         &--special {
             color: $primary-button;

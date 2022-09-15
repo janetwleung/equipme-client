@@ -36,7 +36,7 @@
 
         @include tablet {
             width: auto;
-            gap: 2rem;
+            gap: 1rem;
             padding: 0 2rem;
             align-items: center;
         }
@@ -48,8 +48,11 @@
 
     &__nav-item {
         @include tablet {
+            &:nth-child(2) {
+                padding: 0 1rem;
+            }
             &:nth-child(3) {
-                width: 8rem;
+                width: 7rem;
             }
         }
     }
