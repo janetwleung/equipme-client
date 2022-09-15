@@ -47,5 +47,6 @@
 
     &__nav-item-link {
         @include link-reset;
+        text-transform: uppercase;
     }
 }
