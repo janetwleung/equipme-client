@@ -1,12 +1,30 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    @include desktop {
+        @include desktop-margin-auto;
+    }
+
     &__title-link {
         @include link-reset;
+        
+        @include tablet {
+            margin: 0 2rem;
+        }
+
+        @include desktop {
+            margin: 0;
+        }
     }
 
     &__nav {
@@ -15,7 +33,16 @@
         justify-content: space-between;
         padding: 0 1rem;
         width: 100%;
-        
+
+        @include tablet {
+            width: auto;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
     }
 
     &__nav-item-link {
