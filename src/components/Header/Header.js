@@ -1,5 +1,6 @@
 import "./Header.scss";
 import { Link, NavLink } from "react-router-dom";
+import CTA from "../CTA/CTA";
 
 function Header() {
     return (
@@ -13,10 +14,10 @@ function Header() {
                     <NavLink to="/used" className="header__nav-item-link">Used</NavLink>
                 </li>
                 <li className="header__nav-item">
-                    <NavLink to="/signup" className="header__nav-item-link">Sign up</NavLink>
+                    <CTA isButton={false} text="Sign Up"/>
                 </li>
                 <li className="header__nav-item">
-                    <NavLink to="login" className="header__nav-item-link">Login</NavLink>
+                    <CTA isButton={false} text="Login" type="secondary"/>
                 </li>
             </ul>
 

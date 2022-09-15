@@ -45,6 +45,12 @@
         }
     }
 
+    &__nav-item {
+        @include tablet {
+            width: 8rem;
+        }
+    }
+
     &__nav-item-link {
         @include link-reset;
         text-transform: uppercase;
