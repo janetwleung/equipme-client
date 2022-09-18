@@ -57,12 +57,12 @@
     &__nav-item {
         @include tablet {
             display: flex;
+
             &:nth-child(2) {
                 padding: 0 1rem;
             }
         }
     }
-
 
     &__nav-item-link {
         @include link-reset;
@@ -81,10 +81,11 @@
             height: 0.125rem;
             background: gray;
             transition: width 0.3s;
-          }
-        
+        }
+
         &:hover {
             color: $primary-button;
+
             &::after {
                 width: 100%;
                 background: $primary-button;
@@ -95,21 +96,18 @@
             @include link-reset;
             text-transform: uppercase;
             padding-bottom: 1rem;
-            
+
             &::after {
                 width: 100%;
                 background: $primary-button;
             }
-        
-    }
-
-
+        }
     }
 }
 
-.mobile-header{
+.mobile-header {
     height: 100vh;
-    
+
     @include tablet {
         display: none;
     }
@@ -164,13 +162,14 @@
 
     &__list-item-link {
         @include link-reset;
+
         &:hover {
-            opacity: 0.5;
+            color: $primary-button;
         }
     }
 }
 
-// Hamburger animation
+Hamburger animation
 #menuToggle {
     display: flex;
     flex-direction: column;
@@ -218,7 +217,7 @@
 #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-3px, -1px);
-    background:gray;
+    background: gray;
 }
 
 #menuToggle input:checked~span:nth-last-child(3) {
