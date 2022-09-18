@@ -19,11 +19,12 @@
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
-        }
-
-        @include desktop {
             @include desktop-margin-auto;
         }
+
+        // @include desktop {
+        //     @include desktop-margin-auto;
+        // }
     }
 
     &__title-link {
