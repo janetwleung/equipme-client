@@ -21,10 +21,6 @@
             justify-content: space-between;
             @include desktop-margin-auto;
         }
-
-        // @include desktop {
-        //     @include desktop-margin-auto;
-        // }
     }
 
     &__title-link {
@@ -69,15 +65,11 @@
     &__nav-item-link {
         @include link-reset;
         text-transform: uppercase;
+        
+        &:hover {
+            opacity: 0.5;
+        }
     }
-}
-
-
-
-body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
 }
 
 a {
@@ -90,9 +82,9 @@ a {
     transition: 200ms;
 }
 
-a:hover {
-    opacity: 0.5;
-}
+// a:hover {
+//     opacity: 0.5;
+// }
 
 ul {
     padding: 0;
@@ -152,6 +144,12 @@ ul {
         padding: 10px 0;
         transition-delay: 2s;
         font-size: .80rem;
+    }
+
+    &__list-item-link {
+        &:hover {
+            opacity: 0.5;
+        }
     }
 }
 

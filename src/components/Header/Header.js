@@ -18,10 +18,10 @@ function Header() {
                             <span></span>
                             <ul className="mobile-header__list" id="menu">
                                 <li className="mobile-header__list-item">
-                                    <NavLink to="/pros" className="mobile-header__list-item">What The Pros Wear</NavLink>
+                                    <NavLink to="/pros" className="mobile-header__list-item-link">What The Pros Wear</NavLink>
                                 </li>
                                 <li className="mobile-header__list-item">
-                                    <NavLink to="/used" className="mobile-header__list-item">Shop Used</NavLink>
+                                    <NavLink to="/used" className="mobile-header__list-item-link">Shop Used</NavLink>
                                 </li>
                                 <li className="mobile-header__list-item">
                                     <CTA isButton={false} text="Login" type="secondary" link="/login" />
