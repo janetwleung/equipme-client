@@ -27,19 +27,3 @@ function Header() {
 }
 
 export default Header;
-
-
-{/* <ul className="header__nav">
-                <li className="header__nav-item">
-                    <NavLink to="/pros" className="header__nav-item-link">Pros</NavLink>
-                </li>
-                <li className="header__nav-item">
-                    <NavLink to="/used" className="header__nav-item-link">Used</NavLink>
-                </li>
-                <li className="header__nav-item">
-                    <NavLink to="/signup" className="header__nav-item-link">Sign up</NavLink>
-                </li>
-                <li className="header__nav-item">
-                    <NavLink to="login" className="header__nav-item-link">Login</NavLink>
-                </li>
-            </ul> */}
