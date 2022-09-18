@@ -3,7 +3,12 @@
 @use "../../styles/partials/colors" as *;
 
 .header {
-    border-bottom: .5px solid $primary-text;
+    display: none;
+
+    @include tablet {
+        display: contents;
+        border-bottom: .5px solid $primary-text;
+        }
 
     &__container {
         display: flex;
