@@ -68,8 +68,9 @@
         @include link-reset;
         padding: 0.625rem;
         text-transform: uppercase;
-        color: gray;
+        color: $primary-text;
         transition: 0.3s;
+        position: relative;
 
         &::after {
             content: '';
@@ -94,12 +95,10 @@
             @include link-reset;
             text-transform: uppercase;
             padding-bottom: 1rem;
-            border-bottom: 2px solid $primary-button;
             
             &::after {
                 width: 100%;
                 background: $primary-button;
-                text-decoration: underline;
             }
         
     }
