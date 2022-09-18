@@ -7,6 +7,7 @@ function Header() {
 
     return (
         <>
+        {/* Mobile Navigation HTML */}
             <header className="mobile-header">
                 <div className="mobile-header__content">
                     <nav className="mobile-header__navigation" role="navigation">
@@ -16,26 +17,34 @@ function Header() {
                             <span></span>
                             <span></span>
                             <ul className="mobile-header__list" id="menu">
-                                <li className="mobile-header__list-item">What The Pros Wear</li>
-                                <li className="mobile-header__list-item">Shop Used</li>
-                                <li className="mobile-header__list-item">Login</li>
-                                <li className="mobile-header__list-item">Sign Up</li>
+                                <li className="mobile-header__list-item">
+                                    <NavLink to="/pros" className="mobile-header__list-item">What The Pros Wear</NavLink>
+                                </li>
+                                <li className="mobile-header__list-item">
+                                    <NavLink to="/used" className="mobile-header__list-item">Shop Used</NavLink>
+                                </li>
+                                <li className="mobile-header__list-item">
+                                    <CTA isButton={false} text="Login" type="secondary" link="/login" />
+                                </li>
+                                <li className="mobile-header__list-item">
+                                    <CTA isButton={false} text="Sign Up" link="/signup" />
+                                </li>
                             </ul>
                         </div>
-                        <h1 className="mobile-header__title">EquipMe.</h1>
+                        <Link to="/" className="header__title-link"><h1 className="mobile-header__title">EquipMe.</h1></Link>
                     </nav>
                 </div>
             </header>
-            
+        {/* Tablet / Desktop Navigation HTML */}
             <header className="header">
                 <div className="header__container">
                     <Link to="/" className="header__title-link"><h1 className="header__title">EquipMe.</h1></Link>
                     <ul className="header__nav">
                         <li className="header__nav-item">
-                            <NavLink to="/pros" className="header__nav-item-link">Pros</NavLink>
+                            <NavLink to="/pros" className="header__nav-item-link">What The Pros Wear</NavLink>
                         </li>
                         <li className="header__nav-item">
-                            <NavLink to="/used" className="header__nav-item-link">Used</NavLink>
+                            <NavLink to="/used" className="header__nav-item-link">Shop Used</NavLink>
                         </li>
                         <li className="header__nav-item">
                             <CTA isButton={false} text="Sign Up" link="/signup" />

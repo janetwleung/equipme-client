@@ -7,8 +7,9 @@
 
     @include tablet {
         display: contents;
+        display: block;
         border-bottom: .5px solid $primary-text;
-        }
+    }
 
     &__container {
         display: flex;
@@ -17,7 +18,7 @@
 
         @include tablet {
             flex-direction: row;
-            justify-content: space-between
+            justify-content: space-between;
         }
 
         @include desktop {
