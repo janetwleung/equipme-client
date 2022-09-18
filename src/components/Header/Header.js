@@ -7,7 +7,7 @@ function Header() {
 
     return (
         <>
-        {/* Mobile Navigation HTML */}
+            {/* Mobile Navigation HTML */}
             <header className="mobile-header">
                 <div className="mobile-header__content">
                     <nav className="mobile-header__navigation" role="navigation">
@@ -35,16 +35,28 @@ function Header() {
                     </nav>
                 </div>
             </header>
-        {/* Tablet / Desktop Navigation HTML */}
+            {/* Tablet / Desktop Navigation HTML */}
             <header className="header">
                 <div className="header__container">
                     <Link to="/" className="header__title-link"><h1 className="header__title">EquipMe.</h1></Link>
                     <ul className="header__nav">
                         <li className="header__nav-item">
-                            <NavLink to="/pros" className="header__nav-item-link">What The Pros Wear</NavLink>
+                            <NavLink
+                                to="/pros"
+                                className={({ isActive }) =>
+                                    "header__nav-item-link" + (isActive ? " header__nav-item-link--active" : "")}
+                            >
+                                What The Pros Wear
+                            </NavLink>
                         </li>
                         <li className="header__nav-item">
-                            <NavLink to="/used" className="header__nav-item-link">Shop Used</NavLink>
+                            <NavLink
+                                to="/used"
+                                className={({ isActive }) =>
+                                    "header__nav-item-link" + (isActive ? " header__nav-item-link--active" : "")}
+                            >
+                                Shop Used
+                            </NavLink>
                         </li>
                         <li className="header__nav-item">
                             <CTA isButton={false} text="Sign Up" link="/signup" />

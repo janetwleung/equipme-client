@@ -56,19 +56,55 @@
 
     &__nav-item {
         @include tablet {
+            display: flex;
             &:nth-child(2) {
                 padding: 0 1rem;
             }
         }
     }
 
+
     &__nav-item-link {
         @include link-reset;
+        padding: 0.625rem;
         text-transform: uppercase;
+        color: gray;
+        transition: 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 0.125rem;
+            background: gray;
+            transition: width 0.3s;
+          }
         
         &:hover {
-            opacity: 0.5;
+            color: $primary-button;
+            &::after {
+                width: 100%;
+                background: $primary-button;
+            }
         }
+
+        &--active {
+            @include link-reset;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid $primary-button;
+            
+            &::after {
+                width: 100%;
+                background: $primary-button;
+                text-decoration: underline;
+            }
+        
+    }
+
+
     }
 }
 
