@@ -5,6 +5,10 @@
 .main {
     &__hero {
         position: relative;
+
+        @include tablet {
+            @include desktop-margin-auto;
+        }
     }
 
     &__hero-background {
@@ -62,7 +66,6 @@
         @include desktop {
             padding-left: 3rem;
         }
-
     }
 
     &__title {
@@ -80,8 +83,8 @@
 
         @include desktop {
             @include desktop-margin-auto;
-            font-size: 15rem;
-            left: calc(100vw / 6.875);
+            font-size: 14.5rem;
+            left: 0;
         }
     }
 
