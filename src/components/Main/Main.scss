@@ -1,6 +1,71 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
 .main {
+
+    &__hero-background-top,
+    &__hero-background-bottom {
+        text-transform: uppercase;
+        color: $secondary-background;
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: calc(100vw / 3.75);
+        line-height: calc(100vw / 5);  
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            // @include desktop-margin-auto; 
+            font-size: calc(100vw / 4.25);
+            line-height: calc(100vw / 5);  
+        }
+
+        // @include pre-desktop {
+        //     font-size: calc(1020px / 4.25);
+        //     line-height: calc(1020px / 5); 
+        // }
+
+        @include desktop {
+            font-size: 17.5rem;
+            line-height: 13.175rem; 
+            overflow: visible;
+        }
+    }
+
+    &__hero-background-top {
+        padding: 6rem 0 0 0;
+        margin-left: -.875rem;
+        overflow: hidden;
+
+        @include tablet {
+            margin: auto;
+            overflow: visible;
+        }
+
+        @include desktop {
+            padding-right: 3rem;
+        }
+    }
+
+    &__hero-background-bottom {
+        padding: 0 0 6rem 2.5rem;
+        overflow: hidden;
+
+        @include tablet {
+            margin: auto;
+            overflow: visible;
+        }
+
+        @include desktop {
+            padding-left: 3rem;
+        }
+
+    }
+
     &__hero {
         height: 50vh;
         background-color: lavender;
     }
+
+
 }
