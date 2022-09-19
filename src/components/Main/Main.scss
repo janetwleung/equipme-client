@@ -3,6 +3,14 @@
 @use "../../styles/partials/colors" as *;
 
 .main {
+    &__hero {
+        position: relative;
+    }
+
+    &__hero-background {
+        height: 70vw;
+        background-color: lavender;
+    }
 
     &__hero-background-top,
     &__hero-background-bottom {
@@ -15,15 +23,9 @@
         justify-content: center;
 
         @include tablet {
-            // @include desktop-margin-auto; 
             font-size: calc(100vw / 4.25);
             line-height: calc(100vw / 5);  
         }
-
-        // @include pre-desktop {
-        //     font-size: calc(1020px / 4.25);
-        //     line-height: calc(1020px / 5); 
-        // }
 
         @include desktop {
             font-size: 17.5rem;
@@ -38,6 +40,7 @@
         overflow: hidden;
 
         @include tablet {
+            padding: 8rem 0 0 0;
             margin: auto;
             overflow: visible;
         }
@@ -48,10 +51,11 @@
     }
 
     &__hero-background-bottom {
-        padding: 0 0 6rem 2.5rem;
+        padding: 0 0 4rem 2.5rem;
         overflow: hidden;
 
         @include tablet {
+            padding: 0 0 6rem 2.5rem;
             margin: auto;
             overflow: visible;
         }
@@ -62,10 +66,25 @@
 
     }
 
-    &__hero {
-        height: 50vh;
-        background-color: lavender;
-    }
+    &__title {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: calc(100vw / 5);
+        position: absolute;
+        top: calc(70vw / 2 - 5rem);
+        left: calc(100vw / 15);
+        width: 100%;
 
+        @include tablet {
+            font-size: calc(100vw / 4.875);
+            left: calc(100vw / 19);
+            top: 12rem;
+        }
+
+        @include desktop {
+            @include desktop-margin-auto;
+            font-size: 15rem;
+            left: 21%;
+        }
+    }
 
 }

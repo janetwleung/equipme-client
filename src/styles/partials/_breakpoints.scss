@@ -1,14 +1,7 @@
 $tablet-breakpoint: 768px;
-$pre-desktop-breakpoint: 1020px;
 $desktop-breakpoint: 1280px;
 
 @mixin tablet {
-    @media (min-width: $tablet-breakpoint) {
-        @content;
-    }
-}
-
-@mixin pre-desktop {
     @media (min-width: $tablet-breakpoint) {
         @content;
     }
