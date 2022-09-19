@@ -1,9 +1,6 @@
 import "./Main.scss";
 import CTA from "../CTA/CTA";
-import SportCard from "../SportCard/SportCard";
-import softball from "../../assets/images/softball.png";
-import hockey from "../../assets/images/hockey.png";
-import lacrosse from "../../assets/images/lacrosse.png";
+import Carousel from "../Carousel/Carousel";
 
 function Main() {
     return (
@@ -22,18 +19,7 @@ function Main() {
                 </div>
             </section>
             <section className="main__sports-carousel">
-                <SportCard 
-                    sport="Softball" 
-                    image={softball}
-                />
-                <SportCard 
-                    sport="Hockey" 
-                    image={hockey}
-                />
-                <SportCard 
-                    sport="Lacrosse" 
-                    image={lacrosse}
-                />
+                <Carousel />
             </section>
         </main>
     );
