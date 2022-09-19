@@ -4,15 +4,24 @@
 
 .main {
     &__hero {
-        position: relative;
+        width: auto;
+        height: 30rem;
+        background-color: lavender;
+        display: flex;
+        align-items: center;
 
         @include tablet {
-            @include desktop-margin-auto;
+            height: 70vw;
+        }
+
+        @include desktop {
+            height: calc(100vh - 4.9494rem);
         }
     }
 
     &__hero-background {
-        height: 70vw;
+        width: 100%;
+        position: relative;
     }
 
     &__hero-background-top,
@@ -20,71 +29,46 @@
         text-transform: uppercase;
         color: $secondary-background;
         font-family: "Kumbh Sans", sans-serif;
-        font-size: calc(100vw / 3.75);
-        line-height: calc(100vw / 5);  
+        font-size: calc(100vw / 4);
+        line-height: calc(100vw / 5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            font-size: 12rem;
+            line-height: 10rem;
+        }
+    }
+
+    &__title-container {
+        width: 100vw;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: calc(100vw / 5);
         display: flex;
         justify-content: center;
 
         @include tablet {
-            font-size: calc(100vw / 4.25);
-            line-height: calc(100vw / 5);  
-        }
-
-        @include desktop {
-            font-size: 17.5rem;
-            line-height: 13.175rem; 
-            overflow: visible;
+            font-size: 10rem;
         }
     }
 
-    &__hero-background-top {
-        padding: 6rem 0 0 0;
-        margin-left: -.875rem;
-        overflow: hidden;
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        font-size: 1.25rem;
 
         @include tablet {
-            padding: 8rem 0 0 0;
-            margin: auto;
-            overflow: visible;
-        }
-
-        @include desktop {
-            padding-right: 3rem;
-        }
-    }
-
-    &__hero-background-bottom {
-        padding: 0 0 4rem 2.5rem;
-        overflow: hidden;
-
-        @include tablet {
-            padding: 0 0 6rem 2.5rem;
-            margin: auto;
-            overflow: visible;
-        }
-
-        @include desktop {
-            padding-left: 3rem;
-        }
-    }
-
-    &__title {
-        font-family: "Kumbh Sans", sans-serif;
-        font-size: calc(100vw / 5);
-        position: absolute;
-        top: calc(70vw / 2 - 5rem);
-        left: calc(100vw / 15);
-
-        @include tablet {
-            font-size: calc(100vw / 4.875);
-            left: calc(100vw / 19);
-            top: 12rem;
-        }
-
-        @include desktop {
-            @include desktop-margin-auto;
-            font-size: 14.5rem;
-            left: 0;
+            font-size: 1.75rem;
         }
     }
 
