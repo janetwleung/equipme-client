@@ -6,9 +6,10 @@
     &__hero {
         width: auto;
         height: 30rem;
-        background-color: lavender;
+        // background-color: rgb(230, 230, 250, 0.5);
         display: flex;
         align-items: center;
+        position:relative;
 
         @include tablet {
             height: 70vw;
@@ -22,6 +23,7 @@
     &__hero-background {
         width: 100%;
         position: relative;
+        z-index: -1;
     }
 
     &__hero-background-top,
@@ -37,7 +39,11 @@
 
         @include tablet {
             font-size: 12rem;
-            line-height: 10rem;
+            line-height: 13rem;
+        }
+
+        @include pre-desktop {
+            font-size: 16rem;
         }
     }
 
@@ -47,6 +53,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: -1;
     }
 
     &__title {
@@ -59,6 +66,10 @@
         @include tablet {
             font-size: 10rem;
         }
+
+        @include pre-desktop {
+            font-size: 12rem;
+        }
     }
 
     &__subtitle {
@@ -66,10 +77,20 @@
         justify-content: center;
         align-content: center;
         font-size: 1.25rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
 
         @include tablet {
             font-size: 1.75rem;
         }
     }
 
+    &__hero-button {
+        padding-top: 1rem;
+        width: 8rem;
+
+        @include tablet {
+            padding-top: 2rem;
+        }
+    }
 }
