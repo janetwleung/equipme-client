@@ -9,7 +9,6 @@
 
     &__hero-background {
         height: 70vw;
-        background-color: lavender;
     }
 
     &__hero-background-top,
@@ -72,7 +71,6 @@
         position: absolute;
         top: calc(70vw / 2 - 5rem);
         left: calc(100vw / 15);
-        width: 100%;
 
         @include tablet {
             font-size: calc(100vw / 4.875);
@@ -83,7 +81,7 @@
         @include desktop {
             @include desktop-margin-auto;
             font-size: 15rem;
-            left: 21%;
+            left: calc(100vw / 6.875);
         }
     }
 
