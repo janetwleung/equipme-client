@@ -1,5 +1,7 @@
 import "./Main.scss";
 import CTA from "../CTA/CTA";
+import SportCard from "../SportCard/SportCard";
+import softball from "../../assets/images/softball.png";
 
 function Main() {
     return (
@@ -16,6 +18,12 @@ function Main() {
                         <CTA text="Available Sept 29th"/>
                     </div>
                 </div>
+            </section>
+            <section className="main__sports-list">
+                <SportCard 
+                    sport="Softball" 
+                    image={softball}
+                />
             </section>
         </main>
     );
