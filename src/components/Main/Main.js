@@ -2,6 +2,8 @@ import "./Main.scss";
 import CTA from "../CTA/CTA";
 import SportCard from "../SportCard/SportCard";
 import softball from "../../assets/images/softball.png";
+import hockey from "../../assets/images/hockey.png";
+import lacrosse from "../../assets/images/lacrosse.png";
 
 function Main() {
     return (
@@ -15,14 +17,22 @@ function Main() {
                     <h2 className="main__title">EquipMe.</h2>
                     <span className="main__subtitle">your first stop to finding new sports equipment</span>
                     <div className="main__hero-button">
-                        <CTA text="Available Sept 29th"/>
+                        <CTA text="Get Started"/>
                     </div>
                 </div>
             </section>
-            <section className="main__sports-list">
+            <section className="main__sports-carousel">
                 <SportCard 
                     sport="Softball" 
                     image={softball}
+                />
+                <SportCard 
+                    sport="Hockey" 
+                    image={hockey}
+                />
+                <SportCard 
+                    sport="Lacrosse" 
+                    image={lacrosse}
                 />
             </section>
         </main>
