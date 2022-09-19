@@ -106,7 +106,7 @@
 }
 
 .mobile-header {
-    height: 100vh;
+    // height: 100vh;
 
     @include tablet {
         display: none;
@@ -132,7 +132,6 @@
         border-bottom: 1px solid black;
         height: 4.375rem;
         display: flex;
-        position: relative;
     }
 
     &__title {
