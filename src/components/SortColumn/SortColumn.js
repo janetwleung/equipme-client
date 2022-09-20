@@ -3,26 +3,50 @@ import "./SortColumn.scss";
 function SortColumn() {
     return (
         <div className="sort">
-            <ul>
-                <li>
-                    <input type="checkbox"id="Mizuno"/>
-                    <label htmlFor="Mizuno">Mizuno</label>
+            <ul className="sort__brand-list">
+                <span className="sort__list-label">Brands</span>
+                <li className="sort__brand-list-item">
+                    <input type="checkbox" id="Mizuno"/>
+                    <label className="sort__label" htmlFor="Mizuno">Mizuno</label>
                 </li>
-                <li>
-                    <input type="checkbox"id="Rawlings"/>
-                    <label htmlFor="Rawlings">Rawlings</label>
+                <li className="sort__brand-list-item">
+                    <input type="checkbox" id="Rawlings"/>
+                    <label className="sort__label" htmlFor="Rawlings">Rawlings</label>
                 </li>
-                <li>
-                    <input type="checkbox"id="Wilson"/>
-                    <label htmlFor="Wilson">Wilson</label>
+                <li className="sort__brand-list-item">
+                    <input type="checkbox" id="Wilson"/>
+                    <label className="sort__label" htmlFor="Wilson">Wilson</label>
                 </li>
-                <li>
-                    <input type="checkbox"id="Easton"/>
-                    <label htmlFor="Easton">Easton</label>
+                <li className="sort__brand-list-item">
+                    <input type="checkbox" id="Easton"/>
+                    <label className="sort__label" htmlFor="Easton">Easton</label>
                 </li>
-                <li>
-                    <input type="checkbox"id="Nokona"/>
-                    <label htmlFor="Nokona">Nokona</label>
+                <li className="sort__brand-list-item">
+                    <input type="checkbox" id="Nokona"/>
+                    <label className="sort__label" htmlFor="Nokona">Nokona</label>
+                </li>
+            </ul>
+            <ul className="sort__price-list">
+                <span className="sort__list-label">Price</span>
+                <li className="sort__price-list-item">
+                    <input type="checkbox"/>
+                    <label className="sort__label" htmlFor="">less than $100</label>
+                </li>
+                <li className="sort__price-list-item">
+                    <input type="checkbox"/>
+                    <label className="sort__label" htmlFor="">$100 - $200</label>
+                </li>
+                <li className="sort__price-list-item">
+                    <input type="checkbox"/>
+                    <label className="sort__label" htmlFor="">$200 - $300</label>
+                </li>
+                <li className="sort__price-list-item">
+                    <input type="checkbox"/>
+                    <label className="sort__label" htmlFor="">$300 - $400</label>
+                </li>
+                <li className="sort__price-list-item">
+                    <input type="checkbox"/>
+                    <label className="sort__label" htmlFor="">$400 - $500</label>
                 </li>
             </ul>
         </div>

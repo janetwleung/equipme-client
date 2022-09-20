@@ -8,8 +8,4 @@
     flex-wrap: wrap;
     gap: 1rem;
     @include ul-reset;
-
-    @include tablet {
-        width: 80%;
-    }
 }
