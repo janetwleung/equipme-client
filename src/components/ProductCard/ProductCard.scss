@@ -16,6 +16,10 @@
         height: 20.5rem;
     }
 
+    &__link {
+        @include link-reset;
+    }
+
     &__image {
         width: calc(100vw / 2 - 3rem);
         border: 1px solid $secondary-text;

@@ -1,5 +1,4 @@
 import "./Main.scss";
-import CTA from "../CTA/CTA";
 import Carousel from "../Carousel/Carousel";
 
 function Main() {
