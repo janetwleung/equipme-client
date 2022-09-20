@@ -10,11 +10,13 @@ function ProductsNav() {
                         Gloves
                     </NavLink>
                 </li>
+                /
                 <li className="products__nav-item">
                     <NavLink to="/products/bats" className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}>
                         Bats
                     </NavLink>
                 </li>
+                /
                 <li className="products__nav-item">
                     <NavLink to="/products/cleats" className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}>
                         Cleats

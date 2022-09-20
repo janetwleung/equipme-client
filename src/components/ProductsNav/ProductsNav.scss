@@ -8,6 +8,16 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 1rem;
+
+        @include tablet {
+            padding: 0 2rem;
+            @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+
     }
 
     &__nav {
