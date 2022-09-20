@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.products {
+    &__top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 1rem;
+        @include ul-reset;
+    }
+
+    &__nav-item-link {
+        @include link-reset;
+    }
+
+}
