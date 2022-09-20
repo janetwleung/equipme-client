@@ -2,3 +2,14 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/colors" as *;
 
+.products {
+    @include tablet {
+        @include desktop-margin-auto;
+        
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+    }
+}
