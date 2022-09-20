@@ -5,9 +5,11 @@
 .sort {
     display: none;
 
+
     @include tablet {
         display: flex;
         flex-direction: column;
+        width: 10rem;
     }
 
     &__brand-list,

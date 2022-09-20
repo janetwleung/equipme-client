@@ -3,7 +3,7 @@
 @use "../../styles/partials/colors" as *;
 
 .product-card {
-    max-width: calc(100vw / 2 - 3rem);
+    max-width: 100%;
     height: auto;
     padding-bottom: 1rem;
     display: flex;
