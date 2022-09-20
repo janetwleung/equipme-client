@@ -12,7 +12,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gxf28s3-classic-pro-soft-fbm/312746"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gxf28s3-classic-pro-soft-fbm/312746",
+        "id": "29f8590d-613a-426b-b8cf-bee42346e758"
     },
     {
         "brand": "Mizuno",
@@ -27,7 +28,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gxf90b4-franchise-fbm-12-5/312973"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gxf90b4-franchise-fbm-12-5/312973",
+        "id": "b892195f-580f-4c4d-a276-294b95057596"
     },
     {
         "brand": "Mizuno",
@@ -42,7 +44,8 @@
         "sport":"Baseball",
         "left": "no",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1175b4-franchise-11-75in/312957"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1175b4-franchise-11-75in/312957",
+        "id": "78eb88e6-e376-4c9f-998f-fe4c1145bee9"
     },
     {
         "brand": "Mizuno",
@@ -57,7 +60,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1250b4-franchise-12-5in/312959"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1250b4-franchise-12-5in/312959",
+        "id": "9159816a-f924-404d-8ba9-bcc46b13d4d4"
     },
     {
         "brand": "Mizuno",
@@ -72,7 +76,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1250b3-franchise/312629"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1250b3-franchise/312629",
+        "id": "8e97247d-5ec4-45ae-8610-3e3b6254b217"
     },
     {
         "brand": "Mizuno",
@@ -87,7 +92,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1200b4-franchise-12in/312958"
+        "whereToBuy": "https://www.mizunousa.com/ca/product/baseball-gfn1200b4-franchise-12in/312958",
+        "id": "df0b1eed-296a-4095-adaf-5eace2aba514"
     },
     {
         "brand": "Wilson",
@@ -102,7 +108,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2023-a2k-1787-wbw101271#throwinghand=52622&size=52586"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2023-a2k-1787-wbw101271#throwinghand=52622&size=52586",
+        "id": "8cfbc362-9e43-4a0f-8ae6-931bdb874163"
     },
     {
         "brand": "Wilson",
@@ -117,7 +124,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a2000-scdp15ss-11-5-infield-baseball-glove-wbw101003#throwinghand=52622&size=52766"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a2000-scdp15ss-11-5-infield-baseball-glove-wbw101003#throwinghand=52622&size=52766",
+        "id": "9a24c527-61b4-4640-8af0-f64b11437fe4"
     },
     {
         "brand": "Wilson",
@@ -132,7 +140,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2021-a2k-1799ss-12-75-outfield-baseball-glove-wbw100663#throwinghand=52622&size=52619"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2021-a2k-1799ss-12-75-outfield-baseball-glove-wbw100663#throwinghand=52622&size=52619",
+        "id": "29e4c192-4514-4edd-b469-1e57220b9d2e"
     },
     {
         "brand": "Wilson",
@@ -147,7 +156,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a1000-dp15-11-5-infield-baseball-glove-wbw100729#throwinghand=52622&size=52766"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a1000-dp15-11-5-infield-baseball-glove-wbw100729#throwinghand=52622&size=52766",
+        "id": "9389148a-3f0e-4074-a699-2e114a7a3c97"
     },
     {
         "brand": "Wilson",
@@ -162,7 +172,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2021-a2000-b2-12-pitcher-s-baseball-glove-wbw100890#throwinghand=52622&size=53072"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2021-a2000-b2-12-pitcher-s-baseball-glove-wbw100890#throwinghand=52622&size=53072",
+        "id": "757a6ff5-1a98-4296-a29c-3f145bed5e5a"
     },
     {
         "brand": "Wilson",
@@ -177,7 +188,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a700-12-5-outfield-baseball-glove-wbw100724#throwinghand=52622&size=52694"
+        "whereToBuy": "https://www.wilson.com/en-us/product/2022-a700-12-5-outfield-baseball-glove-wbw100724#throwinghand=52622&size=52694",
+        "id": "75d16f8d-f06f-45bc-85b6-f5b3921663b7"
     },
     {
         "brand": "Rawlings",
@@ -192,7 +204,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/RSGPROR204W-2CBS.html"
+        "whereToBuy": "https://www.rawlings.com/product/RSGPROR204W-2CBS.html",
+        "id": "851e4e1e-3397-4053-9a15-68ddd9540f6d"
     },
     {
         "brand": "Rawlings",
@@ -207,7 +220,8 @@
         "sport": "Baseball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/PRONP4-2CB.html"
+        "whereToBuy": "https://www.rawlings.com/product/PRONP4-2CB.html",
+        "id": "11626324-19e4-4fd7-90e6-3af4e0802b12"
     },
     {
         "brand": "Rawlings",
@@ -222,7 +236,8 @@
         "sport": "Baseball, Softball",
         "left": "no",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/P-PL10BMT.html"
+        "whereToBuy": "https://www.rawlings.com/product/P-PL10BMT.html",
+        "id": "08cf2087-33ce-4a0f-8e78-7b1fd8187682"
     },
     {
         "brand": "Rawlings",
@@ -237,7 +252,8 @@
         "sport": "Baseball, Softball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/PROR3319-6NCB.html"
+        "whereToBuy": "https://www.rawlings.com/product/PROR3319-6NCB.html",
+        "id": "31c7dd34-459d-461c-a85a-27ab9433bfea"
     },
     {
         "brand": "Rawlings",
@@ -252,7 +268,8 @@
         "sport": "Baseball, Softball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/PROR3319-6NCB.html"
+        "whereToBuy": "https://www.rawlings.com/product/PROR3319-6NCB.html",
+        "id": "b24189ad-e804-4c42-b3b1-338eb73b82ec"
     },
     {
         "brand": "Rawlings",
@@ -267,6 +284,7 @@
         "sport": "Baseball, Softball",
         "left": "yes",
         "right": "yes",
-        "whereToBuy": "https://www.rawlings.com/product/P-PRORFM18-10BC.html"
+        "whereToBuy": "https://www.rawlings.com/product/P-PRORFM18-10BC.html",
+        "id": "a2c324f6-96ef-44fc-ac9c-9904f24da22a"
     }
 ]
