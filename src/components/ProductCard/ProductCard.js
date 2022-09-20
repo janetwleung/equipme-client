@@ -2,9 +2,9 @@ import "./ProductCard.scss";
 import image from "../../assets/images/mizuno-franchise-series-baseball-infield-glove-11.75.jpeg";
 import { Link } from "react-router-dom";
 
-function ProductCard({ product, brand, name, price, id }) {
+function ProductCard({ product, brand, name, price, id, category }) {
     return (
-        <Link className="product-card__link" to={`/products/gloves/${id}`}>
+        <Link className="product-card__link" to={`/products/${category}/${id}`}>
             <article className="product-card">
                 <img className="product-card__image" src={image} alt={`${brand} ${product}`} />
                 <div className="product-card__product-details">

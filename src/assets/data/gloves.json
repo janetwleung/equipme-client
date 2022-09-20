@@ -1,6 +1,7 @@
 [
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Classic Pro Soft Baseball First Base Mitt 12.5\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-classic-pro-soft-baseball-first-base-12.5.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno/mizuno-classic-pro-soft-baseball-first-base-12.5-1.jpeg",
@@ -17,6 +18,7 @@
     },
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Franchise Series Baseball First Base Mitt 12.5\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-first-base-12.5.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-first-base-12.5-1.jpeg",
@@ -33,6 +35,7 @@
     },
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Franchise Series Baseball Infield Glove 11.75\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-infield-glove-11.75.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-infield-glove-11.75-1.jpeg",
@@ -49,6 +52,7 @@
     },
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Franchise Series Baseball Outfield Glove 12.5\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-outfield-glove-12.5.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno//mizuno-franchise-series-baseball-outfield-glove-12.5-1.jpeg",
@@ -65,6 +69,7 @@
     },
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Franchise Series Baseball Outfield Glove 12.5\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-outfield-glove-12.5-A.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno//mizuno-franchise-series-baseball-outfield-glove-12.5-A-1.jpeg",
@@ -81,6 +86,7 @@
     },
     {
         "brand": "Mizuno",
+        "category": "gloves",
         "name": "Franchise Series Pitcher/Outfield Baseball Glove 12\"",
         "image1": "http://localhost:8050/images/gloves/mizuno/mizuno-franchise-series-baseball-pitcher-outfield-glove-12.jpeg",
         "image2": "http://localhost:8050/images/gloves/mizuno//mizuno-franchise-series-baseball-pitcher-outfield-glove-12-1.jpeg",
@@ -97,6 +103,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2023 A2K® 1787 11.75\" INFIELD BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2023-a2k-1787-11.75-infield-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2023-a2k-1787-11.75-infield-baseball-glove-1.jpeg",
@@ -113,6 +120,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2022 A2000 SCDP15SS 11.5\" INFIELD BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2022-a2000-scdp15ss-11.5-infield-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2022-a2000-scdp15ss-11.5-infield-baseball-glove-1.jpeg",
@@ -129,6 +137,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2021 A2K 1799SS 12.75\" OUTFIELD BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2021-a2k-1799ss-12.75-outfield-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2021-a2k-1799ss-12.75-outfield-baseball-glove-1.jpeg",
@@ -145,6 +154,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2022 A1000 DP15 11.5\" INFIELD BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2022-a1000-dp15-11.5-infield-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2022-a1000-dp15-11.5-infield-baseball-glove-1.jpeg",
@@ -161,6 +171,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2021 A2000 B2 12\" PITCHER'S BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2021-a2000-b2-12-pitchers-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2021-a2000-b2-12-pitchers-baseball-glove-1.jpeg",
@@ -177,6 +188,7 @@
     },
     {
         "brand": "Wilson",
+        "category": "gloves",
         "name": "2022 A700 12.5\" OUTFIELD BASEBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/wilson/2022-a700-12.5-outfield-baseball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/wilson/2022-a700-12.5-outfield-baseball-glove-1.jpeg",
@@ -193,6 +205,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "2021 EXCLUSIVE HEART OF THE HIDE R2G 11.5\" I-WEB GLOVE",
         "image1": "http://localhost:8050/images/gloves/rawlings/2021-exclusive-heart-of-the-hide-r2g-11.5-i-web-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/2021-exclusive-heart-of-the-hide-r2g-11.5-i-web-glove-1.jpeg",
@@ -209,6 +222,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "2021 HEART OF THE HIDE 11.5\" I-WEB INFIELD GLOVE",
         "image1": "http://localhost:8050/images/gloves/rawlings/2021-heart-of-the-hide-11.5-i-web-infield-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/2021-heart-of-the-hide-11.5-i-web-infield-glove-1.jpeg",
@@ -225,6 +239,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "PLAYERS SERIES 10\" BASEBALL/SOFTBALL GLOVE",
         "image1": "http://localhost:8050/images/gloves/rawlings/players-series-10-baseball-softball-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/players-series-10-baseball-softball-glove-1.jpeg",
@@ -241,6 +256,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "2021 Exclusive HOH R2G 12.75-Inch Outfield Glove",
         "image1": "http://localhost:8050/images/gloves/rawlings/2021-exclusive-hoh-r2g-12.75-outfield-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/2021-exclusive-hoh-r2g-12.75-outfield-glove-1.jpeg",
@@ -257,6 +273,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "2022 GERRIT COLE PRO PREFERRED INFIELD/PITCHER'S GLOVE",
         "image1": "http://localhost:8050/images/gloves/rawlings/2022-gerrit-cole-pro-perferred-infield-pitchers-glove.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/2022-gerrit-cole-pro-perferred-infield-pitchers-glove-1.jpeg",
@@ -273,6 +290,7 @@
     },
     {
         "brand": "Rawlings",
+        "category": "gloves",
         "name": "2022 HEART OF THE HIDE R2G 12.5-INCH FIRST BASE MITT",
         "image1": "http://localhost:8050/images/gloves/rawlings/2022-heart-of-the-hide-r2g-12.5-inch-first-base-mitt.jpeg",
         "image2": "http://localhost:8050/images/gloves/rawlings/2022-heart-of-the-hide-r2g-12.5-inch-first-base-mitt-1.jpeg",

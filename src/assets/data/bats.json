@@ -1,18 +1,21 @@
 [
     {
         "brand": "Mizuno",
+        "category": "bats",
         "name": "CRBN-2",
         "price": "$329.99",
         "id": "1335d9e4-21b2-4829-840a-0943725bdcb6"
     },
     {
         "brand": "Mizuno",
+        "category": "bats",
         "name": "CRBN-1",
         "price": "$299.99",
         "id": "e3837c73-3ff6-4886-8620-e763e5a3241a"
     },
     {
         "brand": "Mizuno",
+        "category": "bats",
         "name": "Nighthawk",
         "price": "$129.99",
         "id": "aa473af2-b913-4d6a-8216-73aa7f378bea"

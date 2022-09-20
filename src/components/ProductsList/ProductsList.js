@@ -14,6 +14,7 @@ function ProductsList({ products }) {
                         name={product.name}
                         image1={product.image1}
                         price={product.price}
+                        category={product.category}
                     />
                 </li>
                 ))}
