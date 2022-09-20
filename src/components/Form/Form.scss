@@ -13,6 +13,11 @@
 
         @include tablet {
             padding: 1rem 6rem;
+            margin-top: 2rem;
+        }
+
+        @include desktop {
+            padding: 1rem 10rem;
         }
     }
 
@@ -21,7 +26,16 @@
         justify-content: center;
         margin: 0;
         padding: 1rem 0;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+        }
     }
+
     &__form {
         display: flex;
         flex-direction: column;
@@ -45,7 +59,10 @@
 
         @include tablet {
             width: 15rem;
+        }
 
+        @include desktop {
+            width: 20rem;
         }
     }
 
