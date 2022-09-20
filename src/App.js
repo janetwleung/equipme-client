@@ -5,6 +5,8 @@ import Main from './components/Main/Main';
 import Form from './components/Form/Form';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import gloves from './assets/data/gloves.json';
+import bats from "./assets/data/bats.json";
+import cleats from "./assets/data/cleats.json";
 
 function App() {
   return (
@@ -14,8 +16,8 @@ function App() {
      <Route path="/" element={<Main />} />
      <Route path="/form" element={<Form />} />
      <Route path="/products/gloves" element={<ProductsPage products={gloves} />} />
-     <Route path="/products/bats" element={<ProductsPage products="bats" />} />
-     <Route path="/products/cleats" element={<ProductsPage products="cleats" />} />
+     <Route path="/products/bats" element={<ProductsPage products={bats} />} />
+     <Route path="/products/cleats" element={<ProductsPage products={cleats} />} />
     </Routes>
     </BrowserRouter>
   );
