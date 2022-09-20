@@ -124,6 +124,9 @@
     }
 
     &__sports-carousel {
-        height: 100vh;
+
+        @include desktop {
+            height: 100vh;
+        }
     }
 }
