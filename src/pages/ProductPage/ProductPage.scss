@@ -1,0 +1,42 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.product-page {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &__image {
+        width: 100%
+    }
+
+    &__image-container {
+        width: calc(100vw - 2rem);
+        display: flex;
+        justify-content: center;
+        border: 1px solid $primary-text;
+    }
+
+    &__name {
+        padding: 0 1rem;
+    }
+
+    &__button {
+        width: 8rem;
+    }
+
+    &__description {
+        padding: 0 0 1.5rem 1rem;
+        margin: 0;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
