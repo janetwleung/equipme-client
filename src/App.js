@@ -17,9 +17,11 @@ function App() {
      <Route path="/" element={<Main />} />
      <Route path="/form" element={<Form />} />
      <Route path="/products/gloves" element={<ProductsPage products={gloves} />} />
-     <Route path="/products/gloves/:gloveId" element={<ProductPage />} />
+     <Route path="/products/gloves/:productId" element={<ProductPage />} />
      <Route path="/products/bats" element={<ProductsPage products={bats} />} />
+     <Route path="/products/bats/:productId" element={<ProductPage />} />
      <Route path="/products/cleats" element={<ProductsPage products={cleats} />} />
+     <Route path="/products/cleats/:productId" element={<ProductPage />} />
     </Routes>
     </BrowserRouter>
   );
