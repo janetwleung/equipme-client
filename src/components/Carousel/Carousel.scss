@@ -1,5 +1,20 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+
 .carousel {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
+
+    &__title {
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    &__list {
+        @include ul-reset;
+        display: flex;
+    }
 }

@@ -13,8 +13,8 @@ function Main() {
                 <div className="main__title-container">
                     <h2 className="main__title">EquipMe.</h2>
                     <span className="main__subtitle">your first stop to finding new sports equipment</span>
-                    <div className="main__hero-button">
-                        <CTA text="Get Started"/>
+                    <div className="main__hero-button-container">
+                        <a className="main__hero-button" href="#carousel">Get Started</a>
                     </div>
                 </div>
             </section>
