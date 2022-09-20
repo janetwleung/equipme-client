@@ -3,7 +3,6 @@ import "./ProductsList.scss";
 import { v4 as uuidv4 } from 'uuid';
 
 function ProductsList({ products }) {
-console.log(uuidv4());
     return (
         <ul className="products-list">
             {/* Use prop to map through list of gloves/bats/cleats below using ProductCard component */}
@@ -11,7 +10,13 @@ console.log(uuidv4());
                 <li>
                     <ProductCard
                         key={uuidv4()}
-                        product={product}/>
+                        id={uuidv4()}
+                        product={product}
+                        brand={product.brand}
+                        name={product.name}
+                        image1={product.image1}
+                        price={product.price}
+                    />
                 </li>
                 ))}
         </ul>

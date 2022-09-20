@@ -1,14 +1,17 @@
 [
     {
-        "name": "Mizuno FP-1",
+        "brand": "Mizuno",
+        "name": "CRBN-2",
         "price": "$329.99"
     },
     {
-        "name": "Mizuno FP-1",
-        "price": "$329.99"
+        "brand": "Mizuno",
+        "name": "CRBN-1",
+        "price": "$299.99"
     },
     {
-        "name": "Mizuno FP-1",
-        "price": "$329.99"
+        "brand": "Mizuno",
+        "name": "Nighthawk",
+        "price": "$129.99"
     }
 ]
