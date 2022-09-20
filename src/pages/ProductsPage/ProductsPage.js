@@ -1,7 +1,7 @@
 import ProductsNav from "../../components/ProductsNav/ProductsNav";
 import "./ProductsPage.scss";
 
-function ProductsPage() {
+function ProductsPage({ product }) {
     return (
         <main className="products">
             <ProductsNav />

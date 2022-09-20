@@ -18,5 +18,14 @@
 
     &__nav-item-link {
         @include link-reset;
+        color: $secondary-text;
+
+        &--active {
+            color: $primary-text;
+        }
+    }
+
+    &__sort-input {
+       margin-left: 1rem;
     }
 }
