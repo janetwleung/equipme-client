@@ -4,7 +4,7 @@ import sportsData from "../../assets/data/sports.json";
 
 function Carousel() {
     return (
-        <div className="carousel">
+        <div className="carousel" id="carousel">
             {sportsData.map(sportData => (
                 <SportCard
                     key={sportData.id}
