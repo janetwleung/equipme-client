@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Form from './components/Form/Form';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import gloves from './assets/data/gloves.json';
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
     <Routes>
      <Route path="/" element={<Main />} />
      <Route path="/form" element={<Form />} />
-     <Route path="/products/gloves" element={<ProductsPage product="gloves" />} />
-     <Route path="/products/bats" element={<ProductsPage product="bats" />} />
-     <Route path="/products/cleats" element={<ProductsPage product="cleats" />} />
+     <Route path="/products/gloves" element={<ProductsPage products={gloves} />} />
+     <Route path="/products/bats" element={<ProductsPage products="bats" />} />
+     <Route path="/products/cleats" element={<ProductsPage products="cleats" />} />
     </Routes>
     </BrowserRouter>
   );
