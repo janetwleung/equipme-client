@@ -32,3 +32,8 @@ export const fetchCleatsList = () => {
 export const fetchSpecificCleat = (selectedCleatId) => {
     return axios.get(`${apiURL}/cleats/${selectedCleatId}`);
 };
+
+// GET Sports
+export const fetchSports = () => {
+    return axios.get(`${apiURL}/sports`);
+}

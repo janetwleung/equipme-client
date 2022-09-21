@@ -1,7 +1,32 @@
 import "./Main.scss";
 import Carousel from "../Carousel/Carousel";
+import { useEffect, useState } from "react";
+import { fetchSports } from "../../utils/api-utils";
 
 function Main() {
+    const [sports, setSports] = useState([]);
+    const [isError, setIsError] = useState(false);
+
+    // Sports list for carousel
+  useEffect(() => {
+    fetchSports()
+      .then((sportsResponse) => {
+        setSports(sportsResponse.data);
+      })
+      .catch(() => {
+        setIsError(true);
+        console.log("For developers: There was an error fetching the sports")
+      })
+  }, []);
+
+  if (isError) {
+    return <span>There was an error fetching the data.</span>
+  }
+
+  if (!sports) {
+    return <span>Loading...</span>
+  };
+
     return (
         <main className="main">
             <section className="main__hero">
@@ -18,7 +43,7 @@ function Main() {
                 </div>
             </section>
             <section className="main__sports-carousel">
-                <Carousel />
+                <Carousel sports={sports}/>
             </section>
         </main>
     );
