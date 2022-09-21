@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchSpecificSport } from "../../utils/api-utils";
 import CTA from "../CTA/CTA";
 import "./Form.scss";
@@ -8,6 +8,8 @@ function Form() {
     let { sportId } = useParams();
     const [form, setForm] = useState([]);
     const [isError, setIsError] = useState(false);
+    const [request, setRequest] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchSpecificSport(sportId)
@@ -19,6 +21,19 @@ function Form() {
                 console.log("For developers: There was an error fetching the form fields")
             })
     }, [sportId]);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+   
+        const newRequest = {
+            age: event.target.age.value,
+            position: event.target.position.value,
+            height: event.target.position.value,
+            level: event.target.position.value
+        }
+        setRequest(newRequest);
+        navigate("/products/gloves", {state: {newRequest}});
+    }
 
     if (isError) {
         return <span>There was an error fetching the data.</span>
@@ -32,7 +47,7 @@ function Form() {
         <main className="intake">
             <div className="intake__container">
                 <h2 className="intake__title">Tell us about yourself</h2>
-                <form className="intake__form">
+                <form className="intake__form" onSubmit={handleSubmit}>
                     <div className="intake__input-container">
                         <label htmlFor="age" className="intake__label">{form.formInput1}:</label>
                         <input className="intake__input" type="text" id="age" name="age" />
@@ -50,7 +65,7 @@ function Form() {
                         <input className="intake__input" type="text" id="level" name="level" />
                     </div>
                     <div className="intake__button">
-                        <CTA text="Submit" />
+                        <CTA text="Submit" isButton={true}/>
                     </div>
                 </form>
             </div>
