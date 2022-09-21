@@ -2,11 +2,51 @@ import "./ProductPage.scss";
 import image from "../../assets/images/mizuno-franchise-series-baseball-infield-glove-11.75.jpeg";
 import CTA from "../../components/CTA/CTA";
 import backArrow from "../../assets/icons/arrow-back.png"
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fetchSpecificGlove, fetchSpecificBat, fetchSpecificCleat } from "../../utils/api-utils";
 
 function ProductPage() {
     let { productId } = useParams();
-    console.log(productId);
+    const [product, setProduct] = useState(); 
+
+    const location = useLocation();
+    const category = location.state.category;
+
+    useEffect(() => {
+        if (category === "gloves") {
+            fetchSpecificGlove(productId)
+                .then((gloveResponse) => {
+                    setProduct(gloveResponse.data)
+                })
+                .catch(() => {
+                    console.log("there is an error")
+                })
+        }
+        if (category === "bats") {
+            fetchSpecificBat(productId)
+                .then((batResponse) => {
+                    setProduct(batResponse.data)
+                })
+                .catch(() => {
+                    console.log("there is an error")
+                })
+        }
+        if (category === "cleats") {
+            fetchSpecificCleat(productId)
+                .then((cleatResponse) => {
+                    setProduct(cleatResponse.data)
+                })
+                .catch(() => {
+                    console.log("there is an error")
+                })
+        }
+    }, [productId, category]);
+
+    if (!product) {
+        return <span>loading...</span>
+    }
+
     return (
         <main className="product-page">
             <div className="product-page__back-container">
@@ -15,12 +55,12 @@ function ProductPage() {
             </div>
             <div className="product-page__container">
                 <div className="product-page__image-container">
-                    <img className="product-page__image" src={image} alt="glove" />
+                    <img className="product-page__image" src={product.image1} alt="glove" />
                 </div>
                 <div className="product-page__details">
-                    <h1 className="product-page__name">Mizuno Global Elite Infielders Glove 11.5"</h1>
+                    <h1 className="product-page__name">{product.name}</h1>
                     <p className="product-page__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repellendus obcaecati quisquam, voluptates ut ducimus rerum fugiat, cupiditate sint voluptas, soluta iure. Deleniti beatae hic eos, voluptates magnam repudiandae culpa?</p>
-                    <span className="product-page__price">$259.99</span>
+                    <span className="product-page__price">{product.price}</span>
                     <div className="product-page__button">
                         <CTA text="Buy Now"/>
                     </div>

@@ -1,6 +1,6 @@
 import "./ProductsNav.scss";
 import { NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 
 function ProductsNav({ request }) {
 
