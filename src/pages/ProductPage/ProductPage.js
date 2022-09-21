@@ -1,8 +1,7 @@
 import "./ProductPage.scss";
-import image from "../../assets/images/mizuno-franchise-series-baseball-infield-glove-11.75.jpeg";
 import CTA from "../../components/CTA/CTA";
 import backArrow from "../../assets/icons/arrow-back.png"
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchSpecificGlove, fetchSpecificBat, fetchSpecificCleat } from "../../utils/api-utils";
 
@@ -12,6 +11,7 @@ function ProductPage() {
 
     const location = useLocation();
     const category = location.state.category;
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (category === "gloves") {
@@ -49,10 +49,10 @@ function ProductPage() {
 
     return (
         <main className="product-page">
-            <div className="product-page__back-container">
+            <button className="product-page__back-container" onClick={() => navigate(-1)}>
                 <img src={backArrow} alt="Back arrow" />
                 <span className="product-page__back">Back</span>
-            </div>
+            </button>
             <div className="product-page__container">
                 <div className="product-page__image-container">
                     <img className="product-page__image" src={product.image1} alt="glove" />
