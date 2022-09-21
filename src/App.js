@@ -7,14 +7,12 @@ import Main from './components/Main/Main';
 import Form from './components/Form/Form';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
-import gloves from './assets/data/gloves.json';
-import bats from "./assets/data/bats.json";
 import cleats from "./assets/data/cleats.json";
 
 
 function App() {
   const [gloves, setGloves] = useState([]);
-  // const [bats, setBats] = useState([]);
+  const [bats, setBats] = useState([]);
   // const [cleats, setCleats] = useState([]);
   const [isError, setIsError] = useState(false);
 
@@ -26,20 +24,21 @@ function App() {
       })
       .catch(() => {
         setIsError(true);
-        console.log("For developers: There was an error fetching the data")
+        console.log("For developers: There was an error fetching the gloves")
       })
   }, []);
 
-  // // Bats API Request
-  // useEffect(() => {
-  //   fetchBatsList()
-  //     .then(() => {
-
-  //     })
-  //     .catch(() => {
-
-  //     })
-  // })
+  // Bats API Request
+  useEffect(() => {
+    fetchBatsList()
+      .then((batsResponse) => {
+        setBats(batsResponse.data);
+      })
+      .catch(() => {
+        setIsError(true);
+        console.log("For developers: There was an error fetching the bats")
+      })
+  }, [])
 
   // // Cleats API Request
   // useEffect(() => {
