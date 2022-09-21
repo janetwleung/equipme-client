@@ -14,7 +14,7 @@ function ProductsList({ products, request }) {
                         product={product}
                         brand={product.brand}
                         name={product.name}
-                        image={product.image}
+                        image={product.image1}
                         price={product.price}
                         category={product.category}
                     />
