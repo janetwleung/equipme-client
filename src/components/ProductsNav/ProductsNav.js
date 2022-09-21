@@ -4,17 +4,21 @@ import { useState } from "react";
 
 function ProductsNav({ request }) {
 
-    const location = useLocation();
-    const newRequest = location.state.newRequest;
+    // const location = useLocation();
+    // const newRequest = location.state.newRequest;
 
-    console.log(newRequest);
+    // console.log(newRequest);
 
     return (
         <div className="products__top-bar">
             <ul className="products__nav">
                 <li className="products__nav-item">
-                    <NavLink 
+                    {/* <NavLink 
                         to={{ pathname:"/products/gloves", state: {newRequest}}} 
+                        className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
+                    > */}
+                    <NavLink 
+                        to="/products/gloves"
                         className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
                     >
                         Gloves
@@ -22,8 +26,12 @@ function ProductsNav({ request }) {
                 </li>
                 /
                 <li className="products__nav-item">
-                    <NavLink 
+                    {/* <NavLink 
                         to={{ pathname:"/products/bats", state: {newRequest}}} 
+                        className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
+                    > */}
+                    <NavLink 
+                        to="/products/bats"
                         className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
                     >
                         Bats
@@ -31,8 +39,12 @@ function ProductsNav({ request }) {
                 </li>
                 /
                 <li className="products__nav-item">
-                    <NavLink 
+                    {/* <NavLink 
                         to={{ pathname:"/products/cleats", state: {newRequest}}} 
+                        className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
+                    > */}
+                    <NavLink 
+                        to="/products/cleats"
                         className={({ isActive }) => "products__nav-item-link" + (isActive ? " products__nav-item-link--active" : "")}
                     >
                         Cleats

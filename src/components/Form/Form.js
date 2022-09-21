@@ -31,7 +31,7 @@ function Form() {
             level: event.target.position.value
         }
 
-        navigate("/products/gloves",  {state: {newRequest}});
+        // navigate("/products/bats",  {state: {newRequest}});
     }
 
     if (isError) {
