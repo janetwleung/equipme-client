@@ -8,7 +8,6 @@ function Form() {
     let { sportId } = useParams();
     const [form, setForm] = useState([]);
     const [isError, setIsError] = useState(false);
-    const [request, setRequest] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,8 +30,8 @@ function Form() {
             height: event.target.position.value,
             level: event.target.position.value
         }
-        setRequest(newRequest);
-        navigate("/products/gloves", {state: {newRequest}});
+
+        navigate("/products/gloves",  {state: {newRequest}});
     }
 
     if (isError) {
