@@ -10,7 +10,7 @@ function ProductsList({ products, request }) {
                 {products.map(product => (
                 <li key={product.id}>
                     <ProductCard
-                        id={product.id}
+                        id={product.uuid}
                         product={product}
                         brand={product.brand}
                         name={product.name}
