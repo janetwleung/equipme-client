@@ -28,7 +28,7 @@ export const fetchCleatsList = () => {
     return axios.get(`${apiURL}/cleats`);
 };
 
-// GET Cleats List
+// GET Specific Cleat
 export const fetchSpecificCleat = (selectedCleatId) => {
     return axios.get(`${apiURL}/cleats/${selectedCleatId}`);
 };
@@ -36,4 +36,9 @@ export const fetchSpecificCleat = (selectedCleatId) => {
 // GET Sports
 export const fetchSports = () => {
     return axios.get(`${apiURL}/sports`);
+}
+
+// GET Specific Sport
+export const fetchSpecificSport = (selectedSportId) => {
+    return axios.get(`${apiURL}/sports/${selectedSportId}`);
 }

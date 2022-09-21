@@ -63,7 +63,7 @@ function App() {
     <Header />
     <Routes>
      <Route path="/" element={<Main />} />
-     <Route path="/form" element={<Form />} />
+     <Route path="/form/:sportId" element={<Form />} />
      <Route path="/products/gloves" element={<ProductsPage products={gloves} />} />
      <Route path="/products/gloves/:productId" element={<ProductPage />} />
      <Route path="/products/bats" element={<ProductsPage products={bats} />} />

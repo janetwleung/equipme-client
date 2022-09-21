@@ -1,7 +1,9 @@
+import { useParams } from "react-router-dom";
 import CTA from "../CTA/CTA";
 import "./Form.scss";
 
 function Form() {
+    let { formId } = useParams();
     return (
         <main className="intake">
             <div className="intake__container">

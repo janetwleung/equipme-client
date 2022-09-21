@@ -8,7 +8,7 @@ function SportCard({ sport, image, hoverImage, id }) {
             <h3 className="card__sport">{sport}</h3>
             <span className="card__description"></span>
             <div className="card__button">
-                <CTA text="Find Equipment" link="/form" />
+                <CTA text="Find Equipment" link={`/form/${id}`} />
             </div>
         </article>
     );
