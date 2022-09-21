@@ -7,13 +7,11 @@ import Main from './components/Main/Main';
 import Form from './components/Form/Form';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
-import cleats from "./assets/data/cleats.json";
-
 
 function App() {
   const [gloves, setGloves] = useState([]);
   const [bats, setBats] = useState([]);
-  // const [cleats, setCleats] = useState([]);
+  const [cleats, setCleats] = useState([]);
   const [isError, setIsError] = useState(false);
 
   // Gloves API Request
@@ -38,22 +36,27 @@ function App() {
         setIsError(true);
         console.log("For developers: There was an error fetching the bats")
       })
-  }, [])
+  }, []);
 
-  // // Cleats API Request
-  // useEffect(() => {
-  //   fetchCleatsList()
-  //     .then(() => {
+  // Cleats API Request
+  useEffect(() => {
+    fetchCleatsList()
+      .then((cleatsResponse) => {
+        setCleats(cleatsResponse.data);
+      })
+      .catch(() => {
+        setIsError(true);
+        console.log("For developers: There was an error fetching the cleats")
+      })
+  }, []);
 
-  //     })
-  //     .catch(() => {
-
-  //     })
-  // })
-
-  if (!gloves) {
-    return <span>Loading...</span>
+  if (isError) {
+    return <span>There was an error fetching the data.</span>
   }
+
+  if (!gloves || !bats || !cleats ) {
+    return <span>Loading...</span>
+  };
 
   return (
     <BrowserRouter>
