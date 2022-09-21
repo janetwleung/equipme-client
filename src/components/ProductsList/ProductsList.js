@@ -1,7 +1,8 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductsList.scss";
 
-function ProductsList({ products }) {
+function ProductsList({ products, request }) {
+    console.log(request);
     return (
         <ul className="products-list">
             {/* Use prop to map through list of gloves/bats/cleats below using ProductCard component */}

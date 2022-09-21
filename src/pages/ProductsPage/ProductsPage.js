@@ -17,7 +17,7 @@ function ProductsPage({ products }) {
             <InfoBanner />
             <div className="products__content"> 
                 <SortColumn />
-                <ProductsList products={products}/>
+                <ProductsList products={products} request={location.state.newRequest}/>
             </div>
         </main>
     );
