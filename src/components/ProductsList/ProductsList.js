@@ -12,7 +12,7 @@ function ProductsList({ products }) {
                         product={product}
                         brand={product.brand}
                         name={product.name}
-                        image1={product.image1}
+                        image={product.image}
                         price={product.price}
                         category={product.category}
                     />

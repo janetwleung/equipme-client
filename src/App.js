@@ -14,20 +14,21 @@ import cleats from "./assets/data/cleats.json";
 
 function App() {
   const [gloves, setGloves] = useState([]);
-  const [bats, setBats] = useState([]);
-  const [cleats, setCleats] = useState([]);
+  // const [bats, setBats] = useState([]);
+  // const [cleats, setCleats] = useState([]);
+  const [isError, setIsError] = useState(false);
 
   // Gloves API Request
   useEffect(() => {
     fetchGlovesList()
       .then((glovesResponse) => {
         setGloves(glovesResponse.data);
-        console.log(glovesResponse.data);
       })
       .catch(() => {
-
+        setIsError(true);
+        console.log("For developers: There was an error fetching the data")
       })
-  });
+  }, []);
 
   // // Bats API Request
   // useEffect(() => {
@@ -51,7 +52,9 @@ function App() {
   //     })
   // })
 
-
+  if (!gloves) {
+    return <span>Loading...</span>
+  }
 
   return (
     <BrowserRouter>

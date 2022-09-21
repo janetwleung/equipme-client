@@ -8,7 +8,8 @@ function Carousel() {
             <h3 className="carousel__title">Choose a sport</h3>
             <ul className="carousel__list">
             {sportsData.map(sportData => (
-                <li><SportCard
+                <li key={sportData.id}>
+                    <SportCard
                     key={sportData.id}
                     sport={sportData.sport}
                     image={sportData.image}

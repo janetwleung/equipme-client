@@ -5,7 +5,7 @@ const apiURL = "http://localhost:8080";
 
 // GET Gloves List
 export const fetchGlovesList = () => {
-    return axios.get(`${apiURL}gloves`);
+    return axios.get(`${apiURL}/gloves`);
 };
 
 // GET Specific Glove

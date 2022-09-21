@@ -2,7 +2,6 @@ import CTA from "../CTA/CTA";
 import "./SportCard.scss";
 
 function SportCard({ sport, image, hoverImage }) {
-    console.log(sport);
     return (
         <article 
             className="card">
