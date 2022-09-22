@@ -5,7 +5,32 @@
 .products {
     @include tablet {
         @include desktop-margin-auto;
-        
+    }
+
+    &__nav-list {
+        @include ul-reset;
+        display: flex;
+        gap: 1.5rem;
+        margin-left: 1rem;
+
+        @include desktop {
+            margin-left: 0;
+        }
+    }
+
+    &__nav-list-item {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $secondary-text;
+
+        &--active {
+            color: $primary-text;
+        }
+    }
+
+    &__top-bar {
+        display: flex;
+        justify-content: space-between;
     }
 
     &__content {

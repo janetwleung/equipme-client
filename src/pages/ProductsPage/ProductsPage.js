@@ -8,12 +8,13 @@ import SortColumn from "../../components/SortColumn/SortColumn";
 import "./ProductsPage.scss";
 
 
-function ProductsPage({ }) {
+function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.newRequest;
-    console.log(newRequest)
+    console.log(newRequest);
+
     const [productList, setProductList] = useState([]);
-    const [sortColumn, setSortColumn] = useState([]);
+    const [sortColumn, setSortColumn] = useState(null);
     const [gloves, setGloves] = useState([]);
     const [bats, setBats] = useState([]);
     const [cleats, setCleats] = useState([]);
@@ -24,6 +25,20 @@ function ProductsPage({ }) {
       fetchGlovesList()
         .then((glovesResponse) => {
           setGloves(glovesResponse.data);
+          setSortColumn(
+            [{
+                brand: "Mizuno",
+            },
+            {
+                brand: "Rawlings",
+            },
+            {
+                brand: "Wilson",
+            },
+            {
+                brand: "Nokona",
+            }]
+          )
           setProductList(glovesResponse.data);
         })
         .catch(() => {
@@ -59,34 +74,91 @@ function ProductsPage({ }) {
     if (isError) {
       return <span>There was an error fetching the data.</span>
     }
-  
-    if (!gloves || !bats || !cleats ) {
-      return <span>Loading...</span>
-    };
+
 
     const handleGlovesClick = () => {
         setProductList(gloves);
+        setSortColumn(
+            [{
+                brand: "Mizuno",
+            },
+            {
+                brand: "Rawlings",
+            },
+            {
+                brand: "Wilson",
+            },
+            {
+                brand: "Nokona",
+            }]
+          )
     }
 
     const handleBatsClick = () => {
         setProductList(bats);
+        setSortColumn(
+            [{
+                brand: "Mizuno",
+            },
+            {
+                brand: "Rawlings",
+            },
+            {
+                brand: "Easton",
+            },
+            {
+                brand: "DeMarini",
+            }]
+          )
     }
 
     const handleCleatsClick = () => {
         setProductList(cleats);
+        setSortColumn(
+            [
+                {
+                    brand: "Mizuno"
+                },
+                {
+                    brand: "Mizuno"
+                },
+                {
+                    brand: "Mizuno"
+                },
+                {
+                    brand: "Mizuno"
+                }
+            ])
     }
+
+    if (!gloves || !bats || !cleats || !sortColumn) {
+        return <span>Loading...</span>
+      };
 
     return (
         <main className="products">
             {/* <ProductsNav /> */}
-            <ul>
-                <li onClick={handleGlovesClick}>Gloves</li>
-                <li onClick={handleBatsClick}>Bats</li>
-                <li onClick={handleCleatsClick}>Cleats</li>
-            </ul>
+            <div className="products__top-bar">
+                <ul className="products__nav-list">
+                    <li className="products__nav-list-item" onClick={handleGlovesClick}>Gloves</li>
+                    <li className="products__nav-list-item" onClick={handleBatsClick}>Bats</li>
+                    <li className="products__nav-list-item" onClick={handleCleatsClick}>Cleats</li>
+                </ul>
+                <div className="products__sort-container">
+                    <label className="products__sort-label" htmlFor="sort">Sort</label>
+                    <select className="products__sort-input" id="sort">
+                        <option value=""></option>
+                        <option value="Recommended">Recommended</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Brand: A to Z</option>
+                        <option>Brand: Z to A</option>
+                    </select>
+                </div>
+            </div>
             <InfoBanner />
             <div className="products__content"> 
-                <SortColumn category={productList.category}/>
+                <SortColumn brands={sortColumn}/>
                 <ProductsList products={productList} />
             </div>
         </main>

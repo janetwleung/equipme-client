@@ -1,29 +1,25 @@
 import "./SortColumn.scss";
 
-function SortColumn() {
+function SortColumn({ brands }) {
     return (
         <div className="sort">
             <ul className="sort__brand-list">
                 <span className="sort__list-label">Brands</span>
                 <li className="sort__brand-list-item">
                     <input type="checkbox" id="Mizuno"/>
-                    <label className="sort__label" htmlFor="Mizuno">Mizuno</label>
+                    <label className="sort__label" htmlFor="Mizuno">{brands[0].brand}</label>
                 </li>
                 <li className="sort__brand-list-item">
                     <input type="checkbox" id="Rawlings"/>
-                    <label className="sort__label" htmlFor="Rawlings">Rawlings</label>
+                    <label className="sort__label" htmlFor="Rawlings">{brands[1].brand}</label>
                 </li>
                 <li className="sort__brand-list-item">
                     <input type="checkbox" id="Wilson"/>
-                    <label className="sort__label" htmlFor="Wilson">Wilson</label>
+                    <label className="sort__label" htmlFor="Wilson">{brands[2].brand}</label>
                 </li>
                 <li className="sort__brand-list-item">
                     <input type="checkbox" id="Easton"/>
-                    <label className="sort__label" htmlFor="Easton">Easton</label>
-                </li>
-                <li className="sort__brand-list-item">
-                    <input type="checkbox" id="Nokona"/>
-                    <label className="sort__label" htmlFor="Nokona">Nokona</label>
+                    <label className="sort__label" htmlFor="Easton">{brands[3].brand}</label>
                 </li>
             </ul>
             <ul className="sort__price-list">
