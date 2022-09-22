@@ -2,6 +2,7 @@ import CTA from "../CTA/CTA";
 import "./SportCard.scss";
 
 function SportCard({ sport, image, hoverImage, id }) {
+
     return (
         <article 
             className="card" style={{backgroundImage: `url(${image})`}}>

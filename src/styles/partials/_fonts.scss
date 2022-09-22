@@ -31,3 +31,10 @@
          url("../../assets/fonts/KumbhSans-Black.ttf") format("ttf");
     font-weight: 900;
 }
+
+@font-face {
+    font-family: "Mexcellent";
+    src: url("../../assets/fonts/Mexcellent-Regular.woff2") format("woff2"),
+         url("../../assets/fonts/Mexcellent-Regular.woff") format("woff"),
+         url("../../assets/fonts/Mexcellent-Regular.ttf") format("ttf");
+}

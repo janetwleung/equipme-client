@@ -12,6 +12,7 @@ function Carousel({ sports }) {
                     id={sport.id}
                     sport={sport.sport}
                     image={sport.image}
+                    hoverImage={sport.hoverImage}
                 />
                 </li>
             ))}

@@ -17,5 +17,9 @@
     &__list {
         @include ul-reset;
         display: flex;
+        
+        @include desktop {
+            gap: 2rem;
+        }
     }
 }

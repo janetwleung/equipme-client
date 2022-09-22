@@ -3,6 +3,8 @@
 @use "../../styles/partials/colors" as *;
 
 .main {
+    scroll-behavior:smooth;
+
     &__hero {
         width: auto;
         height: 30rem;
