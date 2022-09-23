@@ -11,6 +11,7 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.newRequest;
+    console.log(newRequest)
 
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
@@ -197,7 +198,6 @@ function ProductsPage() {
                 const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
                 return aPrice - bPrice;
             })
-            // SET LIST TO THIS sortedGloves
             // setSortType("Price: Low to High");
             setSortedProductList(sortedProducts);
         }

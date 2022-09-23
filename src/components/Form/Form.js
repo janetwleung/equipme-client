@@ -8,6 +8,7 @@ function Form() {
     let { sportId } = useParams();
     const [form, setForm] = useState([]);
     const [isError, setIsError] = useState(false);
+    const [ageError, setAgeError] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,12 +24,22 @@ function Form() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const age = event.target.age.value;
+        const position = event.target.position.value;
+        const height = event.target.height.value;
+        const level = event.target.level.value;
+        // validate
+
+        if (isNaN(age) || age > 100 || age === "") {
+            setAgeError(true);
+            return
+        }
    
         const newRequest = {
-            age: event.target.age.value,
-            position: event.target.position.value,
-            height: event.target.height.value,
-            level: event.target.level.value
+            age: age,
+            position: position,
+            height: height,
+            level: level
         }
 
         navigate("/products/gloves",  {state: {newRequest}});
@@ -50,18 +61,37 @@ function Form() {
                     <div className="intake__input-container">
                         <label htmlFor="age" className="intake__label">{form.formInput1}:</label>
                         <input className="intake__input" type="text" id="age" name="age" />
+                        {ageError ? <span className="intake__error-message">*Age needs to be a valid number</span> : ""}
                     </div>
                     <div className="intake__input-container">
-                        <label htmlFor="height" className="intake__label">{form.formInput2}:</label>
-                        <input className="intake__input" type="text" id="position" name="position" />
+                        <label htmlFor="position" className="intake__label">{form.formInput2}:</label>
+                        <select id="position" className="intake__select">
+                            <option value="infield">Infield</option>
+                            <option value="first base">First Base</option>
+                            <option value="outfield">Outfield</option>
+                            <option value="pitcher">Pitcher</option>
+                            <option value="catcher">Catcher</option>
+                        </select>
                     </div>
                     <div className="intake__input-container">
-                        <label htmlFor="position" className="intake__label">{form.formInput3}:</label>
-                        <input className="intake__input" type="text" id="height" name="height" />
+                        <label htmlFor="height" className="intake__label">{form.formInput3}:</label>
+                        <select id="height" className="intake__select">
+                            <option value="1">4'1" - 4'5"</option>
+                            <option value="2">4'6" - 4'10" </option>
+                            <option value="3">4'11" - 5'2"</option>
+                            <option value="4">5'3" - 5'7"</option>
+                            <option value="5">5'8"+</option>
+                        </select>
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="level" className="intake__label">{form.formInput4}:</label>
-                        <input className="intake__input" type="text" id="level" name="level" />
+                        <select id="level" className="intake__select">
+                            <option value="beginner">Beginner</option>
+                            <option value="houseLeague">House League</option>
+                            <option value="select">Select</option>
+                            <option value="rep">Rep</option>
+                            <option value="pro">Pro</option>
+                        </select>
                     </div>
                     <div className="intake__button">
                         <CTA text="Submit" isButton={true}/>
