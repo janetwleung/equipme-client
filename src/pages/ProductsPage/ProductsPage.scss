@@ -64,10 +64,7 @@
         }
     }
 
-    &__top-bar {
-        // display: flex;
-        // justify-content: space-between;
-       
+    &__top-bar {       
         @include tablet {
             display: grid;
             grid-template-columns: 1fr 4fr;
