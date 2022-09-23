@@ -11,14 +11,16 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.newRequest;
-    console.log(newRequest);
+    // console.log(newRequest);
 
-    const [productList, setProductList] = useState([]);
+    const [productList, setProductList] = useState(null);
+    const [sortedProductList, setSortedProductList] = useState(null);
     const [sortColumn, setSortColumn] = useState(null);
     const [gloves, setGloves] = useState([]);
     const [bats, setBats] = useState([]);
     const [cleats, setCleats] = useState([]);
     const [isError, setIsError] = useState(false);
+    const [selected, setSelected] = useState();
   
     // Gloves API Request
     useEffect(() => {
@@ -134,6 +136,36 @@ function ProductsPage() {
             ])
     }
 
+    const handleChange = (value) => {
+        if (value === "priceLowHigh") {
+            const sortedProducts = [...productList].sort((a,b) => {
+                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
+                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
+                return aPrice - bPrice;
+            })
+            // SET LIST TO THIS sortedGloves
+            setSortedProductList(sortedProducts);
+        } 
+        if (value === "priceHighLow") {
+            const sortedProducts = [...productList].sort((a,b) => {
+                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
+                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
+                return bPrice - aPrice;
+            })
+            setSortedProductList(sortedProducts);
+            console.log(sortedProducts)
+        }
+        if (value === "brandAZ") {
+            const sortedProducts = [...productList].sort((a,b) => ((a.brand < b.brand) ? -1 : 1))
+            setSortedProductList(sortedProducts);
+            console.log(sortedProducts);
+        }
+        if (value === "brandZA") {
+            const sortedProducts = [...productList].sort((a,b) => ((a.brand > b.brand) ? -1 : 1))
+            setSortedProductList(sortedProducts);
+        }
+    }
+
     if (!gloves || !bats || !cleats || !sortColumn) {
         return <span>Loading...</span>
       };
@@ -149,20 +181,20 @@ function ProductsPage() {
                 </ul>
                 <div className="products__sort-container">
                     <label className="products__sort-label" htmlFor="sort">Sort</label>
-                    <select className="products__sort-input" id="sort">
+                    <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)} value={selected} >
                         <option value=""></option>
-                        <option value="Recommended">Recommended</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Brand: A to Z</option>
-                        <option>Brand: Z to A</option>
+                        <option value="recommended">Recommended</option>
+                        <option value="priceLowHigh">Price: Low to High</option>
+                        <option value="priceHighLow">Price: High to Low</option>
+                        <option value="brandAZ">Brand: A to Z</option>
+                        <option value="brandZA">Brand: Z to A</option>
                     </select>
                 </div>
             </div>
             <InfoBanner />
             <div className="products__content"> 
                 <SortColumn brands={sortColumn}/>
-                <ProductsList products={productList} />
+                <ProductsList products={!sortedProductList ? productList : sortedProductList} />
             </div>
         </main>
     );

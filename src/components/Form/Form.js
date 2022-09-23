@@ -27,8 +27,8 @@ function Form() {
         const newRequest = {
             age: event.target.age.value,
             position: event.target.position.value,
-            height: event.target.position.value,
-            level: event.target.position.value
+            height: event.target.height.value,
+            level: event.target.level.value
         }
 
         navigate("/products/gloves",  {state: {newRequest}});
