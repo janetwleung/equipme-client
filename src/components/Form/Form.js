@@ -53,11 +53,11 @@ function Form() {
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="height" className="intake__label">{form.formInput2}:</label>
-                        <input className="intake__input" type="text" id="height" name="height" />
+                        <input className="intake__input" type="text" id="position" name="position" />
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="position" className="intake__label">{form.formInput3}:</label>
-                        <input className="intake__input" type="text" id="position" name="position" />
+                        <input className="intake__input" type="text" id="height" name="height" />
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="level" className="intake__label">{form.formInput4}:</label>

@@ -11,7 +11,6 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.newRequest;
-    // console.log(newRequest);
 
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
@@ -53,65 +52,68 @@ function ProductsPage() {
             id: 5
         }
     ]
-  
+
     // Gloves API Request
     useEffect(() => {
-      fetchGlovesList()
-        .then((glovesResponse) => {
-          setGloves(glovesResponse.data);
-          setSortColumn(
-            [{
-                brand: "Mizuno",
-                id: 1
-            },
-            {
-                brand: "Rawlings",
-                id: 2
-            },
-            {
-                brand: "Wilson",
-                id: 3
-            },
-            {
-                brand: "Nokona",
-                id: 5
-            }]
-          )
-          setSortType(optionArray)
-          setProductList(glovesResponse.data);
-        })
-        .catch(() => {
-          setIsError(true);
-          console.log("For developers: There was an error fetching the gloves")
-        })
+        fetchGlovesList()
+            .then((glovesResponse) => {
+                const glovesData = glovesResponse.data;
+                const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                setGloves(filteredGloves);
+                setSortColumn(
+                    [{
+                        brand: "Mizuno",
+                        id: 1
+                    },
+                    {
+                        brand: "Rawlings",
+                        id: 2
+                    },
+                    {
+                        brand: "Wilson",
+                        id: 3
+                    },
+                    {
+                        brand: "Nokona",
+                        id: 5
+                    }]
+                )
+                setSortType(optionArray)
+                setProductList(filteredGloves);
+            })
+            .catch(() => {
+                setIsError(true);
+                console.log("For developers: There was an error fetching the gloves")
+            })
     }, []);
-  
+
     // Bats API Request
     useEffect(() => {
-      fetchBatsList()
-        .then((batsResponse) => {
-          setBats(batsResponse.data);
-        })
-        .catch(() => {
-          setIsError(true);
-          console.log("For developers: There was an error fetching the bats")
-        })
+        fetchBatsList()
+            .then((batsResponse) => {
+                const batsData = batsResponse.data
+                setBats(batsResponse.data);
+            })
+            .catch(() => {
+                setIsError(true);
+                console.log("For developers: There was an error fetching the bats")
+            })
     }, []);
-  
+
     // Cleats API Request
     useEffect(() => {
-      fetchCleatsList()
-        .then((cleatsResponse) => {
-          setCleats(cleatsResponse.data);
-        })
-        .catch(() => {
-          setIsError(true);
-          console.log("For developers: There was an error fetching the cleats")
-        })
+        fetchCleatsList()
+            .then((cleatsResponse) => {
+                setCleats(cleatsResponse.data);
+            })
+            .catch(() => {
+                setIsError(true);
+                console.log("For developers: There was an error fetching the cleats")
+            })
     }, []);
-  
+
     if (isError) {
-      return <span>There was an error fetching the data.</span>
+        return <span>There was an error fetching the data.</span>
     }
 
     const handleGlovesClick = () => {
@@ -138,7 +140,7 @@ function ProductsPage() {
                 brand: "Nokona",
                 id: 5
             }]
-          )
+        )
     }
 
     const handleBatsClick = () => {
@@ -165,7 +167,7 @@ function ProductsPage() {
                 brand: "DeMarini",
                 id: 6
             }]
-          )
+        )
     }
 
     const handleCleatsClick = () => {
@@ -190,31 +192,31 @@ function ProductsPage() {
             setSortedProductList(gloves)
         }
         if (value === "priceLowHigh") {
-            const sortedProducts = [...productList].sort((a,b) => {
-                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
-                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
+            const sortedProducts = [...productList].sort((a, b) => {
+                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
                 return aPrice - bPrice;
             })
             // SET LIST TO THIS sortedGloves
             // setSortType("Price: Low to High");
             setSortedProductList(sortedProducts);
-        } 
+        }
         if (value === "priceHighLow") {
-            const sortedProducts = [...productList].sort((a,b) => {
-                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
-                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
+            const sortedProducts = [...productList].sort((a, b) => {
+                const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
                 return bPrice - aPrice;
             })
             // setSortType("Price: High to Low")
             setSortedProductList(sortedProducts);
         }
         if (value === "brandAZ") {
-            const sortedProducts = [...productList].sort((a,b) => ((a.brand < b.brand) ? -1 : 1))
+            const sortedProducts = [...productList].sort((a, b) => ((a.brand < b.brand) ? -1 : 1))
             // setSortType("Brand: A to Z");
             setSortedProductList(sortedProducts);
         }
         if (value === "brandZA") {
-            const sortedProducts = [...productList].sort((a,b) => ((a.brand > b.brand) ? -1 : 1))
+            const sortedProducts = [...productList].sort((a, b) => ((a.brand > b.brand) ? -1 : 1))
             // setSortType("Brand: Z to A");
             setSortedProductList(sortedProducts);
         }
@@ -222,7 +224,7 @@ function ProductsPage() {
 
     if (!gloves || !bats || !cleats || !sortColumn || !sortType) {
         return <span>Loading...</span>
-      };
+    };
 
     return (
         <main className="products">
@@ -240,14 +242,14 @@ function ProductsPage() {
                 <InfoBanner />
                 <div className="products__sort-container">
                     <label className="products__sort-label" htmlFor="sort">Sort</label>
-                        <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)}  >
-                            {sortType.map(option => (
-                                <option value={option.value} key={option.id}>{option.text}</option>
-                            ))}
-                        </select>
+                    <select className="products__sort-input" id="sort" onChange={(e) => handleChange(e.target.value)}  >
+                        {sortType.map(option => (
+                            <option value={option.value} key={option.id}>{option.text}</option>
+                        ))}
+                    </select>
                 </div>
-                <div className="products__content"> 
-                    <SortColumn brands={sortColumn}/>
+                <div className="products__content">
+                    <SortColumn brands={sortColumn} />
                     <ProductsList products={!sortedProductList ? productList : sortedProductList} />
                 </div>
             </div>
