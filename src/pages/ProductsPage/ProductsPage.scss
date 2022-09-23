@@ -28,7 +28,7 @@
         @include tablet {
             margin-left: 0;
             margin-bottom: 0;
-            gap: .01rem;
+            gap: 0rem;
             grid-area: "nav-tabs";
         }
 
@@ -40,7 +40,6 @@
 
     &__nav-list-item {
         cursor: pointer;
-        text-decoration: underline;
         color: $secondary-text;
 
         @include tablet {
@@ -49,26 +48,30 @@
             border-top: 1px solid lightgray;
             border-bottom: 1px solid $primary-text;
             border-radius: 10px 10px 0 0;
-            padding: .5rem 1rem .25rem 1rem ;
+            padding: .5rem 1rem .25rem 1rem;
+        }
+
+        &:hover {
+            border-left: 1px solid $primary-text;
+            border-right: 1px solid $primary-text;
+            border-top: 1px solid $primary-text;
         }
 
         &--active {
             color: $primary-text;
-
             cursor: pointer;
-        text-decoration: underline;
 
-        @include tablet {
-            border-left: 1px solid $primary-text;
-            border-right: 1px solid $primary-text;
-            border-top: 1px solid $primary-text;
-            border-radius: 10px 10px 0 0;
-            padding: .5rem 1rem .25rem 1rem ;
-        }
+            @include tablet {
+                border-left: 1px solid $primary-text;
+                border-right: 1px solid $primary-text;
+                border-top: 1px solid $primary-text;
+                border-radius: 10px 10px 0 0;
+                padding: .5rem 1rem .25rem 1rem;
+            }
         }
     }
 
-   
+
 
     &__blank {
         @include tablet {
@@ -78,7 +81,7 @@
         }
     }
 
-    &__top-bar {      
+    &__top-bar {
         display: flex;
         justify-content: center;
 

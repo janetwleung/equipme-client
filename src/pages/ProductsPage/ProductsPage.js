@@ -16,7 +16,7 @@ function ProductsPage() {
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
     const [sortColumn, setSortColumn] = useState(null);
-    // const [sortType, setSortType] = useState("Recommended");
+    const [sortType, setSortType] = useState([]);
     const [gloves, setGloves] = useState(null);
     const [bats, setBats] = useState(null);
     const [cleats, setCleats] = useState(null);
@@ -25,6 +25,34 @@ function ProductsPage() {
     const [batActive, setBatActive] = useState(false);
     const [cleatActive, setCleatActive] = useState(false);
     // const [selected, setSelected] = useState();
+
+    const optionArray = [
+        {
+            text: "Recommended",
+            value: "recommended",
+            id: 1
+        },
+        {
+            text: "Price: Low to High",
+            value: "priceLowHigh",
+            id: 2
+        },
+        {
+            text: "Price: High to Low",
+            value: "priceHighLow",
+            id: 3
+        },
+        {
+            text: "Brand: A to Z",
+            value: "brandAZ",
+            id: 4
+        },
+        {
+            text: "Brand: Z to A",
+            value: "brandZA",
+            id: 5
+        }
+    ]
   
     // Gloves API Request
     useEffect(() => {
@@ -49,6 +77,7 @@ function ProductsPage() {
                 id: 5
             }]
           )
+          setSortType(optionArray)
           setProductList(glovesResponse.data);
         })
         .catch(() => {
@@ -91,6 +120,7 @@ function ProductsPage() {
         setCleatActive(false);
         setProductList(gloves);
         setSortedProductList(gloves);
+        setSortType([...optionArray])
         setSortColumn(
             [{
                 brand: "Mizuno",
@@ -117,6 +147,7 @@ function ProductsPage() {
         setCleatActive(false);
         setProductList(bats);
         setSortedProductList(bats);
+        setSortType(optionArray);
         setSortColumn(
             [{
                 brand: "Mizuno",
@@ -143,6 +174,7 @@ function ProductsPage() {
         setBatActive(false);
         setProductList(cleats);
         setSortedProductList(cleats);
+        setSortType([...optionArray])
         setSortColumn(
             [
                 {
@@ -152,9 +184,8 @@ function ProductsPage() {
             ])
     }
 
-    console.log(`glove: ${gloveActive}, bat: ${batActive}, cleat: ${cleatActive}`)
-
     const handleChange = (value) => {
+        console.log(value);
         if (value === "recommended") {
             setSortedProductList(gloves)
         }
@@ -189,7 +220,7 @@ function ProductsPage() {
         }
     }
 
-    if (!gloves || !bats || !cleats || !sortColumn) {
+    if (!gloves || !bats || !cleats || !sortColumn || !sortType) {
         return <span>Loading...</span>
       };
 
@@ -210,11 +241,9 @@ function ProductsPage() {
                 <div className="products__sort-container">
                     <label className="products__sort-label" htmlFor="sort">Sort</label>
                         <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)}  >
-                            <option value="recommended">Recommended</option>
-                            <option value="priceLowHigh">Price: Low to High</option>
-                            <option value="priceHighLow">Price: High to Low</option>
-                            <option value="brandAZ">Brand: A to Z</option>
-                            <option value="brandZA">Brand: Z to A</option>
+                            {sortType.map(option => (
+                                <option value={option.value} key={option.id}>{option.text}</option>
+                            ))}
                         </select>
                 </div>
                 <div className="products__content"> 
