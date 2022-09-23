@@ -47,20 +47,34 @@
             border-left: 1px solid lightgray;
             border-right: 1px solid lightgray;
             border-top: 1px solid lightgray;
+            border-bottom: 1px solid $primary-text;
             border-radius: 10px 10px 0 0;
             padding: .5rem 1rem .25rem 1rem ;
         }
 
         &--active {
             color: $primary-text;
+
+            cursor: pointer;
+        text-decoration: underline;
+
+        @include tablet {
+            border-left: 1px solid $primary-text;
+            border-right: 1px solid $primary-text;
+            border-top: 1px solid $primary-text;
+            border-radius: 10px 10px 0 0;
+            padding: .5rem 1rem .25rem 1rem ;
+        }
         }
     }
+
+   
 
     &__blank {
         @include tablet {
             grid-area: "sort";
             height: 100%;
-            border-bottom: 1px solid lightgray;
+            border-bottom: 1px solid $primary-text;
         }
     }
 
@@ -79,9 +93,10 @@
     &__page-content {
         @include tablet {
             margin: 0 2rem 1rem 2rem;
-            border-left: 1px solid lightgray;
-            border-right: 1px solid lightgray;
-            border-bottom: 1px solid lightgray
+            border-left: 1px solid $primary-text;
+            border-right: 1px solid $primary-text;
+            border-bottom: 1px solid $primary-text;
+            min-height: 90vh;
         }
 
         @include desktop {

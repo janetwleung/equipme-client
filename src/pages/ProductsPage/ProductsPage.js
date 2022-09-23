@@ -21,7 +21,10 @@ function ProductsPage() {
     const [bats, setBats] = useState(null);
     const [cleats, setCleats] = useState(null);
     const [isError, setIsError] = useState(false);
-    const [selected, setSelected] = useState();
+    const [gloveActive, setGloveActive] = useState(true);
+    const [batActive, setBatActive] = useState(false);
+    const [cleatActive, setCleatActive] = useState(false);
+    // const [selected, setSelected] = useState();
   
     // Gloves API Request
     useEffect(() => {
@@ -83,6 +86,9 @@ function ProductsPage() {
     }
 
     const handleGlovesClick = () => {
+        setGloveActive(true);
+        setBatActive(false);
+        setCleatActive(false);
         setProductList(gloves);
         setSortedProductList(gloves);
         setSortColumn(
@@ -106,6 +112,9 @@ function ProductsPage() {
     }
 
     const handleBatsClick = () => {
+        setBatActive(true);
+        setGloveActive(false);
+        setCleatActive(false);
         setProductList(bats);
         setSortedProductList(bats);
         setSortColumn(
@@ -129,6 +138,9 @@ function ProductsPage() {
     }
 
     const handleCleatsClick = () => {
+        setGloveActive(false);
+        setCleatActive(true);
+        setBatActive(false);
         setProductList(cleats);
         setSortedProductList(cleats);
         setSortColumn(
@@ -139,6 +151,8 @@ function ProductsPage() {
                 }
             ])
     }
+
+    console.log(`glove: ${gloveActive}, bat: ${batActive}, cleat: ${cleatActive}`)
 
     const handleChange = (value) => {
         if (value === "recommended") {
@@ -184,9 +198,9 @@ function ProductsPage() {
             {/* <ProductsNav /> */}
             <div className="products__top-bar">
                 <ul className="products__nav-list">
-                    <li className="products__nav-list-item" onClick={handleGlovesClick}>Gloves</li>
-                    <li className="products__nav-list-item" onClick={handleBatsClick}>Bats</li>
-                    <li className="products__nav-list-item" onClick={handleCleatsClick}>Cleats</li>
+                    <li className={gloveActive ? "products__nav-list-item--active" : "products__nav-list-item"} onClick={handleGlovesClick}>Gloves</li>
+                    <li className={batActive ? "products__nav-list-item--active" : "products__nav-list-item"} onClick={handleBatsClick}>Bats</li>
+                    <li className={cleatActive ? "products__nav-list-item--active" : "products__nav-list-item"} onClick={handleCleatsClick}>Cleats</li>
                 </ul>
                 <div className="products__blank">
                 </div>
@@ -195,7 +209,7 @@ function ProductsPage() {
                 <InfoBanner />
                 <div className="products__sort-container">
                     <label className="products__sort-label" htmlFor="sort">Sort</label>
-                        <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)} value={selected} >
+                        <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)}  >
                             <option value="recommended">Recommended</option>
                             <option value="priceLowHigh">Price: Low to High</option>
                             <option value="priceHighLow">Price: High to Low</option>
