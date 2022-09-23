@@ -16,9 +16,10 @@ function ProductsPage() {
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
     const [sortColumn, setSortColumn] = useState(null);
-    const [gloves, setGloves] = useState([]);
-    const [bats, setBats] = useState([]);
-    const [cleats, setCleats] = useState([]);
+    const [sortType, setSortType] = useState("Recommended");
+    const [gloves, setGloves] = useState(null);
+    const [bats, setBats] = useState(null);
+    const [cleats, setCleats] = useState(null);
     const [isError, setIsError] = useState(false);
     const [selected, setSelected] = useState();
   
@@ -83,6 +84,7 @@ function ProductsPage() {
 
     const handleGlovesClick = () => {
         setProductList(gloves);
+        setSortedProductList(gloves);
         setSortColumn(
             [{
                 brand: "Mizuno",
@@ -105,6 +107,7 @@ function ProductsPage() {
 
     const handleBatsClick = () => {
         setProductList(bats);
+        setSortedProductList(bats);
         setSortColumn(
             [{
                 brand: "Mizuno",
@@ -127,6 +130,7 @@ function ProductsPage() {
 
     const handleCleatsClick = () => {
         setProductList(cleats);
+        setSortedProductList(cleats);
         setSortColumn(
             [
                 {
@@ -144,6 +148,7 @@ function ProductsPage() {
                 return aPrice - bPrice;
             })
             // SET LIST TO THIS sortedGloves
+            setSortType("Price: Low to High");
             setSortedProductList(sortedProducts);
         } 
         if (value === "priceHighLow") {
@@ -152,16 +157,17 @@ function ProductsPage() {
                 const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
                 return bPrice - aPrice;
             })
+            setSortType("Price: High to Low")
             setSortedProductList(sortedProducts);
-            console.log(sortedProducts)
         }
         if (value === "brandAZ") {
             const sortedProducts = [...productList].sort((a,b) => ((a.brand < b.brand) ? -1 : 1))
+            setSortType("Brand: A to Z");
             setSortedProductList(sortedProducts);
-            console.log(sortedProducts);
         }
         if (value === "brandZA") {
             const sortedProducts = [...productList].sort((a,b) => ((a.brand > b.brand) ? -1 : 1))
+            setSortType("Brand: Z to A");
             setSortedProductList(sortedProducts);
         }
     }
