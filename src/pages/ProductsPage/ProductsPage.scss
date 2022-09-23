@@ -82,6 +82,10 @@
             border-left: 1px solid lightgray;
             border-right: 1px solid lightgray;
         }
+
+        @include desktop {
+            margin: 0;
+        }
     }
 
     &__sort-container {
