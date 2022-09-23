@@ -1,26 +1,23 @@
+import { useState } from "react";
 import "./SortColumn.scss";
 
 function SortColumn({ brands }) {
+    const [] = useState();
+
+    const handleToggle = (event, brand) => {
+        console.log(brand)
+    }
+
     return (
         <div className="sort">
             <ul className="sort__brand-list">
                 <span className="sort__list-label">Brands</span>
-                <li className="sort__brand-list-item">
-                    <input type="checkbox" id="Mizuno"/>
-                    <label className="sort__label" htmlFor="Mizuno">{brands[0].brand}</label>
-                </li>
-                <li className="sort__brand-list-item">
-                    <input type="checkbox" id="Rawlings"/>
-                    <label className="sort__label" htmlFor="Rawlings">{brands[1].brand}</label>
-                </li>
-                <li className="sort__brand-list-item">
-                    <input type="checkbox" id="Wilson"/>
-                    <label className="sort__label" htmlFor="Wilson">{brands[2].brand}</label>
-                </li>
-                <li className="sort__brand-list-item">
-                    <input type="checkbox" id="Easton"/>
-                    <label className="sort__label" htmlFor="Easton">{brands[3].brand}</label>
-                </li>
+                {brands.map(brand => (
+                    <li className="sort__brand-list-item" key={brand.id}>
+                        <input type="checkbox" value={brand.brand} id={brand.brand} onChange={() => handleToggle(brand.id)}/>
+                        <label className="sort__label" htmlFor="Mizuno">{brand.brand}</label>
+                    </li>
+                ))}
             </ul>
             <ul className="sort__price-list">
                 <span className="sort__list-label">Price</span>

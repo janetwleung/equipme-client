@@ -28,15 +28,19 @@ function ProductsPage() {
           setSortColumn(
             [{
                 brand: "Mizuno",
+                id: 1
             },
             {
                 brand: "Rawlings",
+                id: 2
             },
             {
                 brand: "Wilson",
+                id: 3
             },
             {
                 brand: "Nokona",
+                id: 5
             }]
           )
           setProductList(glovesResponse.data);
@@ -80,15 +84,19 @@ function ProductsPage() {
         setSortColumn(
             [{
                 brand: "Mizuno",
+                id: 1
             },
             {
                 brand: "Rawlings",
+                id: 2
             },
             {
                 brand: "Wilson",
+                id: 3
             },
             {
                 brand: "Nokona",
+                id: 5
             }]
           )
     }
@@ -98,15 +106,19 @@ function ProductsPage() {
         setSortColumn(
             [{
                 brand: "Mizuno",
+                id: 1
             },
             {
                 brand: "Rawlings",
+                id: 2
             },
             {
                 brand: "Easton",
+                id: 4
             },
             {
                 brand: "DeMarini",
+                id: 6
             }]
           )
     }
@@ -116,16 +128,8 @@ function ProductsPage() {
         setSortColumn(
             [
                 {
-                    brand: "Mizuno"
-                },
-                {
-                    brand: "Mizuno"
-                },
-                {
-                    brand: "Mizuno"
-                },
-                {
-                    brand: "Mizuno"
+                    brand: "Mizuno",
+                    id: 1
                 }
             ])
     }
