@@ -141,6 +141,9 @@ function ProductsPage() {
     }
 
     const handleChange = (value) => {
+        if (value === "recommended") {
+            setSortedProductList(gloves)
+        }
         if (value === "priceLowHigh") {
             const sortedProducts = [...productList].sort((a,b) => {
                 const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1,-1)) : 0;
@@ -186,14 +189,6 @@ function ProductsPage() {
                     <li className="products__nav-list-item" onClick={handleCleatsClick}>Cleats</li>
                 </ul>
                 <div className="products__blank">
-                    {/* <label className="products__sort-label" htmlFor="sort">Sort</label>
-                    <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)} value={selected} >
-                        <option value="recommended">Recommended</option>
-                        <option value="priceLowHigh">Price: Low to High</option>
-                        <option value="priceHighLow">Price: High to Low</option>
-                        <option value="brandAZ">Brand: A to Z</option>
-                        <option value="brandZA">Brand: Z to A</option>
-                    </select> */}
                 </div>
             </div>
             <div className="products__page-content">
