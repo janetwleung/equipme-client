@@ -16,7 +16,7 @@ function ProductsPage() {
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
     const [sortColumn, setSortColumn] = useState(null);
-    const [sortType, setSortType] = useState("Recommended");
+    // const [sortType, setSortType] = useState("Recommended");
     const [gloves, setGloves] = useState(null);
     const [bats, setBats] = useState(null);
     const [cleats, setCleats] = useState(null);
@@ -151,7 +151,7 @@ function ProductsPage() {
                 return aPrice - bPrice;
             })
             // SET LIST TO THIS sortedGloves
-            setSortType("Price: Low to High");
+            // setSortType("Price: Low to High");
             setSortedProductList(sortedProducts);
         } 
         if (value === "priceHighLow") {
@@ -160,17 +160,17 @@ function ProductsPage() {
                 const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1,-1)) : 0;
                 return bPrice - aPrice;
             })
-            setSortType("Price: High to Low")
+            // setSortType("Price: High to Low")
             setSortedProductList(sortedProducts);
         }
         if (value === "brandAZ") {
             const sortedProducts = [...productList].sort((a,b) => ((a.brand < b.brand) ? -1 : 1))
-            setSortType("Brand: A to Z");
+            // setSortType("Brand: A to Z");
             setSortedProductList(sortedProducts);
         }
         if (value === "brandZA") {
             const sortedProducts = [...productList].sort((a,b) => ((a.brand > b.brand) ? -1 : 1))
-            setSortType("Brand: Z to A");
+            // setSortType("Brand: Z to A");
             setSortedProductList(sortedProducts);
         }
     }
