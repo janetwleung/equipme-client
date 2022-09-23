@@ -3,5 +3,12 @@
 @use "../../styles/partials/colors" as *;
 
 .banner {
-    padding: 1rem 3rem;
+    padding: 1rem;
+    @include tablet {
+        padding: 1rem;
+    }
+
+    @include desktop {
+        padding: 2rem 1rem 0.5rem 1rem;
+    }
 }
