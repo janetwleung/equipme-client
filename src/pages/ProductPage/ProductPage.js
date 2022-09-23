@@ -1,5 +1,4 @@
 import "./ProductPage.scss";
-import CTA from "../../components/CTA/CTA";
 import backArrow from "../../assets/icons/arrow-back.png"
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -49,20 +48,20 @@ function ProductPage() {
 
     return (
         <main className="product-page">
-            <button className="product-page__back-container" onClick={() => navigate(-1)}>
-                <img src={backArrow} alt="Back arrow" />
+            <div className="product-page__back-container" onClick={() => navigate(-1)}>
+                <img src={backArrow} alt="Back arrow" className="product-page__arrow"/>
                 <span className="product-page__back">Back</span>
-            </button>
+            </div>
             <div className="product-page__container">
                 <div className="product-page__image-container">
                     <img className="product-page__image" src={product.image1} alt="glove" />
                 </div>
                 <div className="product-page__details">
                     <h1 className="product-page__name">{product.name}</h1>
-                    <p className="product-page__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repellendus obcaecati quisquam, voluptates ut ducimus rerum fugiat, cupiditate sint voluptas, soluta iure. Deleniti beatae hic eos, voluptates magnam repudiandae culpa?</p>
+                    <p className="product-page__description">{product.description}</p>
                     <span className="product-page__price">{product.price}</span>
                     <div className="product-page__button">
-                        <CTA text="Buy Now"/>
+                        <a href={product.whereToBuy} target="_blank" rel="noreferrer" className="product-page__button-text">Buy Now</a>
                     </div>
                 </div>
             </div>

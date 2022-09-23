@@ -3,7 +3,6 @@ import { fetchGlovesList, fetchBatsList, fetchCleatsList } from '../../utils/api
 import { useState, useEffect } from "react";
 import InfoBanner from "../../components/InfoBanner/InfoBanner";
 import ProductsList from "../../components/ProductsList/ProductsList";
-import ProductsNav from "../../components/ProductsNav/ProductsNav";
 import SortColumn from "../../components/SortColumn/SortColumn";
 import "./ProductsPage.scss";
 
@@ -79,14 +78,14 @@ function ProductsPage() {
                         id: 5
                     }]
                 )
-                setSortType(optionArray)
+                // setSortType(optionArray)
                 setProductList(filteredGloves);
             })
             .catch(() => {
                 setIsError(true);
                 console.log("For developers: There was an error fetching the gloves")
             })
-    }, []);
+    }, [newRequest]);
 
     // Bats API Request
     useEffect(() => {
@@ -119,7 +118,7 @@ function ProductsPage() {
                 setIsError(true);
                 console.log("For developers: There was an error fetching the bats")
             })
-    }, []);
+    }, [newRequest]);
 
     // Cleats API Request
     useEffect(() => {
