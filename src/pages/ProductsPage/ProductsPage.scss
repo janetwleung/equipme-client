@@ -40,6 +40,7 @@
 
     &__nav-list-item {
         cursor: pointer;
+        text-decoration: underline;
         color: $secondary-text;
 
         @include tablet {
@@ -49,6 +50,7 @@
             border-bottom: 1px solid $primary-text;
             border-radius: 10px 10px 0 0;
             padding: .5rem 1rem .25rem 1rem;
+            text-decoration: none;
         }
 
         &:hover {
@@ -59,6 +61,7 @@
 
         &--active {
             color: $primary-text;
+            text-decoration: underline;
             cursor: pointer;
 
             @include tablet {
@@ -67,6 +70,7 @@
                 border-top: 1px solid $primary-text;
                 border-radius: 10px 10px 0 0;
                 padding: .5rem 1rem .25rem 1rem;
+                text-decoration: none;
             }
         }
     }

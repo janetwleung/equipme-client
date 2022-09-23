@@ -93,7 +93,21 @@ function ProductsPage() {
         fetchBatsList()
             .then((batsResponse) => {
                 const batsData = batsResponse.data
-                setBats(batsResponse.data);
+                // parseFloat((batsData[0].price).slice(1, -1));
+                if (newRequest.level === "pro" || newRequest.level === "rep") {
+                    const filteredBats = batsData.filter(bat => (parseFloat(bat.price.slice(1, -1))) > 300);
+                    setBats(filteredBats);
+                }
+                if (newRequest.level === "beginner" || newRequest.level === "houseLeague") {
+                    // const filteredBats = batsData.filter(bat => (parseFloat(bat.price.slice(1, -1))) < 300);
+                    // setBats(filteredBats);
+                    const sortedProducts = batsData.sort((a, b) => {
+                        const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                        const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                        return aPrice - bPrice;
+                    })
+                    setBats(sortedProducts);
+                }
             })
             .catch(() => {
                 setIsError(true);
