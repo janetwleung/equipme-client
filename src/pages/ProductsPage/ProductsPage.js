@@ -75,7 +75,6 @@ function ProductsPage() {
       return <span>There was an error fetching the data.</span>
     }
 
-
     const handleGlovesClick = () => {
         setProductList(gloves);
         setSortColumn(
