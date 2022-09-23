@@ -7,14 +7,34 @@
         @include desktop-margin-auto;
     }
 
+    &__top-bar {
+        padding: 0 1rem 0 0;
+
+        @include tablet {
+            padding: 0 2rem 0 2rem;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
     &__nav-list {
         @include ul-reset;
         display: flex;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-left: 1rem;
+
+        @include tablet {
+            margin-left: 0;
+            margin-bottom: 0;
+            gap: .01rem;
+            grid-area: "nav-tabs";
+        }
 
         @include desktop {
             margin-left: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -23,14 +43,55 @@
         text-decoration: underline;
         color: $secondary-text;
 
+        @include tablet {
+            border-left: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+            border-top: 1px solid lightgray;
+            border-radius: 10px 10px 0 0;
+            padding: .5rem 1rem .25rem 1rem ;
+        }
+
         &--active {
             color: $primary-text;
         }
     }
 
+    &__blank {
+        @include tablet {
+            grid-area: "sort";
+            height: 100%;
+            border-bottom: 1px solid lightgray;
+        }
+    }
+
     &__top-bar {
+        // display: flex;
+        // justify-content: space-between;
+       
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas: "nav-tabs sort";
+        }
+    }
+
+    &__page-content {
+        @include tablet {
+            margin: 0 2rem;
+            border-left: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+        }
+    }
+
+    &__sort-container {
+        padding: .5rem 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+
+        @include tablet {
+            padding: .5rem 2rem;
+        }
     }
 
     &__content {
@@ -38,10 +99,12 @@
             display: grid;
             grid-template-columns: 1fr 4fr;
             padding: 0 2rem;
+            // border-left: 1px solid lightgray;
+            // border-right: 1px solid lightgray;
         }
 
         @include desktop {
-            padding: 0;
+            padding: 0 1rem;
         }
     }
 }

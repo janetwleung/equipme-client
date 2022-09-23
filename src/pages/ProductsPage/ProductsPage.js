@@ -185,22 +185,33 @@ function ProductsPage() {
                     <li className="products__nav-list-item" onClick={handleBatsClick}>Bats</li>
                     <li className="products__nav-list-item" onClick={handleCleatsClick}>Cleats</li>
                 </ul>
-                <div className="products__sort-container">
-                    <label className="products__sort-label" htmlFor="sort">Sort</label>
+                <div className="products__blank">
+                    {/* <label className="products__sort-label" htmlFor="sort">Sort</label>
                     <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)} value={selected} >
-                        <option value=""></option>
                         <option value="recommended">Recommended</option>
                         <option value="priceLowHigh">Price: Low to High</option>
                         <option value="priceHighLow">Price: High to Low</option>
                         <option value="brandAZ">Brand: A to Z</option>
                         <option value="brandZA">Brand: Z to A</option>
-                    </select>
+                    </select> */}
                 </div>
             </div>
-            <InfoBanner />
-            <div className="products__content"> 
-                <SortColumn brands={sortColumn}/>
-                <ProductsList products={!sortedProductList ? productList : sortedProductList} />
+            <div className="products__page-content">
+                <InfoBanner />
+                <div className="products__sort-container">
+                    <label className="products__sort-label" htmlFor="sort">Sort</label>
+                        <select className="products__sort-input" id="sort" onChange={(e)=>handleChange(e.target.value)} value={selected} >
+                            <option value="recommended">Recommended</option>
+                            <option value="priceLowHigh">Price: Low to High</option>
+                            <option value="priceHighLow">Price: High to Low</option>
+                            <option value="brandAZ">Brand: A to Z</option>
+                            <option value="brandZA">Brand: Z to A</option>
+                        </select>
+                </div>
+                <div className="products__content"> 
+                    <SortColumn brands={sortColumn}/>
+                    <ProductsList products={!sortedProductList ? productList : sortedProductList} />
+                </div>
             </div>
         </main>
     );

@@ -3,11 +3,5 @@
 @use "../../styles/partials/colors" as *;
 
 .banner {
-    border: 1px solid $primary-text;
-    margin: 0 1rem;
-    padding: .5rem;
-
-    @include desktop {
-        margin: 0;
-    }
+    padding: 1rem 3rem;
 }
