@@ -78,14 +78,14 @@ function ProductsPage() {
                         id: 5
                     }]
                 )
-                // setSortType(optionArray)
+                setSortType(optionArray)
                 setProductList(filteredGloves);
             })
             .catch(() => {
                 setIsError(true);
                 console.log("For developers: There was an error fetching the gloves")
             })
-    }, [newRequest]);
+    }, [newRequest, optionArray]);
 
     // Bats API Request
     useEffect(() => {
