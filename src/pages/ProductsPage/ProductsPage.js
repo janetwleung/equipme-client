@@ -10,7 +10,6 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.newRequest;
-    console.log(newRequest)
 
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
@@ -85,7 +84,7 @@ function ProductsPage() {
                 setIsError(true);
                 console.log("For developers: There was an error fetching the gloves")
             })
-    }, [newRequest, optionArray]);
+    }, [newRequest]);
 
     // Bats API Request
     useEffect(() => {
@@ -111,7 +110,6 @@ function ProductsPage() {
                 } else {
                     const filteredBats = batsData.filter(bat => bat.age === "5, 6, 7, 8")
                     setBats(filteredBats);
-                    console.log("young")
                 }
             })
             .catch(() => {
@@ -268,7 +266,7 @@ function ProductsPage() {
                     </select>
                 </div>
                 <div className="products__content">
-                    <SortColumn brands={sortColumn} />
+                    <SortColumn brands={sortColumn} setProductList={setProductList}/>
                     <ProductsList products={!sortedProductList ? productList : sortedProductList} />
                 </div>
             </div>

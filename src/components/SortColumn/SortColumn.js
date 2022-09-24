@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./SortColumn.scss";
 
-function SortColumn({ brands }) {
+function SortColumn({ brands, setProductList }) {
     const [] = useState();
 
-    const handleToggle = (event, brand) => {
-        console.log(brand)
+    const handleToggle = (e) => {
+        console.log(e);
+ 
     }
 
     return (
@@ -14,7 +15,7 @@ function SortColumn({ brands }) {
                 <span className="sort__list-label">Brands</span>
                 {brands.map(brand => (
                     <li className="sort__brand-list-item" key={brand.id}>
-                        <input type="checkbox" value={brand.brand} id={brand.brand} onChange={() => handleToggle(brand.id)}/>
+                        <input type="checkbox" value={brand.brand} id={brand.brand} onChange={(e) => handleToggle(brand.id)}/>
                         <label className="sort__label" htmlFor="Mizuno">{brand.brand}</label>
                     </li>
                 ))}
