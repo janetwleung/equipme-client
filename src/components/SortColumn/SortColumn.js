@@ -16,7 +16,7 @@ function SortColumn({ brands, setProductList }) {
                 {brands.map(brand => (
                     <li className="sort__brand-list-item" key={brand.id}>
                         <input type="checkbox" value={brand.brand} id={brand.brand} onChange={(e) => handleToggle(brand.id)}/>
-                        <label className="sort__label" htmlFor="Mizuno">{brand.brand}</label>
+                        <label className="sort__label" htmlFor={brand.brand}>{brand.brand}</label>
                     </li>
                 ))}
             </ul>

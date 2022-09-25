@@ -10,6 +10,7 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.userInformation;
+    console.log(newRequest)
 
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
@@ -128,11 +129,7 @@ function ProductsPage() {
                 setIsError(true);
                 console.log("For developers: There was an error fetching the cleats")
             })
-    }, []);
-
-    if (isError) {
-        return <span>There was an error fetching the data.</span>
-    }
+    }, [newRequest]);
 
     const handleGlovesClick = () => {
         setGloveActive(true);
@@ -239,13 +236,16 @@ function ProductsPage() {
         }
     }
 
+    if (isError) {
+        return <span>There was an error fetching the data.</span>
+    }
+
     if (!gloves || !bats || !cleats || !sortColumn || !sortType) {
         return <span>Loading...</span>
     };
 
     return (
         <main className="products">
-            {/* <ProductsNav /> */}
             <div className="products__top-bar">
                 <ul className="products__nav-list">
                     <li className={gloveActive ? "products__nav-list-item--active" : "products__nav-list-item"} onClick={handleGlovesClick}>Gloves</li>
@@ -256,7 +256,7 @@ function ProductsPage() {
                 </div>
             </div>
             <div className="products__page-content">
-                <InfoBanner />
+                <InfoBanner newRequest={newRequest} products={!sortedProductList ? productList[0].category : sortedProductList[0].category}/>
                 <div className="products__sort-container">
                     <label className="products__sort-label" htmlFor="sort">Sort</label>
                     <select className="products__sort-input" id="sort" onChange={(e) => handleChange(e.target.value)}  >
