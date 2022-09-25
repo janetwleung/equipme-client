@@ -8,10 +8,9 @@ function Form() {
     let { sportId } = useParams();
     const [form, setForm] = useState([]);
     const [isError, setIsError] = useState(false);
+    const [errorMessages, setErrorMessages] = useState(false)
+    const [errorThing, setErrorThing] = useState(false);
     const [ageError, setAgeError] = useState(false);
-    const [positionError, setPositionError] = useState(false);
-    const [heightError, setHeightError] = useState(false);
-    const [levelError, setLevelError] = useState(false);
     const navigate = useNavigate();
 
     const errorArray = []
@@ -28,37 +27,52 @@ function Form() {
     }, [sportId]);
 
     const handleSubmit = (event) => {
-        setAgeError(false);
-        setPositionError(false);
-        setHeightError(false);
-        setLevelError(false);
+        // setAgeError(false);
+        // setPositionError(false);
+        // setHeightError(false);
+        // setLevelError(false);
         event.preventDefault();
+        setErrorMessages(false);
+
         const age = event.target.age.value;
         const position = event.target.position.value;
         const height = event.target.height.value;
         const level = event.target.level.value;
 
-        if (isNaN(age) || age > 100 || age === "") {
-            return setAgeError(true);
-        } if (!position) {
-            return setPositionError(true);
-        } if (!height) {
-            return setHeightError(true);
-        } if(!level) {
-            return setLevelError(true);
-        }
+        // if (isNaN(age) || age > 100 || age === "") {
+        //     return setAgeError(true);
+        // } if (!position) {
+        //     return setPositionError(true);
+        // } if (!height) {
+        //     return setHeightError(true);
+        // } if(!level) {
+        //     return setLevelError(true);
+        // }
 
-
-        console.log(errorArray)
-
-        const newRequest = {
+        const userInformation = {
             age: age,
             position: position,
             height: height,
             level: level
         }
 
-        navigate("/products/gloves",  {state: {newRequest}});
+        const errorMessagesArray = ["", "", "", ""];
+
+        Object.values(userInformation).forEach((value, index, key) => {
+            errorMessagesArray[index] = value ? "" : "This field is required";
+        })
+
+        const errorPresent = errorMessagesArray.find(errorMessage => errorMessage === "This field is required"); 
+
+        if (isNaN(age) || age > 100 || age === "" ) {
+            errorMessagesArray[0] = "Please enter a valid age"
+        }
+
+        setErrorMessages(errorMessagesArray);
+        
+        if (!errorPresent) {
+            navigate("/products/gloves",  {state: {userInformation}});
+        }
     }
 
     if (isError) {
@@ -77,7 +91,7 @@ function Form() {
                     <div className="intake__input-container">
                         <label htmlFor="age" className="intake__label">{form.formInput1}:</label>
                         <input className="intake__input" type="text" id="age" name="age" />
-                        {ageError ? <span className="intake__error-message">*Age needs to be a valid number</span> : ""}
+                        {errorMessages[0] && <span className="intake__error-message">*Age needs to be a valid number</span>}
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="position" className="intake__label">{form.formInput2}:</label>
@@ -89,7 +103,7 @@ function Form() {
                             <option value="pitcher">Pitcher</option>
                             <option value="catcher">Catcher</option>
                         </select>
-                        {positionError ? <span className="intake__error-message">Please select a position</span> : ""}
+                        {errorMessages[1] && <span className="intake__error-message">Please select a position</span>}
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="height" className="intake__label">{form.formInput3}:</label>
@@ -101,7 +115,7 @@ function Form() {
                             <option value="4">5'3" - 5'7"</option>
                             <option value="5">5'8"+</option>
                         </select>
-                        {heightError ? <span className="intake__error-message">Please select a height</span> : ""}
+                        {errorMessages[2] && <span className="intake__error-message">Please select a height</span>}
                     </div>
                     <div className="intake__input-container">
                         <label htmlFor="level" className="intake__label">{form.formInput4}:</label>
@@ -113,7 +127,7 @@ function Form() {
                             <option value="rep">Rep</option>
                             <option value="pro">Pro</option>
                         </select>
-                        {levelError ? <span className="intake__error-message">Please select a level</span> : ""}
+                        {errorMessages[3] && <span className="intake__error-message">Please select a level</span>}
                     </div>
                     <div className="intake__button">
                         <CTA text="Submit" isButton={true}/>
