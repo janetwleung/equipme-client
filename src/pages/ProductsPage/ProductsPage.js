@@ -9,7 +9,7 @@ import "./ProductsPage.scss";
 
 function ProductsPage() {
     const location = useLocation();
-    const newRequest = location.state.newRequest;
+    const newRequest = location.state.userInformation;
 
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
