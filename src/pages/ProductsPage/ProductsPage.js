@@ -57,8 +57,68 @@ function ProductsPage() {
         fetchGlovesList()
             .then((glovesResponse) => {
                 const glovesData = glovesResponse.data;
-                const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
-                setGloves(filteredGloves);
+                if (newRequest.age <= 8) {
+                    const filteredGloves = glovesData.filter(glove => (glove.size).includes("10"));
+                    setGloves(filteredGloves);
+                    setProductList(filteredGloves);
+                }
+                else if (newRequest.age > 8 && newRequest.age < 13) {
+                    if (newRequest.position === "first base" || newRequest.position === "catcher") {
+                        const filteredGloves = glovesData.filter(glove => (glove.name).includes("YOUTH") && (glove.name).includes("FIRST BASE"));
+                        setGloves(filteredGloves);
+                        setSortedProductList(filteredGloves);
+                        setProductList(filteredGloves)
+                    } if (newRequest.position === "infield") {
+                        const filteredGloves = glovesData.filter(glove => (glove.position).includes("Infield"));
+                        filteredGloves.splice(6, 1);
+                        filteredGloves.splice(12,1);
+                        const findDPGloves = filteredGloves.filter(glove => (glove.description).includes("DP15") || (glove.description).includes("Pedroia"));
+                        filteredGloves.splice(2,2);
+                        findDPGloves.forEach(DPGlove => filteredGloves.unshift(DPGlove));
+                        setGloves(filteredGloves);
+                        setSortedProductList(filteredGloves);
+                        setProductList(filteredGloves);
+                    } if (newRequest.position === "pitcher") {
+                        const filteredGloves = glovesData.filter(glove => (glove.position).includes("Pitcher"));
+                        const sortedGloves = filteredGloves.sort((a, b) => {
+                            const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                            const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                            return aPrice - bPrice});
+                        
+                        setGloves(sortedGloves);
+                        setProductList(sortedGloves);
+                    } if (newRequest.position === "outfield") {
+                        const filteredGloves = glovesData.filter(glove => (glove.position).includes("Infield"));
+                        const sortedGloves = filteredGloves.sort((a, b) => {
+                            const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                            const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                            return aPrice - bPrice});
+                        sortedGloves.splice(0, 2);
+                        sortedGloves.splice(7, 7);
+                        setGloves(sortedGloves);
+                        setProductList(sortedGloves);
+                    }
+                } else {
+                    if (newRequest.level === "beginner" || newRequest.level === "house league" || newRequest.level === "select") {
+                        const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                        filteredGloves.splice(6, 1);
+                        filteredGloves.splice(12, 1);
+                        const sortedGloves = filteredGloves.sort((a, b) => {
+                            const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                            const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                            return aPrice - bPrice});
+                        setGloves(sortedGloves);
+                        setProductList(sortedGloves);
+                    } else {
+                        const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                        filteredGloves.splice(6, 1);
+                        filteredGloves.splice(12, 1);
+                        const moveGlove = filteredGloves.shift();
+                        filteredGloves.push(moveGlove);
+                        setGloves(filteredGloves);
+                        setProductList(filteredGloves);
+                    }
+                }
                 setSortColumn(
                     [{
                         brand: "Mizuno",
@@ -78,7 +138,7 @@ function ProductsPage() {
                     }]
                 )
                 setSortType(optionArray)
-                setProductList(filteredGloves);
+
             })
             .catch(() => {
                 setIsError(true);
@@ -258,9 +318,11 @@ function ProductsPage() {
         return <span>There was an error fetching the data.</span>
     }
 
-    if (!gloves || !bats || !cleats || !sortColumn || !sortType) {
+    if (!gloves || !bats || !cleats || !sortColumn || !sortType || !productList) {
         return <span>Loading...</span>
     };
+
+    console.log(productList)
 
     return (
         <main className="products">

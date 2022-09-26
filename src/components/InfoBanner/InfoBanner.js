@@ -13,15 +13,35 @@ function InfoBanner({ newRequest, products }) {
     let ageBatMessage = "";
 
     if (userPosition === "infield") {
-        gloveMessage = "As an infielder, it's essential to have a smaller glove in order to be able to get rid of the ball quickly. Our game is extremely fast paced and we don't want to lose the ball in our mitt. The open pocket allows us to see the ball coming into our glove as we receive the ball. However, at the end of the day, choose hat you're most comfortable ith as the glove should feel like it's an extension of the hand"
+        if (Number(userAge) < 10) {
+            gloveMessage = "What an exciting time it is starting our with softball! Here are some glove recommendations to help you get started."
+        } else {
+            gloveMessage = "As an infielder, it's essential to have a smaller glove in order to be able to get rid of the ball quickly. Our game is extremely fast paced and we don't want to lose the ball in our mitt. The open pocket allows us to see the ball coming into our glove as we receive the ball. However, at the end of the day, choose hat you're most comfortable ith as the glove should feel like it's an extension of the hand"
+        }
     } else if (userPosition === "outfield") {
+        if (Number(userAge) < 10) {
+            gloveMessage = "What an exciting time it is starting our with softball! Here are some glove recommendations to help you get started."
+        } else {
         gloveMessage = "As an outfielder, there is a lot of ground to cover so a slightly bigger glove is preferred. However, control and being able to find the ball out fo the glove quickly are essential."
+        }
     } else if (userPosition === "pitcher") {
-        gloveMessage = "As a pitcher, a closed web is preferred in order to hide the grip of the ball as to not give away anything to your opponents."
+        if (Number(userAge) < 10) {
+            gloveMessage = "What an exciting time it is starting our with softball! Here are some glove recommendations to help you get started."
+        } else {
+            gloveMessage = "As a pitcher, a closed web is preferred in order to hide the grip of the ball as to not give away anything to your opponents."
+        }
     } else if (userPosition === "catcher") {
+        if (Number(userAge) < 12) {
+            gloveMessage = "What an exciting time it is starting our with softball! Here are some glove recommendations to help you get started."
+        } else {
         gloveMessage = "As a catcher, a first base mitt is suggested to give you more control behind the plate and help you be a better wall."
+        }
     } else if (userPosition === "first base") {
+        if (Number(userAge) < 12) {
+            gloveMessage = "What an exciting time it is starting our with softball! Here are some glove recommendations to help you get started."
+        } else {
         gloveMessage = "As a first baseman, trappers are preferred as it allows you to pick any ball that your infielders throw your way."
+        }
     } 
 
     if (userLevel === "beginner" || userLevel === "house league") {
