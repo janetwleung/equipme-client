@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
 
 .carousel {
     display: flex;
@@ -7,7 +8,17 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 6rem 0;
+    padding: 3rem 0;
+
+    @include tablet {
+        border: 1px solid $primary-text;
+        margin: 3rem 8rem;
+        padding: 0 0 2rem 0;
+    }
+
+    &__space {
+        height: 1rem;
+    }
 
     &__title {
         font-size: 2rem;
@@ -22,8 +33,10 @@
 
         @include tablet {
             display: grid;
+            // justify-content: center;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
+            // width: 75%;
+            gap: 3rem;
         }
         
         @include desktop {

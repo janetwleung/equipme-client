@@ -27,10 +27,7 @@ function Form() {
     }, [sportId]);
 
     const handleSubmit = (event) => {
-        // setAgeError(false);
-        // setPositionError(false);
-        // setHeightError(false);
-        // setLevelError(false);
+
         event.preventDefault();
         setErrorMessages(false);
 
@@ -38,16 +35,6 @@ function Form() {
         const position = event.target.position.value;
         const height = event.target.height.value;
         const level = event.target.level.value;
-
-        // if (isNaN(age) || age > 100 || age === "") {
-        //     return setAgeError(true);
-        // } if (!position) {
-        //     return setPositionError(true);
-        // } if (!height) {
-        //     return setHeightError(true);
-        // } if(!level) {
-        //     return setLevelError(true);
-        // }
 
         const userInformation = {
             age: age,

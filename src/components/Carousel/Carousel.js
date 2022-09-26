@@ -4,6 +4,9 @@ import SportCard from "../SportCard/SportCard";
 function Carousel({ sports }) {
     return (
         <div className="carousel" id="carousel">
+            <div className="carousel__space">
+
+            </div>
             <h3 className="carousel__title">Choose a sport</h3>
             <ul className="carousel__list">
             {sports.map(sport => (

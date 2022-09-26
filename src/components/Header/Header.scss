@@ -25,6 +25,7 @@
 
     &__title-link {
         @include link-reset;
+        cursor:pointer;
 
         @include tablet {
             margin: 0 2rem;
