@@ -7,7 +7,7 @@ function ProductCard({ brand, name, price, id, category, image }) {
             <article className="product-card">
                 <img className="product-card__image" src={image} alt={`${brand} ${name}`} />
                 <div className="product-card__product-details">
-                    <span className="product-card__name">{`${brand} ${name}`}</span>
+                    <span className="product-card__name">{`${brand} ${name.toLowerCase()}`}</span>
                     <span className="product-card__price">{price}</span>
                 </div>
             </article>

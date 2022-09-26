@@ -92,24 +92,57 @@ function ProductsPage() {
         fetchBatsList()
             .then((batsResponse) => {
                 const batsData = batsResponse.data
-                if (newRequest.age > 8) {
-                    if (newRequest.level === "pro" || newRequest.level === "rep") {
-                        const filteredBats = batsData.filter(bat => (parseFloat(bat.price.slice(1, -1))) > 300);
-                        setBats(filteredBats);
-                    }
-                    if (newRequest.level === "beginner" || newRequest.level === "houseLeague" || newRequest.level === "select") {
-                        // const filteredBats = batsData.filter(bat => (parseFloat(bat.price.slice(1, -1))) < 300);
-                        // setBats(filteredBats);
-                        const sortedProducts = batsData.sort((a, b) => {
+                if (newRequest.age >= 8 && newRequest.age <= 9) {
+                    const filteredBats = batsData.filter(bat => (bat.length).includes("26") || (bat.length).includes("27") || (bat.length).includes("28") || (bat.length).includes("29"));
+                    setBats(filteredBats);
+                    console.log(filteredBats)
+                    // if (newRequest.level === "pro" || newRequest.level === "rep") {
+                    //     const filteredBats = batsData.filter(bat => (parseFloat(bat.price.slice(1, -1))) > 300);
+                    //     setBats(filteredBats);
+                    // }
+                    // if (newRequest.level === "beginner" || newRequest.level === "houseLeague" || newRequest.level === "select") {
+                    //     const sortedProducts = batsData.sort((a, b) => {
+                    //         const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                    //         const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                    //         return aPrice - bPrice;
+                    //     })
+                    //     const filteredBats = sortedProducts.filter(bat => (parseFloat(bat.price.slice(1, -1))) > 50)
+                    //     setBats(filteredBats);
+                    // }
+                } else if (newRequest.age >= 10 && newRequest.age <= 13) {
+                    const filteredBats = batsData.filter(bat => (bat.length).includes("28") || (bat.length).includes("29") || (bat.length).includes("30") || (bat.length).includes("31") || (bat.length).includes("32"));
+                    if (newRequest.level === "beginner" || newRequest.level === "house league" || newRequest.level === "select") {
+                        const sortedProducts = filteredBats.sort((a, b) => {
+                                    const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                                    const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                                    return aPrice - bPrice});
+                                    setBats(sortedProducts)
+                    } else {
+                        const sortedProducts = filteredBats.sort((a, b) => {
                             const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
                             const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
-                            return aPrice - bPrice;
-                        })
-                        const filteredBats = sortedProducts.filter(bat => (parseFloat(bat.price.slice(1, -1))) > 50)
-                        setBats(filteredBats);
-                    }
+                            return bPrice - aPrice});
+                            setBats(sortedProducts);
+                    } 
+                } else if (newRequest.age >= 14) {
+                    const filteredBats = batsData.filter(bat => (bat.length).includes("31") || (bat.length).includes("32") || (bat.length).includes("33") || (bat.length).includes("34"));
+                    if (newRequest.level === "beginner" || newRequest.level === "house league" || newRequest.level === "select") {
+                        const sortedProducts = filteredBats.sort((a, b) => {
+                                    const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                                    const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                                    return aPrice - bPrice});
+                                    setBats(sortedProducts)
+                    } else {
+                        const sortedProducts = filteredBats.sort((a, b) => {
+                            const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
+                            const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
+                            return bPrice - aPrice});
+                            console.log(sortedProducts)
+                            sortedProducts.splice(7, 4)
+                            setBats(sortedProducts);
+                    } 
                 } else {
-                    const filteredBats = batsData.filter(bat => bat.age === "5, 6, 7, 8")
+                    const filteredBats = batsData.filter(bat => (bat.length).includes("24") || (bat.length).includes("25") || (bat.length).includes("26"));
                     setBats(filteredBats);
                 }
             })

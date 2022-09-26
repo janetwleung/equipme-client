@@ -41,9 +41,11 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        text-transform: capitalize;
     }
 
     &__price {
         display: flex;
+        font-weight: 600;
     }
 }

@@ -62,6 +62,7 @@
 
     &__name {
         font-size: 1.5rem;
+        text-transform: capitalize;
 
         @include tablet {
             margin: 0 0 2rem 0;

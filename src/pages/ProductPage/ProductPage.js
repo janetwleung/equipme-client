@@ -57,7 +57,7 @@ function ProductPage() {
                     <img className="product-page__image" src={product.image1} alt="glove" />
                 </div>
                 <div className="product-page__details">
-                    <h1 className="product-page__name">{product.name}</h1>
+                    <h1 className="product-page__name">{(product.name).toLowerCase()}</h1>
                     <p className="product-page__description">{product.description}</p>
                     {product.length && <span className="product-page__length">Lengths Available: {product.length}</span>}
                     <span className="product-page__price">{product.price}</span>
