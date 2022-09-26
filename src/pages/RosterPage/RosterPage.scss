@@ -16,4 +16,12 @@
         }
     }
 
+    &__athletes-list {
+        @include ul-reset;
+        display: flex;
+        flex-direction: column;
+        justify-items:  center;
+        align-items: center;
+    }
+
 }

@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.athlete-card {
+    width: 23rem;
+
+    &__image-container {
+        height: 15rem;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 25rem;
+    }
+}
