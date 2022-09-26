@@ -6,6 +6,7 @@ import Form from './components/Form/Form';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import ProsPage from './pages/ProsPage/ProsPage';
+import RosterPage from './pages/RosterPage/RosterPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
      <Route path="/" element={<Main />} />
      <Route path="/form/:sportId" element={<Form />} />
      <Route path="/what-the-pros-wear" element={<ProsPage />} />
+     <Route path="/pros/Softball" element={<RosterPage />} />
      <Route path="/products/gloves" element={<ProductsPage />} />
      <Route path="/products/gloves/:productId" element={<ProductPage />} />
      <Route path="/products/bats" element={<ProductsPage />} />
