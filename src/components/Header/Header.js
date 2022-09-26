@@ -18,7 +18,7 @@ function Header() {
                             <span></span>
                             <ul className="mobile-header__list" id="menu">
                                 <li className="mobile-header__list-item">
-                                    <NavLink to="/pros" className="mobile-header__list-item-link">What The Pros Wear</NavLink>
+                                    <NavLink to="/what-the-pros-wear" className="mobile-header__list-item-link">What The Pros Wear</NavLink>
                                 </li>
                                 <li className="mobile-header__list-item">
                                     <NavLink to="/used" className="mobile-header__list-item-link">Shop Used</NavLink>
@@ -42,7 +42,7 @@ function Header() {
                     <ul className="header__nav">
                         <li className="header__nav-item">
                             <NavLink
-                                to="/pros"
+                                to="/what-the-pros-wear"
                                 className={({ isActive }) =>
                                     "header__nav-item-link" + (isActive ? " header__nav-item-link--active" : "")}
                             >
