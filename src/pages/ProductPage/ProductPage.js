@@ -59,6 +59,7 @@ function ProductPage() {
                 <div className="product-page__details">
                     <h1 className="product-page__name">{product.name}</h1>
                     <p className="product-page__description">{product.description}</p>
+                    {product.length && <span className="product-page__length">Lengths Available: {product.length}</span>}
                     <span className="product-page__price">{product.price}</span>
                     <div className="product-page__button">
                         <a href={product.whereToBuy} target="_blank" rel="noreferrer" className="product-page__button-text">Buy Now</a>
