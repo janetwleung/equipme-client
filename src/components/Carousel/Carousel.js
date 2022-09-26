@@ -12,10 +12,11 @@ function Carousel({ sports }) {
             {sports.map(sport => (
                 <li key={sport.id}>
                     <SportCard
-                    id={sport.id}
                     sport={sport.sport}
                     image={sport.image}
                     hoverImage={sport.hoverImage}
+                    text="Find Equipment"
+                    link={`/form/${sport.id}`}
                 />
                 </li>
             ))}

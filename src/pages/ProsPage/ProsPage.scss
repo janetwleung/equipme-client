@@ -1,0 +1,56 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.pros-page {
+    &__title {
+        padding: 1rem;
+
+        @include tablet {
+            padding: 2rem 2rem;
+            @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: 2rem 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__subtitle {
+        padding: 0 1rem;
+
+        @include tablet {
+            padding: 0 2rem;
+        }
+    }
+
+    &__sports-list {
+        @include ul-reset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid $primary-text;
+        padding: 2rem 3rem;
+
+        @include tablet {
+            display: grid;
+            // justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            // width: 75%;
+            gap: 3rem;
+        }
+        
+        @include desktop {
+            gap: 2rem;
+        }
+
+    }
+    
+}
