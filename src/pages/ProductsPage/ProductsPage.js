@@ -276,12 +276,12 @@ function ProductsPage() {
             <div className="products__page-content">
                 <InfoBanner newRequest={newRequest} products={!sortedProductList ? productList[0].category : sortedProductList[0].category}/>
                 <div className="products__second-bar">
-                    <span>Showing Results {productList.length} of {productList.length}</span>
+                    <span className="products__result-number">Showing Results {productList.length} of {productList.length}</span>
                     <div className="products__sort-container">
                         <label className="products__sort-label" htmlFor="sort">Sort</label>
                         <select className="products__sort-input" id="sort" onChange={(e) => handleChange(e.target.value)}  >
                             {sortType.map(option => (
-                                <option value={option.value} key={option.id}>{option.text}</option>
+                                <option value={option.value} key={option.id} className="products__sort-option">{option.text}</option>
                             ))}
                         </select>
                     </div>

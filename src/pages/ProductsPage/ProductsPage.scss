@@ -99,7 +99,6 @@
 
     &__second-bar {
         display: flex;
-        color: grey;
         flex-direction: column;
         justify-content: space-between;
         padding: 0 1rem;
@@ -109,6 +108,11 @@
             align-items: center;
             padding: 0 0.25rem 0 1rem;
         }
+    }
+
+    &__result-number {
+        color: gray;
+        font-size: .875rem;
     }
 
     &__page-content {
@@ -133,6 +137,15 @@
         @include tablet {
             padding: .5rem 1rem;
         }
+    }
+
+    &__sort-label {
+        padding: 0 .5rem 0 0;
+        color: $primary-text;
+    }
+
+    &__sort-input {
+        font-family: inherit;
     }
 
     &__content {
