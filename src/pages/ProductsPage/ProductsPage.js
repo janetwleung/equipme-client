@@ -72,7 +72,7 @@ function ProductsPage() {
                         const filteredGloves = glovesData.filter(glove => (glove.position).includes("Infield"));
                         filteredGloves.splice(6, 1);
                         filteredGloves.splice(12,1);
-                        const findDPGloves = filteredGloves.filter(glove => (glove.description).includes("DP15") || (glove.description).includes("Pedroia"));
+                        const findDPGloves = filteredGloves.filter(glove => (glove.name).includes("DP15") || (glove.name).includes("SCDP15SS"));
                         filteredGloves.splice(2,2);
                         findDPGloves.forEach(DPGlove => filteredGloves.unshift(DPGlove));
                         setGloves(filteredGloves);
