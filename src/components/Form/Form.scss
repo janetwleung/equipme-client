@@ -7,17 +7,19 @@
     justify-content: center;
     
     &__container {
-        background-color: rgb(0, 0, 0, 0.1);
+        background-color: #ececec;
+        border-radius: .625rem;
         padding: 1rem;
         margin-top: 1rem;
+        width: 80%;
 
         @include tablet {
-            padding: 1rem 6rem;
+            width: 60%;
             margin-top: 2rem;
         }
 
         @include desktop {
-            padding: 1rem 10rem;
+            width: 50%;
         }
     }
 
