@@ -1,13 +1,13 @@
 import "./EquipmentModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg";
 
-function EquipmentModal({ item, setModal }) {
+function EquipmentModal({ item, setModal, offsetX, offsetY }) {
     const handleClick = () => {
         setModal(false);
     }
     console.log(item)
     return (
-        <div className="equipment-card">
+        <div className="equipment-card" style={{ top: `${offsetY}px`, right: `${offsetX}px` }}>
             <div className="equipment-card__close-container" onClick={handleClick}>
                 <img className="equipment-card__close" src={closeIcon} alt="Close icon"/>
             </div>

@@ -20,6 +20,14 @@
         }
     }
 
+    &__name {
+        margin: 0;
+    }
+
+    &__message {
+        padding: 0 0 1rem 0;
+    }
+
     &__back-container {
         display: flex;
         align-items: center;

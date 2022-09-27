@@ -13,11 +13,9 @@
     top: calc(100vh / 2 - 5rem);
     left: calc(100vw / 2 - (calc(100vw - 5rem))/2);
 
-
-    
-
     @include tablet {
         width: 25rem;
+        left: calc(100vw / 2 - 25rem/2)
     }
 
     &__close-container {
@@ -27,9 +25,9 @@
         padding: .5rem;
     }
 
-
     &__close {
         width: 25px;
+        cursor: pointer;
     }
 
     &__details {

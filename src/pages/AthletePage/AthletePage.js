@@ -40,7 +40,7 @@ function AthletePage() {
             <div className="athlete__content">
                 <h2 className="athlete__name">{athlete.name}</h2>
                 <p className="athlete__description">{athlete.description}</p>
-                <span>Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
+                <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
                 <ProAthlete 
                     name={athlete.name}
                     defenseImage={athlete.image1}
