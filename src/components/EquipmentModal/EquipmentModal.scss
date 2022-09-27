@@ -15,7 +15,8 @@
 
     @include tablet {
         width: 25rem;
-        left: calc(100vw / 2 - 25rem/2)
+        top: 11rem;
+        left: calc(50% - 12.5rem);
     }
 
     &__close-container {

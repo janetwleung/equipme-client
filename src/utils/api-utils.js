@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiURL = "https://equipmeserver.herokuapp.com/";
+const apiURL = "https://equipmeserver.herokuapp.com";
 
 
 // GET Gloves List
