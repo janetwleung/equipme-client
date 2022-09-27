@@ -5,6 +5,7 @@ import InfoBanner from "../../components/InfoBanner/InfoBanner";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import SortColumn from "../../components/SortColumn/SortColumn";
 import "./ProductsPage.scss";
+import Loading from "../../components/Loading/Loading";
 
 function ProductsPage() {
     const location = useLocation();
@@ -108,13 +109,33 @@ function ProductsPage() {
                         setGloves(sortedGloves);
                         setProductList(sortedGloves);
                     } else {
-                        const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
-                        filteredGloves.splice(6, 1);
-                        filteredGloves.splice(12, 1);
-                        const moveGlove = filteredGloves.shift();
-                        filteredGloves.push(moveGlove);
-                        setGloves(filteredGloves);
-                        setProductList(filteredGloves);
+                        if (newRequest.position === "outfield") {
+                            const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                            filteredGloves.splice(6, 1);
+                            filteredGloves.splice(12, 1);
+                            const moveGlove = filteredGloves.pop();
+                            filteredGloves.unshift(moveGlove);
+                            setGloves(filteredGloves);
+                            setProductList(filteredGloves);
+                        } if (newRequest.position === "infield") {
+                            const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                            filteredGloves.splice(6, 1);
+                            filteredGloves.splice(12, 1);
+                            filteredGloves.pop();
+                            const moveGlove = filteredGloves.pop();
+                            filteredGloves.unshift(moveGlove);
+                            setGloves(filteredGloves);
+                            setProductList(filteredGloves);
+                        } else {
+                            const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
+                            filteredGloves.splice(6, 1);
+                            filteredGloves.splice(12, 1);
+                            // filteredGloves.pop();
+                            // const moveGlove = filteredGloves.pop();
+                            // filteredGloves.unshift(moveGlove);
+                            setGloves(filteredGloves);
+                            setProductList(filteredGloves);
+                        }
                     }
                 }
                 setSortColumn(
@@ -316,7 +337,7 @@ function ProductsPage() {
     }
 
     if (!gloves || !bats || !cleats || !sortColumn || !sortType || !productList) {
-        return <span>Loading...</span>
+        return <Loading />
     };
 
     return (

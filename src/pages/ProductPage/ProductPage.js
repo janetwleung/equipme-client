@@ -3,6 +3,7 @@ import backArrow from "../../assets/icons/arrow-back.png"
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchSpecificGlove, fetchSpecificBat, fetchSpecificCleat } from "../../utils/api-utils";
+import Loading from "../../components/Loading/Loading";
 
 function ProductPage() {
     let { productId } = useParams();
@@ -43,7 +44,7 @@ function ProductPage() {
     }, [productId, category]);
 
     if (!product) {
-        return <span>loading...</span>
+        return <Loading />
     }
 
     return (

@@ -5,6 +5,7 @@ import { fetchSpecificAthlete} from "../../utils/api-utils";
 import circleIcon from "../../assets/icons/double-circle.png";
 import "./AthletePage.scss";
 import backArrow from "../../assets/icons/arrow-back.png"
+import Loading from "../../components/Loading/Loading";
 
 function AthletePage() {
     let { athleteId } = useParams();
@@ -28,7 +29,7 @@ function AthletePage() {
     }
 
     if (!athlete) {
-        return <span>Loading...</span>
+        return <Loading />
     }
 
     return (
