@@ -60,10 +60,20 @@ function Header() {
                             </NavLink>
                         </li>
                         <li className="header__nav-item">
-                            <CTA isButton={false} text="Sign Up" link="/signup" />
+                            <CTA 
+                                isButton={false} 
+                                text="Sign Up"
+                                // link="/signup" 
+                                link="#" />
                         </li>
                         <li className="header__nav-item">
-                            <CTA isButton={false} text="Login" type="secondary" link="/login" />
+                            <CTA 
+                                isButton={false} 
+                                text="Login" 
+                                type="secondary" 
+                                // link="/login" 
+                                link="#"
+                            />
                         </li>
                     </ul>
                 </div>
