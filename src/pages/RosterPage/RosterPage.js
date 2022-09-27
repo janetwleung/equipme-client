@@ -35,7 +35,7 @@ function RosterPage() {
             <div>
                 <ul className="roster-page__athletes-list">
                     {athletes.map(athlete => (
-                        <li key={athlete.id} className="roster-page__athetle-list-item">
+                        <li key={athlete.id} className="roster-page__athlete-list-item">
                             <AthleteCard 
                                 athletes={athlete}
                                 id={athlete.id}
