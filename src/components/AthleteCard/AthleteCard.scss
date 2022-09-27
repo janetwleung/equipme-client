@@ -4,13 +4,55 @@
 
 .athlete-card {
     width: 23rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 0 0 .75rem .75rem;
+
+    @include tablet {
+        width: auto;
+    }
+
+    &__link {
+        @include link-reset;
+        cursor: pointer;
+    }
 
     &__image-container {
         height: 15rem;
         overflow: hidden;
+        border-radius: .75rem .75rem 0 0;
+
+        @include tablet {
+            height: 17.5vw;
+            max-height: 12rem;
+        }
     }
 
     &__image {
-        width: 25rem;
+        width: 100%;
+    }
+
+    &__details {
+        padding: .75rem .5rem;
+        background-color: #efefef;
+        border-radius: 0 0 .75rem .75rem;
+    }
+
+    &__name-number {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__number {
+        font-size: 1.25rem;
+    }
+
+    &__name {
+        font-size: 1.25rem;
+    }
+
+    &__position {
+        text-transform: uppercase;
+        margin-top: .5rem;
+        @include link-reset;
     }
 }

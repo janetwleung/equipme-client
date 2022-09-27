@@ -30,7 +30,8 @@ function RosterPage() {
 
     return (
         <main className="roster-page">
-            <h1 className="roster-page__title">Team Canada Softball</h1>
+            <h2 className="roster-page__title">Pro Softball Players</h2>
+            <h6 className="roster-page__subtitle">Click an athlete profile to see what equipment they like to use</h6>
             <div>
                 <ul className="roster-page__athletes-list">
                     {athletes.map(athlete => (
@@ -40,11 +41,8 @@ function RosterPage() {
                                 id={athlete.id}
                                 name={athlete.name}
                                 image={athlete.image}
-                                image1={athlete.image1}
-                                image2={athlete.image2}
-                                glove={athlete.glove_id}
-                                bat={athlete.bat_id}
-                                cleats={athlete.cleat_id}
+                                position={athlete.position}
+                                number={athlete.number}
                             />
                         </li>
                     ))}

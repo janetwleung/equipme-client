@@ -3,16 +3,36 @@
 @use "../../styles/partials/colors" as *;
 
 .roster-page {
-    &__title {
-        padding: 1rem;
+
+
+    &__title,
+    &__subtitle {
+        padding: 0 1rem;
 
         @include tablet {
-            padding: 2rem 2rem;
+            padding: 0 2rem;
             @include desktop-margin-auto;
         }
 
         @include desktop {
-            padding: 2rem 0;
+            padding: 0;
+        }
+    }
+
+    &__title {
+        padding: 1rem 0 0 1rem;
+        @include tablet {
+            padding: 1rem 0 .25rem 2rem;
+        }
+
+        @include desktop {
+            padding: 1rem 0;
+        }
+    }
+
+    &__subtitle {
+        @include desktop {
+            padding: 0 0 1rem 0;
         }
     }
 
@@ -22,6 +42,24 @@
         flex-direction: column;
         justify-items:  center;
         align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        
+        @include tablet {
+            padding: 2rem;
+            display: grid;
+            gap: 1.5rem 2rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            @include desktop-margin-auto;
+        };
+
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem 2rem;
+            padding: 0
+        };
     }
 
+
+   
 }
