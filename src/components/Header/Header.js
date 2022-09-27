@@ -51,9 +51,10 @@ function Header() {
                         </li>
                         <li className="header__nav-item">
                             <NavLink
-                                to="/used"
-                                className={({ isActive }) =>
-                                    "header__nav-item-link" + (isActive ? " header__nav-item-link--active" : "")}
+                                to="#"
+                                className="header__nav-item-link"
+                                // className={({ isActive }) =>
+                                //     "header__nav-item-link" + (isActive ? " header__nav-item-link--active" : "")}
                             >
                                 Shop Used
                             </NavLink>
