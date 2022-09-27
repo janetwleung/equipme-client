@@ -20,39 +20,6 @@ function AthletePage() {
             })
     }, [athleteId]);
 
-    // useEffect(() => {
-    //     fetchSpecificGlove(!athlete.gloveId? "307a1f60-c2a2-4ed5-bcf0-0666fc7152ad" : athlete.gloveId)
-    //         .then(gloveResponse => {
-    //             console.log(gloveResponse.data);
-    //         })
-    //         .catch(error => {
-    //             setIsError(true);
-    //             console.log("For devs: There has been an error fetching the data")
-    //         })
-    // },[athleteId])
-
-    // useEffect(() => {
-    //     fetchSpecificBat(!athlete.batId ? "db7bfe71-2375-4223-9007-dc390243dfd4" : athlete.batId)
-    //         .then(batResponse => {
-    //             console.log(batResponse.data)
-    //         })
-    //         .catch(error => {
-    //             setIsError(true);
-    //             console.log("For devs: There has been an error fetching the data")
-    //         })
-    // }, [athleteId])
-
-    // useEffect(() => {
-    //     fetchSpecificCleat(!athlete.cleatId ? "e4a0605b-a49d-4432-865a-d09acf3805b6" : athlete.cleatId)
-    //         .then(cleatResponse => {
-    //             console.log(cleatResponse.data)
-    //         })
-    //         .catch(error => {
-    //             setIsError(true);
-    //             console.log("For devs: There has been an error fetching the data")
-    //         })
-    // }, [athleteId])
-
     if (isError) {
         return <span>There has been an error fetching the data</span>
     }
@@ -73,6 +40,10 @@ function AthletePage() {
                     gloveId={athlete.gloveId}
                     baIdt={athlete.batId}
                     cleatId={athlete.cleatId}
+                    gloveOffsetX={athlete.gloveOffsetX}
+                    gloveOffsetY={athlete.gloveOffsetY}
+                    cleatOffsetX={athlete.cleatOffsetX}
+                    cleatOffsetY={athlete.cleatOffsetY}
                 />
             </div>
         </main>

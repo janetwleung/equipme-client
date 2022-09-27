@@ -1,0 +1,26 @@
+.athlete-image {
+    display: flex;
+    justify-content: center;
+    
+     &__image-container {
+        display:flex;
+        justify-content: center;
+        position: relative;
+        width: 20rem;
+    }
+
+    &__image {
+        width: 20rem;
+        display: flex;
+    }
+
+    &__button {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+}
