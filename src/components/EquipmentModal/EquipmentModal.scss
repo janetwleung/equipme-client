@@ -1,0 +1,72 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.equipment-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 5rem);
+    height: 25rem;
+    border: 1px solid $primary-text;
+    background-color: $primary-global;
+    position: absolute;
+    top: calc(100vh / 2 - 5rem);
+    left: calc(100vw / 2 - (calc(100vw - 5rem))/2);
+
+
+    
+
+    @include tablet {
+        width: 25rem;
+    }
+
+    &__close-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: .5rem;
+    }
+
+
+    &__close {
+        width: 25px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &__name {
+        text-transform: uppercase;
+    }
+    &__image {
+        width: 12rem;
+    }
+
+    &__button {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button-text {
+        width: 100%;
+        border: none;
+        text-align: center;
+        border-radius: 20px;
+        height: 2.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inherit;
+        background-color: $primary-button;
+        color: $primary-global;
+        padding: 0 1rem;
+        width: fit-content;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

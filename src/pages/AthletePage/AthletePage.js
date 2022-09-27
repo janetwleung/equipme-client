@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProAthlete from "../../components/ProAthlete/ProAthlete";
-import { fetchSpecificAthlete, fetchSpecificBat, fetchSpecificGlove, fetchSpecificCleat } from "../../utils/api-utils";
+import { fetchSpecificAthlete} from "../../utils/api-utils";
+import circleIcon from "../../assets/icons/double-circle.png";
 import "./AthletePage.scss";
 import backArrow from "../../assets/icons/arrow-back.png"
 
@@ -39,6 +40,7 @@ function AthletePage() {
             <div className="athlete__content">
                 <h2 className="athlete__name">{athlete.name}</h2>
                 <p className="athlete__description">{athlete.description}</p>
+                <span>Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
                 <ProAthlete 
                     name={athlete.name}
                     defenseImage={athlete.image1}

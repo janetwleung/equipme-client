@@ -2,15 +2,28 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/colors" as *;
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
 .athlete-image {
-    display: flex;
-    justify-content: center;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
     
      &__image-container {
         display:flex;
         justify-content: center;
         position: relative;
         width: 20rem;
+        padding-bottom: 6rem;
     }
 
     &__image {
@@ -22,6 +35,8 @@
         width: 20px;
         height: 20px;
         position: absolute;
+        animation: pulse 1s ease-in-out infinite alternate;
+        cursor: pointer;
 
         &:hover {
             scale: 1.05;
