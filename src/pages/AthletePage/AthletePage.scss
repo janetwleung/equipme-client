@@ -1,0 +1,15 @@
+.athlete {
+    &__content {
+        padding: 0 1rem;
+    }
+
+    &__image-container {
+        display:flex;
+        justify-content: center;
+    }
+
+    &__image {
+        width: 20rem;
+        display: flex;
+    }
+}

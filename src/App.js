@@ -7,6 +7,7 @@ import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import ProsPage from './pages/ProsPage/ProsPage';
 import RosterPage from './pages/RosterPage/RosterPage';
+import AthletePage from './pages/AthletePage/AthletePage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
      <Route path="/form/:sportId" element={<Form />} />
      <Route path="/what-the-pros-wear" element={<ProsPage />} />
      <Route path="/pros/Softball" element={<RosterPage />} />
+     <Route path="/pros/Softball/:athleteId" element={<AthletePage />} />
      <Route path="/products/gloves" element={<ProductsPage />} />
      <Route path="/products/gloves/:productId" element={<ProductPage />} />
      <Route path="/products/bats" element={<ProductsPage />} />

@@ -32,7 +32,7 @@ function RosterPage() {
         <main className="roster-page">
             <h2 className="roster-page__title">Pro Softball Players</h2>
             <h6 className="roster-page__subtitle">Click an athlete profile to see what equipment they like to use</h6>
-            <div>
+            <div className="roster-page__content">
                 <ul className="roster-page__athletes-list">
                     {athletes.map(athlete => (
                         <li key={athlete.id} className="roster-page__athlete-list-item">
