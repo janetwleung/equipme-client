@@ -9,8 +9,6 @@ import "./ProductsPage.scss";
 function ProductsPage() {
     const location = useLocation();
     const newRequest = location.state.userInformation;
-    console.log(newRequest)
-
     const [productList, setProductList] = useState(null);
     const [sortedProductList, setSortedProductList] = useState(null);
     const [sortColumn, setSortColumn] = useState(null);
@@ -182,7 +180,6 @@ function ProductsPage() {
                             const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
                             const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
                             return bPrice - aPrice});
-                            console.log(sortedProducts);
                             sortedProducts.splice(7, 4);
                             setBats(sortedProducts);
                     } 
@@ -321,8 +318,6 @@ function ProductsPage() {
     if (!gloves || !bats || !cleats || !sortColumn || !sortType || !productList) {
         return <span>Loading...</span>
     };
-
-    console.log(productList)
 
     return (
         <main className="products">
