@@ -71,13 +71,14 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
                     style={{ top: `${gloveOffsetY}px`, left: `${gloveOffsetX}px` }}
                     onClick={handleGloveClick}
                 />
+                {!cleatOffsetX ? "" : 
                 <img 
                     className="athlete-image__cleat-button athlete-image__button" 
                     src={circleButton} 
                     alt="circle button" 
                     style={{ top: `${cleatOffsetY}px`, left: `${cleatOffsetX}px` }}
                     onClick={handleCleatClick}
-                />
+                />}
             </div>
         </div>
     );

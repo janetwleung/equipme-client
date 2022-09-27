@@ -1,5 +1,53 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
 .athlete {
+    @include desktop-margin-auto;
     &__content {
         padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            padding: 0 2rem;
+            @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__back-container {
+        display: flex;
+        align-items: center;
+        width: 2rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include tablet {
+            padding: .5rem 2rem 0 2rem;
+            // @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: .5rem 0 .5rem 0;
+        }
+    }
+
+    &__back {
+        padding: 1rem 1rem 1rem 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.125rem;
+    }
+    
+    &__description {
+        padding: 0 0 1rem 0;
     }
 }

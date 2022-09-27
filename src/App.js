@@ -17,8 +17,8 @@ function App() {
      <Route path="/" element={<Main />} />
      <Route path="/form/:sportId" element={<Form />} />
      <Route path="/what-the-pros-wear" element={<ProsPage />} />
-     <Route path="/pros/Softball" element={<RosterPage />} />
-     <Route path="/pros/Softball/:athleteId" element={<AthletePage />} />
+     <Route path="/what-the-pros-wear/Softball" element={<RosterPage />} />
+     <Route path="/what-the-pros-wear/Softball/:athleteId" element={<AthletePage />} />
      <Route path="/products/gloves" element={<ProductsPage />} />
      <Route path="/products/gloves/:productId" element={<ProductPage />} />
      <Route path="/products/bats" element={<ProductsPage />} />

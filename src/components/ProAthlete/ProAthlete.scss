@@ -1,3 +1,7 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
 .athlete-image {
     display: flex;
     justify-content: center;

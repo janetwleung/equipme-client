@@ -5,7 +5,7 @@ function AthleteCard({ id, name, image, position, number }) {
 
     console.log(name);
     return (
-        <Link to={`/pros/Softball/${id}`} className="athlete-card__link">
+        <Link to={`/what-the-pros-wear/Softball/${id}`} className="athlete-card__link">
             <article className="athlete-card">
                 <div className="athlete-card__image-container">
                     <img className="athlete-card__image" src={image} alt={name} />

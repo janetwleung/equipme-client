@@ -38,7 +38,7 @@ function ProsPage() {
                             sport={sport.sport}
                             image={sport.image}
                             text="Roster"
-                            link={`/pros/${sport.sport}`}
+                            link={`/what-the-pros-wear/${sport.sport}`}
                             />
                         </li>
                     ))}
