@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+.footer {
+    height: 8rem;
+    background-color: $primary-text;
+
+    &__content {
+        padding: 1rem;
+        height: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            padding: 1rem 2rem;
+            @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: 1rem 0;
+        }
+    }
+
+    &__logo-link {
+        @include link-reset;
+        color: $primary-global;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__logo {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 1.5rem;
+    }
+
+    &__copyright {
+        color: $primary-global;
+        display: flex;
+        justify-content: center;
+    }
+}
