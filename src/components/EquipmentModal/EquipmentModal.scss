@@ -9,13 +9,14 @@
     height: 25rem;
     border: 1px solid $primary-text;
     background-color: $primary-global;
+    opacity: 0.95;
     position: absolute;
     top: calc(100vh / 2 - 5rem);
     left: calc(100vw / 2 - (calc(100vw - 5rem))/2);
 
     @include tablet {
         width: 25rem;
-        top: 11rem;
+        top: 2.5rem;
         left: calc(50% - 12.5rem);
     }
 
@@ -40,6 +41,7 @@
 
     &__name {
         text-transform: uppercase;
+        font-weight: 600;
     }
     &__image {
         width: 12rem;

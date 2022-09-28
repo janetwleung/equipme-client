@@ -39,9 +39,15 @@ function AthletePage() {
                 <span className="athlete__back">Back</span>
             </div>
             <div className="athlete__content">
-                <h2 className="athlete__name">{athlete.name}</h2>
-                <p className="athlete__description">{athlete.description}</p>
-                <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
+                <div className="athlete__details">
+                    <h2 className="athlete__name">{athlete.name}</h2>
+                    <span className="athlete__position">{athlete.position}</span>
+                    <div className="athlete__description-container">
+                        <p className="athlete__description">{athlete.description}</p>
+                    </div>
+                    <span className="athlete__number">{athlete.number}</span>
+                    <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
+                </div>
                 <ProAthlete 
                     name={athlete.name}
                     defenseImage={athlete.image1}

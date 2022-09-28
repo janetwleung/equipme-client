@@ -9,11 +9,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    
 
         @include tablet {
-            padding: 0 2rem;
+            padding: 0;
+            margin: 0 ;
             @include desktop-margin-auto;
             position: relative;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            background-color: $tertiary-background;
+            width: 75vw;
+            max-width: 53rem;
         }
 
         @include desktop {
@@ -21,12 +28,49 @@
         }
     }
 
+    &__details {
+        @include tablet {
+            padding: 1rem;
+            height: 100%;
+        }
+    }
+
     &__name {
         margin: 0;
+
+        @include tablet {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__description-container {
+        @include tablet {
+            background-color: $primary-global;
+            margin: 2rem 1rem;
+            padding: 1rem;
+        }
+    }
+
+    &__number {
+        display: none;
+
+        @include tablet {
+            display:inline-block;
+            font-size: 7rem;
+            position: absolute;
+            bottom: 0;
+            right: 2rem;
+            font-family: "Mexcellent", sans-serif;
+        }
+    }
+
+    &__position {
+        text-transform: uppercase;
     }
 
     &__message {
-        padding: 0 0 1rem 0;
+        padding: 0 0 5rem 0;
     }
 
     &__back-container {
@@ -57,6 +101,10 @@
     
     &__description {
         padding: 0 0 1rem 0;
+        
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &__circle {
