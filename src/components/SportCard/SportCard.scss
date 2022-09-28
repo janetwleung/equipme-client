@@ -6,7 +6,6 @@
     background-repeat: no-repeat;
     background-position: 50% 10%;
     background-size: 20rem;
-    // height: 27rem;
     height: 25rem;
     width: 18rem;
     box-shadow: 7px 15px 15px -3px rgba(0,0,0,0.3);
@@ -23,6 +22,8 @@
     @include desktop {
         height: 45vh;
         width: 30vh;
+        max-height: 27.6186rem;
+        max-width: 19.9497rem;
     }
 
     &:hover {
@@ -51,7 +52,7 @@
         }
 
         @include desktop {
-            margin: 0 0 3.5rem 2.25rem;
+            margin: 0 0 2rem 2.25rem;
         }
     }
 }
