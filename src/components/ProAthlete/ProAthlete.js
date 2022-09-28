@@ -83,8 +83,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
             </div>
             {gloveModal ? <EquipmentModal item={glove} setModal={setGloveModal}/> : ""}
             {cleatModal ? <EquipmentModal item={cleat} setModal={setCleatModal}/> : ""}
-            {batModal ? <EquipmentModal item={bat} setModal={setBatModal} /> : ""}
-            
+            {batModal ? <EquipmentModal item={bat} setModal={setBatModal}/> : ""}
         </div>
     );
 }
