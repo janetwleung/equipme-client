@@ -10,6 +10,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
     const [cleat, setCleat] = useState();
     const [gloveModal, setGloveModal] = useState(false);
     const [cleatModal, setCleatModal] = useState(false);
+    const [batModal, setBatModal] = useState(false);
     const [isError, setIsError] = useState();
 
     useEffect(() => {
@@ -21,7 +22,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
                 setIsError(true);
                 console.log("For devs: There has been an error fetching the data")
             })
-    },[])
+    },[gloveId])
 
     useEffect(() => {
         fetchSpecificBat(batId)
@@ -32,7 +33,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
                 setIsError(true);
                 console.log("For devs: There has been an error fetching the data")
             })
-    }, [])
+    }, [batId])
 
     useEffect(() => {
         fetchSpecificCleat(cleatId)
@@ -43,20 +44,13 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
                 setIsError(true);
                 console.log("For devs: There has been an error fetching the data")
             })
-    }, [])
-
-    const handleClick = (event) => {
-        console.log("X:" + event.nativeEvent.offsetX)
-        console.log("Y:" + event.nativeEvent.offsetY)
-    }
+    }, [cleatId])
 
     const handleGloveClick = (event) => {
-        console.log(glove)
         setGloveModal(true)
     }
 
     const handleCleatClick = (event) => {
-        console.log(cleat)
         setCleatModal(true)
     }
 
@@ -69,7 +63,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
         <div className="athlete-image">
             <div className="athlete-image__container">
                 <div className="athlete-image__image-container">
-                    <img className="athlete-image__image" src={defenseImage} alt={name} onClick={handleClick}/>
+                    <img className="athlete-image__image" src={defenseImage} alt={name}/>
                     <img 
                         className="athlete-image__glove-button athlete-image__button" 
                         src={circleButton} 
@@ -89,6 +83,7 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
             </div>
             {gloveModal ? <EquipmentModal item={glove} setModal={setGloveModal}/> : ""}
             {cleatModal ? <EquipmentModal item={cleat} setModal={setCleatModal}/> : ""}
+            {batModal ? <EquipmentModal item={bat} setModal={setBatModal} /> : ""}
             
         </div>
     );

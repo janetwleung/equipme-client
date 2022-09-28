@@ -5,7 +5,6 @@ function EquipmentModal({ item, setModal, offsetX, offsetY }) {
     const handleClick = () => {
         setModal(false);
     }
-    console.log(item)
     return (
         <div className="equipment-card" style={{ top: `${offsetY}px`, right: `${offsetX}px` }}>
             <div className="equipment-card__close-container" onClick={handleClick}>
