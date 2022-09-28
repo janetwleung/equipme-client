@@ -2,6 +2,7 @@ import "./ProsPage.scss";
 import { useEffect, useState } from "react";
 import { fetchSports } from "../../utils/api-utils";
 import SportCard from "../../components/SportCard/SportCard";
+import Loading from "../../components/Loading/Loading";
 
 function ProsPage() {
     const [sports, setSports] = useState([]);
@@ -23,7 +24,7 @@ function ProsPage() {
       }
     
       if (!sports) {
-        return <span>Loading...</span>
+        return <Loading />
       };
     return (
         <main className="pros-page">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./RosterPage.scss";
 import { fetchAthletes } from "../../utils/api-utils";
 import AthleteCard from "../../components/AthleteCard/AthleteCard";
+import Loading from "../../components/Loading/Loading";
 
 function RosterPage() {
     const [athletes, setAthletes] = useState(null);
@@ -23,10 +24,8 @@ function RosterPage() {
       }
     
       if (!athletes) {
-        return <span>Loading...</span>
+        return <Loading />
       };
-
-      console.log(athletes)
 
     return (
         <main className="roster-page">
