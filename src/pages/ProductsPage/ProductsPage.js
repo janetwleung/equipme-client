@@ -120,7 +120,6 @@ function ProductsPage() {
                             const filteredGloves = glovesData.filter(glove => ((glove.position).toLowerCase()).includes((newRequest.position).toLowerCase()))
                             filteredGloves.splice(6, 1);
                             filteredGloves.splice(12, 1);
-                            filteredGloves.pop();
                             const moveGlove = filteredGloves.pop();
                             filteredGloves.unshift(moveGlove);
                             setGloves(filteredGloves);
