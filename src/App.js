@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage/ProductPage';
 import ProsPage from './pages/ProsPage/ProsPage';
 import RosterPage from './pages/RosterPage/RosterPage';
 import AthletePage from './pages/AthletePage/AthletePage';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -21,10 +22,8 @@ function App() {
      <Route path="/what-the-pros-wear/Softball/:athleteId" element={<AthletePage />} />
      <Route path="/products" element={<ProductsPage />} />
      <Route path="/products/:productId" element={<ProductPage />} />
-     {/* <Route path="/products/bats" element={<ProductsPage />} /> */}
-     <Route path="/products:productId" element={<ProductPage />} />
-     {/* <Route path="/products/cleats" element={<ProductsPage />} /> */}
-     <Route path="/products/:productId" element={<ProductPage />} />
+     <Route path="*" element={<NotFound />}/>
+
     </Routes>
     </BrowserRouter>
   );
