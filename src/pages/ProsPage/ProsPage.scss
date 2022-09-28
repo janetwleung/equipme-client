@@ -27,6 +27,11 @@
 
         @include tablet {
             padding: 0 2rem;
+            @include desktop-margin-auto;
+        }
+
+        @include desktop {
+            padding: 0;
         }
     }
 
@@ -36,14 +41,11 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        border: 1px solid $primary-text;
         padding: 2rem 3rem;
 
         @include tablet {
             display: grid;
-            // justify-content: center;
             grid-template-columns: 1fr 1fr 1fr;
-            // width: 75%;
             gap: 3rem;
         }
         

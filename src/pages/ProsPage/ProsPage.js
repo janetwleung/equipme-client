@@ -29,8 +29,8 @@ function ProsPage() {
     return (
         <main className="pros-page">
             <h1 className="pros-page__title">Team Canada</h1>
+            <p className="pros-page__subtitle">Curious to know what the pros use? Click below to find out what equipment they use:</p>
             <div className="pros-page__content">
-                <p className="pros-page__subtitle">Curious to know what the pros use? Click below to find out what equipment they use:</p>
                 <ul className="pros-page__sports-list">
                     {sports.map(sport => (
                         <li key={sport.id} className="pros-page__sport-card">
