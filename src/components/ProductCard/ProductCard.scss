@@ -32,11 +32,10 @@
     &__product-details {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-between;
         gap: .5rem;
         padding: .5rem .5rem 0 .5rem;
-        height: 7.25rem;
+        height: 8.75rem;
         // background-color: #ebebeb;
         overflow: hidden;
     }
@@ -47,16 +46,12 @@
         align-content: center;
         text-transform: uppercase;
         padding-top: .25rem;
-        font-size: 1.1rem;
-
-        @include tablet {
-            font-size: .875rem;
-        }
+        font-weight: 600;
+        height: 4.25rem;
     }
 
     &__price {
         display: flex;
-        font-weight: 600;
         font-size: 1.125rem;
         padding-bottom: 1rem;
     }
