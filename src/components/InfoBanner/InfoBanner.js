@@ -65,6 +65,12 @@ function InfoBanner({ newRequest, products }) {
         ageBatMessage = `As a ${Number(userAge)} year old at your height, a 33" - 34" bat is recommended with a -10 to -8 drop. Depending on the type of hitter you are, you may go with a different bat weight. Power hitters may go for heavier bats while contact hitters may go with something lighter so that they have more control.`;
     }
 
+    if (userAge < 15) {
+        cleatMessage = `Players who are competing in an agegroup that is under the age of 15 must use molded cleats for competition. `
+    } else {
+        cleatMessage = `You have the freedom to choose what type of cleats to purchase. Metal cleats provide more grip when moving around on the field. TPU/Molded cleats are less harsh on the feet/body and would be more suited towards the older player.`
+    }
+
     return (
         <div className="banner">
             {products === "gloves" && <p>{gloveMessage}</p>} 
