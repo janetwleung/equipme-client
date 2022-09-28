@@ -169,6 +169,7 @@ function ProductsPage() {
                 const batsData = batsResponse.data
                 if (newRequest.age >= 8 && newRequest.age <= 9) {
                     const filteredBats = batsData.filter(bat => (bat.length).includes("26") || (bat.length).includes("27") || (bat.length).includes("28") || (bat.length).includes("29"));
+                    console.log(filteredBats)
                     setBats(filteredBats);
                 } else if (newRequest.age >= 10 && newRequest.age <= 13) {
                     const filteredBats = batsData.filter(bat => (bat.length).includes("28") || (bat.length).includes("29") || (bat.length).includes("30") || (bat.length).includes("31") || (bat.length).includes("32"));
@@ -216,7 +217,14 @@ function ProductsPage() {
     useEffect(() => {
         fetchCleatsList()
             .then((cleatsResponse) => {
-                setCleats(cleatsResponse.data);
+                const cleatsData = cleatsResponse.data;
+                if (newRequest.age < 15 && newRequest.age > 10) {
+                    const filteredCleats = cleatsData.filter(cleat => cleat.metal === "no");
+                    setCleats(filteredCleats);
+                } else {
+                    cleatsData.pop();
+                    setCleats(cleatsData);
+                }
             })
             .catch(() => {
                 setIsError(true);
