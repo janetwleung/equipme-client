@@ -22,7 +22,7 @@
     &__title {
         padding: 1rem 0 0 1rem;
         @include tablet {
-            padding: 1rem 0 .25rem 2rem;
+            padding: 1rem 0 1rem 2rem;
         }
 
         @include desktop {
@@ -32,6 +32,10 @@
 
     &__subtitle {
         border-bottom: 1px solid lightgray;
+        @include tablet {
+            padding: 0 2rem 1rem 2rem;
+            @include desktop-margin-auto;
+        }
         @include desktop {
             padding: 0 0 1rem 0;
         }
