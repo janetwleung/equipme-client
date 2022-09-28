@@ -152,7 +152,33 @@ function ProductsPage() {
                         id: 5
                     }]
                 )
-                setSortType(optionArray)
+                setSortType([
+                    {
+                        text: "Recommended",
+                        value: "recommended",
+                        id: 1
+                    },
+                    {
+                        text: "Price: Low to High",
+                        value: "priceLowHigh",
+                        id: 2
+                    },
+                    {
+                        text: "Price: High to Low",
+                        value: "priceHighLow",
+                        id: 3
+                    },
+                    {
+                        text: "Brand: A to Z",
+                        value: "brandAZ",
+                        id: 4
+                    },
+                    {
+                        text: "Brand: Z to A",
+                        value: "brandZA",
+                        id: 5
+                    }
+                ])
 
             })
             .catch(() => {
