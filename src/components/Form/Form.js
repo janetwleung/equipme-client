@@ -9,11 +9,7 @@ function Form() {
     const [form, setForm] = useState([]);
     const [isError, setIsError] = useState(false);
     const [errorMessages, setErrorMessages] = useState(false)
-    const [errorThing, setErrorThing] = useState(false);
-    const [ageError, setAgeError] = useState(false);
     const navigate = useNavigate();
-
-    const errorArray = []
 
     useEffect(() => {
         fetchSpecificSport(sportId)
@@ -45,7 +41,7 @@ function Form() {
 
         const errorMessagesArray = ["", "", "", ""];
 
-        Object.values(userInformation).forEach((value, index, key) => {
+        Object.values(userInformation).forEach((value, index) => {
             errorMessagesArray[index] = value ? "" : "This field is required";
         })
 

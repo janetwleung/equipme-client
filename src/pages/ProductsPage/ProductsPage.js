@@ -21,7 +21,6 @@ function ProductsPage() {
     const [gloveActive, setGloveActive] = useState(true);
     const [batActive, setBatActive] = useState(false);
     const [cleatActive, setCleatActive] = useState(false);
-    // const [selected, setSelected] = useState();
 
     const optionArray = [
         {
