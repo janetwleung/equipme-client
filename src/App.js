@@ -19,12 +19,12 @@ function App() {
      <Route path="/what-the-pros-wear" element={<ProsPage />} />
      <Route path="/what-the-pros-wear/Softball" element={<RosterPage />} />
      <Route path="/what-the-pros-wear/Softball/:athleteId" element={<AthletePage />} />
-     <Route path="/products/gloves" element={<ProductsPage />} />
-     <Route path="/products/gloves/:productId" element={<ProductPage />} />
-     <Route path="/products/bats" element={<ProductsPage />} />
-     <Route path="/products/bats/:productId" element={<ProductPage />} />
-     <Route path="/products/cleats" element={<ProductsPage />} />
-     <Route path="/products/cleats/:productId" element={<ProductPage />} />
+     <Route path="/products" element={<ProductsPage />} />
+     <Route path="/products/:productId" element={<ProductPage />} />
+     {/* <Route path="/products/bats" element={<ProductsPage />} /> */}
+     <Route path="/products:productId" element={<ProductPage />} />
+     {/* <Route path="/products/cleats" element={<ProductsPage />} /> */}
+     <Route path="/products/:productId" element={<ProductPage />} />
     </Routes>
     </BrowserRouter>
   );

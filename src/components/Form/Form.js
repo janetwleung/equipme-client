@@ -58,7 +58,7 @@ function Form() {
         setErrorMessages(errorMessagesArray);
         
         if (!errorPresent) {
-            navigate("/products/gloves",  {state: {userInformation}});
+            navigate("/products",  {state: {userInformation}});
         }
     }
 
