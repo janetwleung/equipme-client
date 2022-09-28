@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# EquipMe.
+![EquipMe](/src/assets/images/equipme-screens.png?raw=true "EquipMe")
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About the App
+EquipMe is a web application that assists users in the buying process when looking for new sports equipment. 
 
-In the project directory, you can run:
+With all the different options out there, it can seem overwhelming to know what items to purchase even for a seasoned veteran. EquipMe simplifies the buying process by recommending products curated exactly for the user, based on their input, in order to make them feel confident in their new equipment so that they can spend more of their time enjoying the sports they play.
 
-### `npm start`
+Features:
+- Initial softball focus 
+- Glove, bat, and cleats recommendation with sort functionality based on user's age, position, height, and playing level
+- Links to product page for purchase
+- What The Pros Wear page
+	- See what equipment the pros like to use 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+More features to come:
+- Save favourite items to your page
+- Filter functionality
+- New sports to be added (Hockey, Lacrosse)
+- Shop used page to connect with other users to resell equipment
+- Enhanced logic on recommending products
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Website: [EquipMe.](https://equipme.netlify.app/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tech Stack:
 
-### `npm run build`
+ <img src="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png" width="50px">&nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/css3-11-1175239.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" width="50px"> &nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/sass-226054.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/express-8-1175029.png" width="50px">&nbsp;&nbsp; <img src="https://cdn.iconscout.com/icon/free/png-256/mysql-20-1174940.png" width="50px"> &nbsp;&nbsp;<img src="https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png" width="50px"> 
+ 
+React, SASS Grid & Flexbox, Node, Express, MySQL & Knex, Git & Github
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ## Setup
+ - download or clone the repository
+    - `git clone <repo-ssh-link>`
+ - run `npm install`
+ - run `npm start` to start the app in your web browser 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
