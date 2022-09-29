@@ -86,7 +86,7 @@ function ProductsPage() {
                         setGloves(sortedGloves);
                         setProductList(sortedGloves);
                     } if (newRequest.position === "outfield") {
-                        const filteredGloves = glovesData.filter(glove => (glove.position).includes("Infield"));
+                        const filteredGloves = glovesData.filter(glove => (glove.position).includes("Outfield"));
                         const sortedGloves = filteredGloves.sort((a, b) => {
                             const aPrice = a.price[0] === '$' ? parseFloat(a.price.slice(1, -1)) : 0;
                             const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
