@@ -226,6 +226,7 @@ function ProductsPage() {
                             const bPrice = b.price[0] === '$' ? parseFloat(b.price.slice(1, -1)) : 0;
                             return bPrice - aPrice});
                             sortedProducts.splice(7, 4);
+                            sortedProducts.pop();
                             setBats(sortedProducts);
                     } 
                 } else {
