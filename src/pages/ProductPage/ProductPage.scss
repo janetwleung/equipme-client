@@ -4,7 +4,8 @@
 
 .product-page {
     @include desktop-margin-auto;
-
+    height: 80vh;
+    
     &__back-container {
         display: flex;
         align-items: center;
