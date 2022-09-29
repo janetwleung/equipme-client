@@ -4,6 +4,8 @@
 
 .athlete {
     @include desktop-margin-auto;
+    height: 80vh;
+    
     &__content {
         padding: 0 1rem;
         display: flex;
