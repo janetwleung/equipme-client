@@ -72,7 +72,8 @@ function AthletePage() {
                         name={athlete.name}
                         image={athlete.image1}
                         gloveId={athlete.gloveId}
-                        baIdt={athlete.batId}
+                        defenseActive={defenseActive}
+                        batId={athlete.batId}
                         cleatId={athlete.cleatId}
                         equipment1OffsetX={athlete.gloveOffsetX}
                         equipment1OffsetY={athlete.gloveOffsetY}
@@ -83,13 +84,13 @@ function AthletePage() {
                     <ProAthlete 
                         name={athlete.name}
                         image={athlete.image2}
-                        gloveId={athlete.gloveId}
-                        baIdt={athlete.batId}
+                        offenseActive={offenseActive}
+                        batId={athlete.batId}
                         cleatId={athlete.cleatId}
-                        gloveOffsetX={athlete.gloveOffsetX}
-                        gloveOffsetY={athlete.gloveOffsetY}
-                        cleatOffsetX={athlete.cleatOffsetX}
-                        cleatOffsetY={athlete.cleatOffsetY}
+                        equipment1OffsetX={athlete.batOffsetX}
+                        equipment1OffsetY={athlete.batOffsetY}
+                        equipment2OffsetX={athlete.cleatOffsetX}
+                        equipment2OffsetY={athlete.cleatOffsetY}
                     />}
                 </div>
                 

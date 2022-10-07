@@ -4,7 +4,7 @@ import { fetchSpecificBat, fetchSpecificGlove, fetchSpecificCleat } from "../../
 import circleButton from "../../assets/icons/double-circle.png";
 import EquipmentModal from "../EquipmentModal/EquipmentModal";
 
-function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, equipment1OffsetY, equipment2OffsetX, equipment2OffsetY }) {
+function ProAthlete({ name, image, gloveId, batId, cleatId, defenseActive, offenseActive, equipment1OffsetX, equipment1OffsetY, equipment2OffsetX, equipment2OffsetY }) {
     const [glove, setGlove] = useState();
     const [bat, setBat] = useState();
     const [cleat, setCleat] = useState();
@@ -48,7 +48,7 @@ function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, e
 
 
     const handleEquipment1Click = (event) => {
-        setGloveModal(true)
+        defenseActive ? setGloveModal(true) : setBatModal(true);
     }
 
     const handleEquipment2Click = (event) => {
