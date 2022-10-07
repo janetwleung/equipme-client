@@ -89,8 +89,8 @@ function AthletePage() {
                         cleatId={athlete.cleatId}
                         equipment1OffsetX={athlete.batOffsetX}
                         equipment1OffsetY={athlete.batOffsetY}
-                        equipment2OffsetX={athlete.cleatOffsetX}
-                        equipment2OffsetY={athlete.cleatOffsetY}
+                        equipment2OffsetX={athlete.cleat1OffsetX}
+                        equipment2OffsetY={athlete.cleat1OffsetY}
                     />}
                 </div>
                 
