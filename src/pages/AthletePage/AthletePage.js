@@ -32,6 +32,8 @@ function AthletePage() {
         return <Loading />
     }
 
+    const splitName = (athlete.name).split(" ");
+
     return (
         <main className="athlete">
             <div className="athlete__back-container" onClick={() => navigate(-1)}>
@@ -46,12 +48,28 @@ function AthletePage() {
                         <p className="athlete__description">{athlete.description}</p>
                     </div>
                     <span className="athlete__number">{athlete.number}</span>
-                    <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
+                    <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> to see what equipment {splitName[0]} likes to use.</span>
                 </div>
-                <ProAthlete 
+                <div className="athlete__image">
+                        <ul className="athlete__nav-list">
+                            <li className="athlete__nav-list-item">Defense</li>
+                            <li className="athlete__nav-list-item">Offense</li>
+                        </ul>
+                    <ProAthlete 
+                        name={athlete.name}
+                        image={athlete.image1}
+                        gloveId={athlete.gloveId}
+                        baIdt={athlete.batId}
+                        cleatId={athlete.cleatId}
+                        equipment1OffsetX={athlete.gloveOffsetX}
+                        equipment1OffsetY={athlete.gloveOffsetY}
+                        equipment2OffsetX={athlete.cleatOffsetX}
+                        equipment2OffsetY={athlete.cleatOffsetY}
+                    />
+                </div>
+                {/* <ProAthlete 
                     name={athlete.name}
-                    defenseImage={athlete.image1}
-                    offenseImage={athlete.image2}
+                    image={athlete.image2}
                     gloveId={athlete.gloveId}
                     baIdt={athlete.batId}
                     cleatId={athlete.cleatId}
@@ -59,7 +77,7 @@ function AthletePage() {
                     gloveOffsetY={athlete.gloveOffsetY}
                     cleatOffsetX={athlete.cleatOffsetX}
                     cleatOffsetY={athlete.cleatOffsetY}
-                />
+                /> */}
             </div>
         </main>
     );

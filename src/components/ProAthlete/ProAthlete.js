@@ -4,7 +4,7 @@ import { fetchSpecificBat, fetchSpecificGlove, fetchSpecificCleat } from "../../
 import circleButton from "../../assets/icons/double-circle.png";
 import EquipmentModal from "../EquipmentModal/EquipmentModal";
 
-function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId, gloveOffsetX, gloveOffsetY, cleatOffsetX, cleatOffsetY }) {
+function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, equipment1OffsetY, equipment2OffsetX, equipment2OffsetY }) {
     const [glove, setGlove] = useState();
     const [bat, setBat] = useState();
     const [cleat, setCleat] = useState();
@@ -64,20 +64,20 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
         <div className="athlete-image">
             <div className="athlete-image__container">
                 <div className="athlete-image__image-container">
-                    <img className="athlete-image__image" src={defenseImage} alt={name}/>
+                    <img className="athlete-image__image" src={image} alt={name}/>
                     <img 
                         className="athlete-image__glove-button athlete-image__button" 
                         src={circleButton} 
                         alt="circle button" 
-                        style={{ top: `${gloveOffsetY}px`, left: `${gloveOffsetX}px` }}
+                        style={{ top: `${equipment1OffsetY}px`, left: `${equipment1OffsetX}px` }}
                         onClick={handleGloveClick}
                     />
-                    {!cleatOffsetX ? "" : 
+                    {!equipment2OffsetX ? "" : 
                     <img 
                         className="athlete-image__cleat-button athlete-image__button" 
                         src={circleButton} 
                         alt="circle button" 
-                        style={{ top: `${cleatOffsetY}px`, left: `${cleatOffsetX}px` }}
+                        style={{ top: `${equipment2OffsetY}px`, left: `${equipment2OffsetX}px` }}
                         onClick={handleCleatClick}
                     />}
                 </div>
