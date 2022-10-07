@@ -11,6 +11,8 @@ function AthletePage() {
     let { athleteId } = useParams();
     const [athlete, setAthlete] = useState();
     const [isError, setIsError] = useState(false);
+    const [defenseActive, setDefenseActive] = useState(true);
+    const [offenseActive, setOffenseActive] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,6 +32,16 @@ function AthletePage() {
 
     if (!athlete) {
         return <Loading />
+    }
+
+    const handleDefenseClick = () => {
+        setOffenseActive(false);
+        setDefenseActive(true);
+    }
+
+    const handleOffenseClick = () => {
+        setDefenseActive(false);
+        setOffenseActive(true);
     }
 
     const splitName = (athlete.name).split(" ");
@@ -52,9 +64,10 @@ function AthletePage() {
                 </div>
                 <div className="athlete__image">
                         <ul className="athlete__nav-list">
-                            <li className="athlete__nav-list-item">Defense</li>
-                            <li className="athlete__nav-list-item">Offense</li>
+                            <li className="athlete__nav-list-item" onClick={handleDefenseClick}>Defense</li>
+                            <li className="athlete__nav-list-item" onClick={handleOffenseClick}>Offense</li>
                         </ul>
+                    {defenseActive && 
                     <ProAthlete 
                         name={athlete.name}
                         image={athlete.image1}
@@ -65,19 +78,21 @@ function AthletePage() {
                         equipment1OffsetY={athlete.gloveOffsetY}
                         equipment2OffsetX={athlete.cleatOffsetX}
                         equipment2OffsetY={athlete.cleatOffsetY}
-                    />
+                    />}
+                    {offenseActive && 
+                    <ProAthlete 
+                        name={athlete.name}
+                        image={athlete.image2}
+                        gloveId={athlete.gloveId}
+                        baIdt={athlete.batId}
+                        cleatId={athlete.cleatId}
+                        gloveOffsetX={athlete.gloveOffsetX}
+                        gloveOffsetY={athlete.gloveOffsetY}
+                        cleatOffsetX={athlete.cleatOffsetX}
+                        cleatOffsetY={athlete.cleatOffsetY}
+                    />}
                 </div>
-                {/* <ProAthlete 
-                    name={athlete.name}
-                    image={athlete.image2}
-                    gloveId={athlete.gloveId}
-                    baIdt={athlete.batId}
-                    cleatId={athlete.cleatId}
-                    gloveOffsetX={athlete.gloveOffsetX}
-                    gloveOffsetY={athlete.gloveOffsetY}
-                    cleatOffsetX={athlete.cleatOffsetX}
-                    cleatOffsetY={athlete.cleatOffsetY}
-                /> */}
+                
             </div>
         </main>
     );

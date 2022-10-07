@@ -47,12 +47,17 @@ function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, e
     }, [cleatId])
 
 
-    const handleGloveClick = (event) => {
+    const handleEquipment1Click = (event) => {
         setGloveModal(true)
     }
 
-    const handleCleatClick = (event) => {
+    const handleEquipment2Click = (event) => {
         setCleatModal(true)
+    }
+
+    const handleClick = (event) => {
+        console.log("X:" + event.nativeEvent.offsetX)
+        console.log("Y:" + event.nativeEvent.offsetY)
     }
 
 
@@ -64,13 +69,13 @@ function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, e
         <div className="athlete-image">
             <div className="athlete-image__container">
                 <div className="athlete-image__image-container">
-                    <img className="athlete-image__image" src={image} alt={name}/>
+                    <img className="athlete-image__image" src={image} alt={name} onClick={handleClick}/>
                     <img 
                         className="athlete-image__glove-button athlete-image__button" 
                         src={circleButton} 
                         alt="circle button" 
                         style={{ top: `${equipment1OffsetY}px`, left: `${equipment1OffsetX}px` }}
-                        onClick={handleGloveClick}
+                        onClick={handleEquipment1Click}
                     />
                     {!equipment2OffsetX ? "" : 
                     <img 
@@ -78,7 +83,7 @@ function ProAthlete({ name, image, gloveId, batId, cleatId, equipment1OffsetX, e
                         src={circleButton} 
                         alt="circle button" 
                         style={{ top: `${equipment2OffsetY}px`, left: `${equipment2OffsetX}px` }}
-                        onClick={handleCleatClick}
+                        onClick={handleEquipment2Click}
                     />}
                 </div>
             </div>

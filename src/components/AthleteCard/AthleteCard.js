@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import "./AthleteCard.scss";
 
 function AthleteCard({ id, name, image, position, number }) {
-
-    console.log(name);
     return (
         <Link to={`/what-the-pros-wear/Softball/${id}`} className="athlete-card__link">
             <article className="athlete-card">
