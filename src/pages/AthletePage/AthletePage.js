@@ -65,7 +65,7 @@ function AthletePage() {
                 <div className="athlete__image">
                         <ul className="athlete__nav-list">
                             <li className={defenseActive ? "athlete__nav-list-item--active" : "athlete__nav-list-item"} onClick={handleDefenseClick}>Defense</li>
-                            <li className={offenseActive ? "athlete__nav-list-item--active" : "athlete__nav-list-item"} onClick={handleOffenseClick}>Offense</li>
+                            {!(athlete.image2) ? "" : <li className={offenseActive ? "athlete__nav-list-item--active" : "athlete__nav-list-item"} onClick={handleOffenseClick}>Offense</li>}
                         </ul>
                     {defenseActive && 
                     <ProAthlete 

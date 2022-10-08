@@ -43,7 +43,7 @@
     }
 
     &__nav-list-item {
-        width: 50%;
+        width: 100%;
         display: flex;
         color: $secondary-text;
         cursor: pointer;
@@ -55,7 +55,7 @@
         padding: .5rem 0;
 
         &--active {
-            width: 50%;
+            width: 100%;
             display: flex;
             color: $primary-text;
             cursor: pointer;
