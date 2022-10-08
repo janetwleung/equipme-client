@@ -4,7 +4,7 @@ import { fetchSpecificBat, fetchSpecificGlove, fetchSpecificCleat } from "../../
 import circleButton from "../../assets/icons/double-circle.png";
 import EquipmentModal from "../EquipmentModal/EquipmentModal";
 
-function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId, gloveOffsetX, gloveOffsetY, cleatOffsetX, cleatOffsetY }) {
+function ProAthlete({ name, image, gloveId, batId, cleatId, defenseActive, offenseActive, equipment1OffsetX, equipment1OffsetY, equipment2OffsetX, equipment2OffsetY }) {
     const [glove, setGlove] = useState();
     const [bat, setBat] = useState();
     const [cleat, setCleat] = useState();
@@ -46,12 +46,17 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
             })
     }, [cleatId])
 
-    const handleGloveClick = (event) => {
-        setGloveModal(true)
+    const handleEquipment1Click = (event) => {
+        defenseActive ? setGloveModal(true) : setBatModal(true);
     }
 
-    const handleCleatClick = (event) => {
+    const handleEquipment2Click = (event) => {
         setCleatModal(true)
+    }
+
+    const handleClick = (event) => {
+        console.log("X:" + event.nativeEvent.offsetX)
+        console.log("Y:" + event.nativeEvent.offsetY)
     }
 
 
@@ -63,21 +68,21 @@ function ProAthlete({ name, defenseImage, offenseImage, gloveId, batId, cleatId,
         <div className="athlete-image">
             <div className="athlete-image__container">
                 <div className="athlete-image__image-container">
-                    <img className="athlete-image__image" src={defenseImage} alt={name}/>
+                    <img className="athlete-image__image" src={image} alt={name} onClick={handleClick}/>
                     <img 
                         className="athlete-image__glove-button athlete-image__button" 
                         src={circleButton} 
                         alt="circle button" 
-                        style={{ top: `${gloveOffsetY}px`, left: `${gloveOffsetX}px` }}
-                        onClick={handleGloveClick}
+                        style={{ top: `${equipment1OffsetY}px`, left: `${equipment1OffsetX}px` }}
+                        onClick={handleEquipment1Click}
                     />
-                    {!cleatOffsetX ? "" : 
+                    {!equipment2OffsetX ? "" : 
                     <img 
                         className="athlete-image__cleat-button athlete-image__button" 
                         src={circleButton} 
                         alt="circle button" 
-                        style={{ top: `${cleatOffsetY}px`, left: `${cleatOffsetX}px` }}
-                        onClick={handleCleatClick}
+                        style={{ top: `${equipment2OffsetY}px`, left: `${equipment2OffsetX}px` }}
+                        onClick={handleEquipment2Click}
                     />}
                 </div>
             </div>

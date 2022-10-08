@@ -11,6 +11,8 @@ function AthletePage() {
     let { athleteId } = useParams();
     const [athlete, setAthlete] = useState();
     const [isError, setIsError] = useState(false);
+    const [defenseActive, setDefenseActive] = useState(true);
+    const [offenseActive, setOffenseActive] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -32,6 +34,18 @@ function AthletePage() {
         return <Loading />
     }
 
+    const handleDefenseClick = () => {
+        setOffenseActive(false);
+        setDefenseActive(true);
+    }
+
+    const handleOffenseClick = () => {
+        setDefenseActive(false);
+        setOffenseActive(true);
+    }
+
+    const splitName = (athlete.name).split(" ");
+
     return (
         <main className="athlete">
             <div className="athlete__back-container" onClick={() => navigate(-1)}>
@@ -46,20 +60,40 @@ function AthletePage() {
                         <p className="athlete__description">{athlete.description}</p>
                     </div>
                     <span className="athlete__number">{athlete.number}</span>
-                    <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> below to see what equipment {athlete.name} likes to use.</span>
+                    <span className="athlete__message">Click on the <img className="athlete__circle" src={circleIcon} alt="Circle icon" /> to see what equipment {splitName[0]} likes to use.</span>
                 </div>
-                <ProAthlete 
-                    name={athlete.name}
-                    defenseImage={athlete.image1}
-                    offenseImage={athlete.image2}
-                    gloveId={athlete.gloveId}
-                    baIdt={athlete.batId}
-                    cleatId={athlete.cleatId}
-                    gloveOffsetX={athlete.gloveOffsetX}
-                    gloveOffsetY={athlete.gloveOffsetY}
-                    cleatOffsetX={athlete.cleatOffsetX}
-                    cleatOffsetY={athlete.cleatOffsetY}
-                />
+                <div className="athlete__image">
+                        <ul className="athlete__nav-list">
+                            <li className={defenseActive ? "athlete__nav-list-item--active" : "athlete__nav-list-item"} onClick={handleDefenseClick}>Defense</li>
+                            {!(athlete.image2) ? "" : <li className={offenseActive ? "athlete__nav-list-item--active" : "athlete__nav-list-item"} onClick={handleOffenseClick}>Offense</li>}
+                        </ul>
+                    {defenseActive && 
+                    <ProAthlete 
+                        name={athlete.name}
+                        image={athlete.image1}
+                        gloveId={athlete.gloveId}
+                        defenseActive={defenseActive}
+                        batId={athlete.batId}
+                        cleatId={athlete.cleatId}
+                        equipment1OffsetX={athlete.gloveOffsetX}
+                        equipment1OffsetY={athlete.gloveOffsetY}
+                        equipment2OffsetX={athlete.cleatOffsetX}
+                        equipment2OffsetY={athlete.cleatOffsetY}
+                    />}
+                    {offenseActive && 
+                    <ProAthlete 
+                        name={athlete.name}
+                        image={athlete.image2}
+                        offenseActive={offenseActive}
+                        batId={athlete.batId}
+                        cleatId={athlete.cleatId}
+                        equipment1OffsetX={athlete.batOffsetX}
+                        equipment1OffsetY={athlete.batOffsetY}
+                        equipment2OffsetX={athlete.cleat1OffsetX}
+                        equipment2OffsetY={athlete.cleat1OffsetY}
+                    />}
+                </div>
+                
             </div>
         </main>
     );
